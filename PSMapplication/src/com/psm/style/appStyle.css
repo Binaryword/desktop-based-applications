@@ -1,0 +1,92 @@
+* {
+
+-fx-white:#ffffff;
+-fx-orange:#FF8000;
+-fx-light-orange:#FFE4C4;
+-fx-primary:#104E8B;
+-fx-secondary:#C6E2FF
+
+}
+
+.root{
+	-fx-background-color:-fx-primary ;
+}
+
+
+
+/* the menu section  tab pane*/
+
+.tab{
+
+	-fx-background-color:-fx-primary ;
+	-fx-pref-width:200;
+	-fx-pref-height:60;
+}
+
+.tab-header-background{
+
+	-fx-background-color:-fx-primary;
+}
+
+.glyph-icon{
+
+	-fx-fill:-fx-secondary;
+}
+
+/*STUDENT SECTION STYLE */
+
+.student-main-backgroound{
+
+	-fx-background-color:white;
+}
+
+
+.card-display{
+	-fx-background-color:gray;
+}
+
+.button{
+	-fx-background-color:-fx-primary;
+	-fx-text-fill:white ;
+}
+
+.button-menu{
+	-fx-background-color:linear-gradient(#707070 , #333333) ;
+	-fx-text-fill:-fx-white ;
+}
+
+/*dashboard design */
+
+.backImage{
+	-fx-background-image:url("/com/psm/image/image.jpg");
+	-fx-background-size:stretch ;
+	-fx-background-repeat:stretch ;
+	-fx-background-position:center;
+	-fx-background-color:white;
+}
+
+.cardshow{
+
+	-fx-border-radius:20px;
+	-fx-background-radius:20px 0px 20px 0px;
+	-fx-background-color:red ;
+}
+
+.cardshow2{
+
+	-fx-border-radius:20px;
+	-fx-background-radius:0px 20px 0px 20px;
+	-fx-background-color:red ;
+}
+
+
+.detail-button{
+
+		-fx-background-color:linear-gradient( #00B2EE 2%, #00688B 80% ) ;
+		-fx-background-radius:20px ;
+		-fx-text-fill:white ;
+}
+
+
+
+

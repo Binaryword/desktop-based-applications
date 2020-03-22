@@ -1,0 +1,11 @@
+.jfx-button{
+
+		-fx-background-color:linear-gradient( #00B2EE 2%, #00688B 80% ) ;
+		-fx-text-fill:white ;
+}
+
+
+.root{
+
+	-fx-background-color:white ;
+}
