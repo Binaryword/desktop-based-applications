@@ -272,9 +272,9 @@
                                                       <Insets left="30.0" />
                                                    </padding>
                                                 </JFXButton>
-                                                <JFXButton fx:id="pry_5_button1" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="10.0" layoutX="10.0" layoutY="360.0" onAction="#activateClassButton" prefHeight="50.0" prefWidth="154.0" ripplerFill="#450e94" styleClass="detail-button" text="Show Info">
+                                                <JFXButton fx:id="btn_show_student" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="10.0" layoutX="10.0" layoutY="360.0" onAction="#activateLoadStudentWindow" prefHeight="50.0" prefWidth="154.0" ripplerFill="#450e94" styleClass="detail-button" text="Show Info">
                                                    <graphic>
-                                                      <FontAwesomeIconView glyphName="TABLE" size="15" text="" />
+                                                      <FontAwesomeIconView fx:id="btn_student_detail" glyphName="TABLE" size="15" text="" />
                                                    </graphic>
                                                    <padding>
                                                       <Insets left="30.0" />
@@ -351,7 +351,7 @@
                                                 <Insets left="25.0" />
                                              </padding>
                                           </JFXButton>
-                                          <JFXButton fx:id="pry_5_button11" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="10.0" onAction="#activateClassButton" prefHeight="50.0" prefWidth="154.0" ripplerFill="#450e94" styleClass="detail-button" text="Show Info">
+                                          <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="10.0" onAction="#activateClassButton" prefHeight="50.0" prefWidth="154.0" ripplerFill="#450e94" styleClass="detail-button" text="Show Info">
                                              <graphic>
                                                 <FontAwesomeIconView glyphName="TABLE" size="15" text="" />
                                              </graphic>

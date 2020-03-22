@@ -72,7 +72,12 @@ public class MenuController implements Initializable{
     @FXML
     private TableColumn<Student, Integer> stud_age_col;
 
+    @FXML
+    private JFXButton btn_show_student;
+
     private StudentDao stud_dao  ;
+
+    private Student selected_student  ;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -101,14 +106,14 @@ public class MenuController implements Initializable{
 		//addStudent();
 
 		//loadDetailLayout();
-		
+
 		student_table.getSelectionModel().selectedItemProperty().addListener((v , s_old , s_new)->{
-			
-			//loadDetailLayout(s_new);
+
+			selected_student = s_new ;
 		});
 			//
-	
-		
+
+
 
 	}
 
@@ -211,33 +216,57 @@ public class MenuController implements Initializable{
 
 	 }
 
-	
-	// load the detail layout
-	public void loadWindow(Student student , String title){
 
-//		Student stud = stud_dao.getStudent("02");
-//		System.out.println(stud.toString());
-		Stage stage = null ; 
-		
+    @FXML
+    void activateLoadStudentWindow(ActionEvent event) {
+
+    	//loadWindow("Student Panel" , "/com/psm/front_design/menu_design.fxml") ;
+
+    	Stage stage = null ;
+
+		try {
+
+			javafx.scene.Parent root = FXMLLoader.load(getClass().getResource("/com/psm/front_design/Student_detail.fxml"));
+			Scene scene = new Scene(root);
+			stage = new Stage();
+			stage.setScene(scene);
+			stage.setTitle("Student Panel");
+			stage.showAndWait();
+
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+    }
+
+	// load the detail layout
+	public void loadWindow(String title , String path){
+
+		Stage stage = null ;
+
 		try {
 			
-			javafx.scene.Parent root = FXMLLoader.load(getClass().getResource("/com/psm/front_design/menu_design.fxml"));
+			
+			FXMLLoader loader = new  FXMLLoader(getClass().getResource(path));
+			loader.load(); 	
+			StudentDetailController sd = loader.getController() ; 
+			sd.initStudent(selected_student);
+			javafx.scene.Parent root = FXMLLoader.load(getClass().getResource(path));
 			Scene scene = new Scene(root);
 			stage = new Stage();
 			stage.setScene(scene);
 			stage.setTitle(title);
 			stage.show();
-			
-			
-			
-			
+
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		System.out.println(student.toString());
+
+
 
 	}
 
