@@ -1,5 +1,6 @@
 package com.psm.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -8,9 +9,13 @@ import com.psm.model.Student;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class StudentDetailController implements Initializable{
 
@@ -79,8 +84,27 @@ public class StudentDetailController implements Initializable{
 
     @FXML
     void activateUpdateStudent(ActionEvent event) {
-    	
-    	
+
+    	if(student == null)
+    		return ;
+
+
+    	try {
+
+    		StudentUpdateController.initStudent(student);
+    		Parent root =  FXMLLoader.load(getClass().getResource("/com/psm/front_design/Update_Student.fxml"));
+    		Scene scene = new Scene(root);
+			Stage stage = new Stage();
+			stage.setScene(scene);
+			stage.setTitle("Update Form");
+			stage.showAndWait();
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
 
     }
 
@@ -89,7 +113,7 @@ public class StudentDetailController implements Initializable{
 
 		student = stud ;
 		System.out.println(student.toString());
-		
+
 
 	}
 

@@ -1,6 +1,7 @@
 package com.psm.controller;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
@@ -15,6 +16,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.ToggleGroup;
 
 public class StudentUpdateController implements Initializable{
@@ -78,6 +80,13 @@ public class StudentUpdateController implements Initializable{
 	    	combo_class.getItems().addAll(classList);
 
 
+	    	ObservableList<String>  paymentList= FXCollections.observableArrayList("PAID" , "HALF_PAID"  , "NOT_PAID") ;
+	    	combo_payment_status.getItems().addAll(paymentList);
+
+	    	dob_calender.setValue(LocalDate.parse("2000-01-01"));
+
+	    	//
+	    	initWidget();
 		}
 
 	    @FXML
@@ -93,6 +102,7 @@ public class StudentUpdateController implements Initializable{
 	    @FXML
 	    void active_close_window(ActionEvent event) {
 
+
 	    }
 
 
@@ -100,10 +110,28 @@ public class StudentUpdateController implements Initializable{
 	    public static void initStudent(Student stud){
 
 	    	student = stud ;
+	    	System.out.println("Student from update form " + student.toString() ) ;
 	    }
 
 	    public void initWidget(){
 
+	    	txt_name.setText(student.getFirstName());
+	    	txt_otherName.setText(student.getOtherName());
+	    	txt_address.setText(student.getAddress());
+	    	txt_age.setText(String.valueOf(student.getAge()));
+	    	dob_calender.setValue(LocalDate.parse(student.getDOB()));
+	    	combo_class.setValue(student.getStud_class().toUpperCase());
+	    	combo_payment_status.setValue(student.getPaymentStatus().toUpperCase());
+
+	    	if(student.getSex() == true )
+	    		radio_male.setSelected(true);
+	    	else
+	    		radio_female.setSelected(true);
+
+
+	    	txt_family_name.setText(student.getParent().getFamily_name());
+	    	txt_parent_address.setText(student.getParent().getFamily_address());
+	    	txt_parent_contact.setText(student.getParent().getFamily_contact());
 
 	    }
 
