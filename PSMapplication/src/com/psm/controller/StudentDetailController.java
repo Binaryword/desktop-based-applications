@@ -59,14 +59,17 @@ public class StudentDetailController implements Initializable{
     @FXML
     private JFXButton btn_delete;
 
-    private Student student = null ;
+    private static Student student = null ;
 
 
 
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
 
+    	System.out.println("the init method..");
 
+    	if(!student.equals(null))
+			initWidget();
 	}
 
     @FXML
@@ -76,14 +79,45 @@ public class StudentDetailController implements Initializable{
 
     @FXML
     void activateUpdateStudent(ActionEvent event) {
+    	
+    	
 
     }
 
 
-	public void initStudent(Student stud){
-		
-		this.student = stud ;
+	public static void initStudent(Student stud){
+
+		student = stud ;
 		System.out.println(student.toString());
+		
+
 	}
+
+
+
+	public void initWidget(){
+
+		txt_name.setText(txt_name.getText() + " " + student.getOtherName());
+		txt_firstname.setText(txt_firstname.getText() + " " + student.getFirstName());
+		txt_dob.setText(txt_dob.getText() + " " + student.getDOB());
+		txt_class.setText(txt_class.getText() + " " + student.getStud_class());
+		txt_age.setText(txt_age.getText() + " " + student.getAge());
+		txt_address.setText(txt_address.getText() + " " + student.getAddress());
+		txt_paymentStatus.setText(txt_paymentStatus.getText() + " " + student.getPaymentStatus());
+		txt_gender.setText(txt_gender.getText() + " " + ((student.getSex()==true) ? "MALE":"FEMALE"));
+		txt_aced_performance.setText(txt_aced_performance.getText() + " " + "GOOD");
+		txt_parent_name.setText(txt_parent_name.getText() + " " + student.getParent().getFamily_name());
+		txt_parent_address.setText(txt_parent_address.getText() + " " + student.getParent().getFamily_address());
+		txt_parent_contact.setText(txt_parent_contact.getText() + " " + student.getParent().getFamily_contact());
+
+
+	}
+
+
+
+
+
+
+
 
 }

@@ -221,12 +221,16 @@ public class MenuController implements Initializable{
     void activateLoadStudentWindow(ActionEvent event) {
 
     	//loadWindow("Student Panel" , "/com/psm/front_design/menu_design.fxml") ;
+    	if(selected_student==null)
+			return  ;
 
     	Stage stage = null ;
 
 		try {
-
-			javafx.scene.Parent root = FXMLLoader.load(getClass().getResource("/com/psm/front_design/Student_detail.fxml"));
+			
+			StudentDetailController.initStudent(selected_student);
+			FXMLLoader loader = new  FXMLLoader(getClass().getResource("/com/psm/front_design/Student_detail.fxml"));
+			javafx.scene.Parent root = loader.load();
 			Scene scene = new Scene(root);
 			stage = new Stage();
 			stage.setScene(scene);
@@ -244,15 +248,17 @@ public class MenuController implements Initializable{
 	// load the detail layout
 	public void loadWindow(String title , String path){
 
+
+
 		Stage stage = null ;
 
 		try {
-			
-			
+
+
 			FXMLLoader loader = new  FXMLLoader(getClass().getResource(path));
-			loader.load(); 	
-			StudentDetailController sd = loader.getController() ; 
-			sd.initStudent(selected_student);
+			loader.load();
+			StudentDetailController sd = loader.getController() ;
+			//sd.initStudent(selected_student);
 			javafx.scene.Parent root = FXMLLoader.load(getClass().getResource(path));
 			Scene scene = new Scene(root);
 			stage = new Stage();
