@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
+import com.psm.database.StudentDao;
 import com.psm.model.Student;
 
 import javafx.event.ActionEvent;
@@ -66,7 +67,7 @@ public class StudentDetailController implements Initializable{
 
     private static Student student = null ;
 
-
+    private StudentDao stud_dao = new StudentDao();
 
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -80,6 +81,8 @@ public class StudentDetailController implements Initializable{
     @FXML
     void activateDeleteStudent(ActionEvent event) {
 
+
+    	stud_dao.deleteStudentRecord(student.getId());
     }
 
     @FXML

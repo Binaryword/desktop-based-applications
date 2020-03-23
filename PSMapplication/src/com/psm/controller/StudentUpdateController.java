@@ -9,6 +9,8 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
+import com.psm.database.StudentDao;
+import com.psm.model.Parent;
 import com.psm.model.Student;
 
 import javafx.collections.FXCollections;
@@ -16,13 +18,15 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class StudentUpdateController implements Initializable{
 
+	  @FXML private AnchorPane root ;
 
-	  @FXML
+	    @FXML
 	    private JFXTextField txt_name;
 
 	    @FXML
@@ -71,6 +75,7 @@ public class StudentUpdateController implements Initializable{
 	    private JFXButton btn_cancel;
 
 	    private static Student student ;
+	    private StudentDao studDao = new StudentDao() ;
 
 	    @Override
 		public void initialize(URL location, ResourceBundle resources) {
@@ -85,8 +90,10 @@ public class StudentUpdateController implements Initializable{
 
 	    	dob_calender.setValue(LocalDate.parse("2000-01-01"));
 
-	    	//
+	    	//setting student value to the gui widget
 	    	initWidget();
+
+
 		}
 
 	    @FXML
@@ -97,11 +104,36 @@ public class StudentUpdateController implements Initializable{
 	    @FXML
 	    void activate_update(ActionEvent event) {
 
+
+	    	int id = student.getId() ;
+	    	String name = txt_name.getText() ;
+	    	String othername = txt_name.getText();
+	    	String address = txt_address.getText();
+	    	int age = Integer.parseInt(txt_age.getText().trim());
+	    	String dob = dob_calender.getValue().toString() ;
+	    	String stud_class = combo_class.getValue() ;
+	    	String pay_status = combo_payment_status.getValue() ;
+	    	boolean sex  ;
+
+	    	if(radio_male.isSelected())
+	    		sex = true ;
+	    	else
+	    		sex = false ;
+
+	    	String famName = txt_family_name.getText() ;
+	    	String famAddress = txt_parent_address.getText();
+	    	String famContact = txt_parent_contact.getText() ;
+
+	    student = new Student(id, age, name, othername, address, dob , pay_status.toUpperCase() , stud_class.toUpperCase() , sex , new Parent(famName , famContact , famAddress));
+	    updateStudentRecord(student);
+
 	    }
 
 	    @FXML
 	    void active_close_window(ActionEvent event) {
 
+	    		Stage stage = (Stage)root.getScene().getWindow() ;
+	    		stage.close();
 
 	    }
 
@@ -132,6 +164,25 @@ public class StudentUpdateController implements Initializable{
 	    	txt_family_name.setText(student.getParent().getFamily_name());
 	    	txt_parent_address.setText(student.getParent().getFamily_address());
 	    	txt_parent_contact.setText(student.getParent().getFamily_contact());
+
+	    }
+
+
+	    public void updateStudentRecord(Student student){
+
+	    	// updating database
+	    	boolean success = studDao.updateStudent(student);
+
+	    	if(success)
+	    	{
+	    		System.out.println("Update successfull");
+	    		Stage stage = (Stage)root.getScene().getWindow() ;
+	    		stage.close();
+
+	    	}
+
+	    	else
+	    		System.out.println("Error");
 
 	    }
 
