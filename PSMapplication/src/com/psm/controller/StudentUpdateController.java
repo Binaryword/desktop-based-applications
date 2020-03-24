@@ -185,6 +185,9 @@ public class StudentUpdateController implements Initializable{
 	    		System.out.println("Error");
 
 	    }
+	    
+	    
+	    
 
 
 }

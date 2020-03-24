@@ -296,7 +296,31 @@ public class StudentDao {
 		return isSuccessfull;
 		
 		
+	}// end of update method
+	
+	
+	public boolean deleteStudentRecord(int age){
+	
+		String query = "delete from studentTable where id = ?" ; 
+		boolean isSuccessfull = false ; 
+		try {
+			preStatement = connection.prepareStatement(query);
+			
+			preStatement.setInt(1, age);
+			
+			isSuccessfull = preStatement.execute() ; 
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			
+			return false ; 
+		} 
+		
+		
+		return isSuccessfull ; 
 	}
+	
+	
 
 
 }

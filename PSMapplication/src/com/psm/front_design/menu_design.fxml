@@ -335,7 +335,7 @@
                                  <left>
                                     <VBox prefHeight="335.0" prefWidth="181.0" style="-fx-background-color: #707070;" BorderPane.alignment="CENTER">
                                        <children>
-                                          <JFXButton alignment="BASELINE_LEFT" graphicTextGap="25.0" prefHeight="50.0" prefWidth="181.0" ripplerFill="#450e94" styleClass="button-menu" text="Academic Staff">
+                                          <JFXButton fx:id="btn_aced_staff" alignment="BASELINE_LEFT" graphicTextGap="25.0" onAction="#activateStaffSelection" prefHeight="50.0" prefWidth="181.0" ripplerFill="#450e94" styleClass="button-menu" text="Academic Staff">
                                              <graphic>
                                                 <FontAwesomeIconView glyphName="USER" size="15" />
                                              </graphic>
@@ -343,7 +343,7 @@
                                                 <Insets left="25.0" />
                                              </padding>
                                           </JFXButton>
-                                          <JFXButton alignment="BASELINE_LEFT" graphicTextGap="25.0" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="181.0" ripplerFill="#450e94" styleClass="button-menu" text="Non Academic Staff">
+                                          <JFXButton fx:id="btn_non_aced_staff" alignment="BASELINE_LEFT" graphicTextGap="25.0" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="181.0" ripplerFill="#450e94" styleClass="button-menu" text="Non Academic Staff">
                                              <graphic>
                                                 <FontAwesomeIconView glyphName="USER" size="15" />
                                              </graphic>
@@ -351,7 +351,7 @@
                                                 <Insets left="25.0" />
                                              </padding>
                                           </JFXButton>
-                                          <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="10.0" onAction="#activateClassButton" prefHeight="50.0" prefWidth="154.0" ripplerFill="#450e94" styleClass="detail-button" text="Show Info">
+                                          <JFXButton fx:id="btn_staff_info" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="10.0" onAction="#activateLoadStudentWindow" prefHeight="50.0" prefWidth="154.0" ripplerFill="#450e94" styleClass="detail-button" text="Show Info">
                                              <graphic>
                                                 <FontAwesomeIconView glyphName="TABLE" size="15" text="" />
                                              </graphic>
@@ -378,16 +378,16 @@
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
                                                 </Text>
-                                                <TableView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                                <TableView fx:id="staff_table_view" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                                                    <columns>
-                                                      <TableColumn prefWidth="74.0" text="ID" />
-                                                      <TableColumn prefWidth="126.0" text="Name" />
-                                                      <TableColumn prefWidth="100.0" text="Surname" />
-                                                      <TableColumn prefWidth="100.0" text="DOB" />
-                                                      <TableColumn prefWidth="100.0" text="Address" />
-                                                      <TableColumn prefWidth="100.0" text="Phone Contact" />
-                                                      <TableColumn prefWidth="100.0" text="Email" />
-                                                      <TableColumn prefWidth="100.0" text="Age" />
+                                                      <TableColumn fx:id="staff_id_col" prefWidth="54.0" text="ID" />
+                                                      <TableColumn fx:id="staff_othername_col" prefWidth="147.0" text="Name" />
+                                                      <TableColumn fx:id="staff_firstname_col" prefWidth="99.0" text="Surname" />
+                                                      <TableColumn fx:id="staff_doe_col" prefWidth="100.0" text="DOE" />
+                                                      <TableColumn fx:id="staff_classtaking_col" prefWidth="76.0" text="Class Taking" />
+                                                      <TableColumn fx:id="staff_contact_col" prefWidth="124.0" text="Phone Contact" />
+                                                      <TableColumn fx:id="staff_sex_col" prefWidth="76.0" text="Gender" />
+                                                      <TableColumn fx:id="staff_age_col" prefWidth="124.0" text="Age" />
                                                    </columns>
                                                    <VBox.margin>
                                                       <Insets />

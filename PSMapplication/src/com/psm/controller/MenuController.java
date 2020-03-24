@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 import com.jfoenix.controls.JFXButton;
 import com.psm.database.StudentDao;
 import com.psm.model.Parent;
+import com.psm.model.Staff;
 import com.psm.model.Student;
 
 import javafx.collections.FXCollections;
@@ -72,6 +73,80 @@ public class MenuController implements Initializable{
     @FXML
     private TableColumn<Student, Integer> stud_age_col;
 
+
+//    staff related instance variable
+
+    @FXML
+    private JFXButton btn_aced_staff;
+
+    @FXML
+    private JFXButton btn_non_aced_staff;
+
+    @FXML
+    private JFXButton btn_staff_info;
+
+    @FXML
+    private TableView<Staff> staff_table_view;
+
+    @FXML
+    private TableColumn<Staff, Integer> staff_id_col;
+
+    @FXML
+    private TableColumn<Staff, String> staff_othername_col;
+
+    @FXML
+    private TableColumn<Staff, String> staff_firstname_col;
+
+    @FXML
+    private TableColumn<Staff, String> staff_doe_col;
+
+    @FXML
+    private TableColumn<Staff, String> staff_classtaking_col;
+
+    @FXML
+    private TableColumn<Staff, String> staff_contact_col;
+
+    @FXML
+    private TableColumn<Staff, String> staff_sex_col;
+
+    @FXML
+    private TableColumn<Staff, Integer> staff_age_col;
+
+
+    @FXML
+    void activateLoadStaffWindow(ActionEvent event) {
+    				
+    	
+
+    }
+
+    @FXML
+    void activateStaffSelection(ActionEvent event) {
+
+    	JFXButton b = (JFXButton) event.getSource() ;
+
+		switch(b.getId())
+		{
+
+//		case "" :
+//			student_table.getItems().removeAll() ;
+//			student_table.setItems(getStudents("nry1"));
+//			break ;
+//		case "" :
+//			student_table.getItems().removeAll() ;
+//			student_table.setItems(getStudents("nry2"));
+//			break ;
+//		case "" :
+//			student_table.getItems().removeAll() ;
+//			student_table.setItems(getStudents("nry3"));
+//			break ;
+//			default :
+		}
+
+    }
+
+
+
     @FXML
     private JFXButton btn_show_student;
 
@@ -86,8 +161,35 @@ public class MenuController implements Initializable{
 		stud_dao = new StudentDao();
 
 
-		// initializing the student table
+		
 
+		staff_id_col.setCellValueFactory(new PropertyValueFactory<>("id"));
+
+		staff_othername_col.setCellValueFactory(new PropertyValueFactory<>("otherName"));
+
+		staff_firstname_col.setCellValueFactory(new PropertyValueFactory<>("firstName"));
+
+		staff_doe_col.setCellValueFactory(new PropertyValueFactory<>("DOE"));
+
+		staff_classtaking_col.setCellValueFactory(new PropertyValueFactory<>("classTaking"));
+
+		staff_contact_col.setCellValueFactory(new PropertyValueFactory<>("contact"));
+		
+		staff_sex_col.setCellValueFactory(new PropertyValueFactory<>("sex"));
+		
+		staff_age_col.setCellValueFactory(new PropertyValueFactory<>("age"));
+		
+	
+
+		//inserting data into table
+		student_table.getSelectionModel().selectedItemProperty().addListener((v , s_old , s_new)->{
+
+			selected_student = s_new ;
+		});
+		
+
+		// initializing the staff table and columns
+		
 		student_id_column.setCellValueFactory(new PropertyValueFactory<>("id"));
 
 		student_name_column.setCellValueFactory(new PropertyValueFactory<>("otherName"));
@@ -101,19 +203,7 @@ public class MenuController implements Initializable{
 		stud_class_col.setCellValueFactory(new PropertyValueFactory<>("stud_class"));
 
 		stud_age_col.setCellValueFactory(new PropertyValueFactory<>("age"));
-
-		//inserting data into table
-		//addStudent();
-
-		//loadDetailLayout();
-
-		student_table.getSelectionModel().selectedItemProperty().addListener((v , s_old , s_new)->{
-
-			selected_student = s_new ;
-		});
-			//
-
-
+		
 
 	}
 
@@ -227,7 +317,7 @@ public class MenuController implements Initializable{
     	Stage stage = null ;
 
 		try {
-			
+
 			StudentDetailController.initStudent(selected_student);
 			FXMLLoader loader = new  FXMLLoader(getClass().getResource("/com/psm/front_design/Student_detail.fxml"));
 			javafx.scene.Parent root = loader.load();
