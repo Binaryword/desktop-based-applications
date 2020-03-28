@@ -16,12 +16,14 @@ public class Student {
 	private SimpleStringProperty   paymentStatus;
 	private SimpleStringProperty  stud_class ;
 	private SimpleBooleanProperty sex   ;
+	private String passport_location ;
 	private Parent parent  ;
-	
-	
+
+
+
 	public Student(int id , int age , String firstName , String otherName , String address , String DOB , String pay_status, String stud_class ,  boolean sex , Parent parent){
-		
-	
+
+
 		this.id = new SimpleIntegerProperty(id);
 		this.age = new SimpleIntegerProperty(age);
 		this.firstName = new SimpleStringProperty(firstName);
@@ -31,8 +33,8 @@ public class Student {
 		this.paymentStatus = new SimpleStringProperty(pay_status);
 		this.stud_class = new SimpleStringProperty(stud_class);
 		this.sex = new SimpleBooleanProperty(sex);
-		this.parent = parent ;  
-		
+		this.parent = parent ;
+
 	}
 
 
@@ -171,6 +173,20 @@ public class Student {
 
 	public void setSex(boolean sex) {
 		this.sex.set(sex);
+	}
+
+
+
+
+	public String getPassport_location() {
+		return passport_location;
+	}
+
+
+
+
+	public void setPassport_location(String passport_location) {
+		this.passport_location = passport_location;
 	}
 
 

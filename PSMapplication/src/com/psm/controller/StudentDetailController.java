@@ -81,8 +81,6 @@ public class StudentDetailController implements Initializable{
 
     	System.out.println("the init method..");
 
-    	passport_holder.setImage(new Image(getClass().getResourceAsStream("/com/psm/passports/nn.jpg")));
-
     	if(!student.equals(null))
 			initWidget();
 	}
@@ -132,6 +130,27 @@ public class StudentDetailController implements Initializable{
 
 
 	public void initWidget(){
+
+		passport_holder.setImage(new Image(getClass().getResourceAsStream("/com/psm/passports/defaultImage.png")));
+		System.out.println("Password location :  " + student.getPassport_location());
+
+		if(student.getPassport_location() != null){
+
+			try{
+				
+				String pass_loc = "/com/psm/passports/"+student.getFirstName().trim()+"_"+student.getId()+".png"; 
+				passport_holder.setImage(new Image(getClass().getResourceAsStream(pass_loc)));
+				student.setPassport_location(pass_loc);
+
+			}catch(Exception e){
+
+				System.out.println("Error : " + e.getMessage() ) ;
+			}
+
+
+		}
+
+
 
 		txt_name.setText(txt_name.getText() + " " + student.getOtherName());
 		txt_firstname.setText(txt_firstname.getText() + " " + student.getFirstName());

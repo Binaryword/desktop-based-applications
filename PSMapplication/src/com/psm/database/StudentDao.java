@@ -68,11 +68,12 @@ public class StudentDao {
 	private void initiateTable() {
 
 		String sql = "create table studentTable("
-				+ "id integer(10) primary key , "
+				+ "id integer(100) primary key , "
 				+ "age integer(15) not null , "
 				+ "firstname varchar(30) not null , "
 				+ "othername varchar(100) not null , "
 				+ "address varchar(100) not null , "
+				+ "pass_loc varchar(200) not null , "
 				+ "DOB DATE , "
 				+ "pay_status varchar(20) , "
 				+ "stud_class varchar(20) , "
@@ -101,7 +102,7 @@ public class StudentDao {
 
 	public boolean insertStudent(Student student) {
 
-		String sql = "insert into studentTable values (? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ?) ";
+		String sql = "insert into studentTable values (? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ?) ";
 		boolean isSuccessfull = false;
 
 		try {
@@ -111,13 +112,15 @@ public class StudentDao {
 			preStatement.setString(3, student.getFirstName().toLowerCase());
 			preStatement.setString(4, student.getOtherName().toLowerCase());
 			preStatement.setString(5, student.getAddress().toLowerCase());
-			preStatement.setString(6, student.getDOB().toLowerCase());
-			preStatement.setString(7, student.getPaymentStatus().toLowerCase());
-			preStatement.setString(8, student.getStud_class().toLowerCase());
-			preStatement.setBoolean(9, student.getSex());
-			preStatement.setString(10, student.getParent().getFamily_name().toLowerCase());
-			preStatement.setString(11, student.getParent().getFamily_address().toLowerCase());
-			preStatement.setString(12, student.getParent().getFamily_contact().toLowerCase());
+			preStatement.setString(6, student.getPassport_location());
+			preStatement.setString(7, student.getDOB().toLowerCase());
+			preStatement.setString(8, student.getPaymentStatus().toLowerCase());
+			preStatement.setString(9, student.getStud_class().toLowerCase());
+			preStatement.setBoolean(10, student.getSex());
+			preStatement.setString(11, student.getParent().getFamily_name().toLowerCase());
+			preStatement.setString(12, student.getParent().getFamily_address().toLowerCase());
+			preStatement.setString(13, student.getParent().getFamily_contact().toLowerCase());
+
 
 			boolean isFine = preStatement.execute();
 
@@ -167,10 +170,12 @@ public class StudentDao {
 				String familyName = resultSet.getString("family_name");
 				String family_contact = resultSet.getString("family_contact");
 				String family_address = resultSet.getString("family_address");
+				String pass_loc = resultSet.getString("pass_loc");
 
 
 				System.out.println();
 				student = new Student(id, age, firstName, otherName, address, formatter.format(DOB) , pay_status , stud_class.toUpperCase() , sex , new Parent(familyName , family_contact , family_address));
+				student.setPassport_location(pass_loc);
 
 				if (student != null)
 					studentList.add(student);
@@ -218,11 +223,11 @@ public class StudentDao {
 				String familyName = resultSet.getString("family_name");
 				String family_contact = resultSet.getString("family_contact");
 				String family_address = resultSet.getString("family_address");
-
+				String pass_loc = resultSet.getString("pass_loc");
 
 				System.out.println();
 				student = new Student(id, age, firstName, otherName, address, formatter.format(DOB) , pay_status , stud_class.toUpperCase() , sex , new Parent(familyName , family_contact , family_address));
-
+				student.setPassport_location(pass_loc);
 				System.out.println(" Student data found successfully...");
 
 				return student;
@@ -242,7 +247,7 @@ public class StudentDao {
 
 
 	public boolean updateStudent(Student student){
-		
+
 
 //		+ "id integer(10) primary key , "
 //		+ "age integer(15) not null , "
@@ -256,9 +261,9 @@ public class StudentDao {
 //		+ "family_name varchar(30) not null , "
 //		+ "family_contact varchar(15) not null , "
 //		+ "family_address varchar(100) not null ) ; " ;
-		
-		String sql = "update studentTable  set id=?, age=?, firstname=? , othername=? , address=?,  DOB=? ,"
-				+ "pay_status=? , stud_class=? , sex=? ,  family_name=? , family_contact=? , family_address=?  where id = ? ; ";
+
+		String sql = "update studentTable  set id=?, age=?, firstname=? , othername=? , address=?,  pass_loc=? , DOB=? ,"
+				+ "pay_status=? , stud_class=? , sex=? ,  family_name=? , family_contact=? , family_address=? where id = ? ; ";
 		boolean isSuccessfull = false;
 
 		try {
@@ -268,16 +273,17 @@ public class StudentDao {
 			preStatement.setString(3, student.getFirstName().toLowerCase());
 			preStatement.setString(4, student.getOtherName().toLowerCase());
 			preStatement.setString(5, student.getAddress().toLowerCase());
-			preStatement.setString(6, student.getDOB().toLowerCase());
-			preStatement.setString(7, student.getPaymentStatus().toLowerCase());
-			preStatement.setString(8, student.getStud_class().toLowerCase());
-			preStatement.setBoolean(9, student.getSex());
-			preStatement.setString(10, student.getParent().getFamily_name().toLowerCase());
-			preStatement.setString(11, student.getParent().getFamily_address().toLowerCase());
-			preStatement.setString(12, student.getParent().getFamily_contact().toLowerCase());
+			preStatement.setString(6, student.getPassport_location());
+			preStatement.setString(7, student.getDOB().toLowerCase());
+			preStatement.setString(8, student.getPaymentStatus().toLowerCase());
+			preStatement.setString(9, student.getStud_class().toLowerCase());
+			preStatement.setBoolean(10, student.getSex());
+			preStatement.setString(11, student.getParent().getFamily_name().toLowerCase());
+			preStatement.setString(12, student.getParent().getFamily_address().toLowerCase());
+			preStatement.setString(13, student.getParent().getFamily_contact().toLowerCase());
 			
-			preStatement.setInt(13, student.getId());
-			
+			preStatement.setInt(14, student.getId());
+
 			boolean isFine = preStatement.execute();
 
 			if (isFine) {
@@ -294,33 +300,33 @@ public class StudentDao {
 		}
 
 		return isSuccessfull;
-		
-		
+
+
 	}// end of update method
-	
-	
+
+
 	public boolean deleteStudentRecord(int age){
-	
-		String query = "delete from studentTable where id = ?" ; 
-		boolean isSuccessfull = false ; 
+
+		String query = "delete from studentTable where id = ?" ;
+		boolean isSuccessfull = false ;
 		try {
 			preStatement = connection.prepareStatement(query);
-			
+
 			preStatement.setInt(1, age);
-			
-			isSuccessfull = preStatement.execute() ; 
-			
+
+			isSuccessfull = preStatement.execute() ;
+
 		} catch (SQLException e) {
 			e.printStackTrace();
-			
-			return false ; 
-		} 
-		
-		
-		return isSuccessfull ; 
+
+			return false ;
+		}
+
+
+		return isSuccessfull ;
 	}
-	
-	
+
+
 
 
 }

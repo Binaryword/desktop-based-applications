@@ -84,6 +84,11 @@
                         <JFXTextField fx:id="txt_family_name" focusColor="#051ad3" labelFloat="true" prefHeight="25.0" prefWidth="177.0" promptText="Family Name" unFocusColor="#240475" />
                         <JFXTextField fx:id="txt_parent_address" focusColor="#051ad3" layoutX="30.0" layoutY="46.0" prefHeight="25.0" prefWidth="177.0" promptText="Address" unFocusColor="#240475" />
                         <JFXTextField fx:id="txt_parent_contact" focusColor="#051ad3" layoutX="30.0" layoutY="72.0" prefHeight="25.0" prefWidth="177.0" promptText="Phone No:" unFocusColor="#240475" />
+                        <JFXButton fx:id="btn_select_image" buttonType="RAISED" graphicTextGap="8.0" onAction="#activate_Image_selection" prefHeight="37.0" prefWidth="176.0" stylesheets="@../style/detailPaneStyle.css" text="Select Image ">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="USER" size="20" />
+                           </graphic>
+                        </JFXButton>
                         <HBox alignment="CENTER" prefHeight="37.0" prefWidth="177.0" spacing="15.0">
                            <children>
                               <JFXButton fx:id="btn_submit" buttonType="RAISED" onAction="#activate_submit" prefHeight="40.0" prefWidth="76.0" stylesheets="@../style/detailPaneStyle.css" text="Submit" />

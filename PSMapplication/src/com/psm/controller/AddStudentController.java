@@ -1,6 +1,10 @@
 package com.psm.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
@@ -10,6 +14,7 @@ import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
 import com.psm.database.StudentDao;
+import com.psm.model.ChangeDirectory;
 import com.psm.model.Parent;
 import com.psm.model.Student;
 
@@ -20,7 +25,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.FileChooser.ExtensionFilter;
 
 public class AddStudentController implements Initializable{
 
@@ -76,13 +83,34 @@ public class AddStudentController implements Initializable{
 
 	    @FXML
 	    private JFXButton btn_clear;
+	    
+	    private Student student ; 
 
-
+	    private File file ; 
+	    
 	    private StudentDao stud_dao = new StudentDao();
 
     @FXML
     void activate_clear(ActionEvent event) {
 
+    }
+    
+    @FXML
+    void activate_Image_selection(ActionEvent event) {
+
+    	FileChooser filechooser = new FileChooser();
+    	filechooser.setInitialDirectory((new File("C:\\")));
+    	filechooser.setInitialFileName("image");
+    	filechooser.getExtensionFilters().addAll(new ExtensionFilter("png" , "*.png")
+    			, new ExtensionFilter("jpg", "*.jpg"));
+
+    	file = filechooser.showOpenDialog(new Stage());
+
+    	if(file == null)
+    		return ;
+
+
+    	
     }
 
     @FXML
@@ -108,10 +136,29 @@ public class AddStudentController implements Initializable{
     	String famName = txt_family_name.getText();
     	String famAddress = txt_parent_address.getText();
     	String famContact = txt_parent_contact.getText();
+    	
+    	
+    	Path path = FileSystems.getDefault().getPath("").toAbsolutePath();
+    	System.out.println(path.toString() + "\\src\\com\\psm\\passports\\new_image.png");
+    	String passport_path = path.toString() + "\\src\\com\\psm\\passports\\" + fName+"_"+id+".png" ;
+    	String pass_loc = "/com/psm/passports/"+fName+"_"+id+".png"; 
+
+    	System.out.println(passport_path);
+    	
+
+    	try {
+
+			ChangeDirectory.copy(file , new File(passport_path));
+
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
 
 
-       Student student = new Student(id, age, fName, oName, address, dob , pay_status.toUpperCase() , stud_class.toUpperCase() , sex , new Parent(famName , famContact , famAddress));
- 	    addStudentRecord(student);
+    	student = new Student(id, age, fName, oName, address, dob , pay_status.toUpperCase() , stud_class.toUpperCase() , sex , new Parent(famName , famContact , famAddress));
+ 	   	student.setPassport_location(pass_loc);
+    	addStudentRecord(student);
 
 
     }
