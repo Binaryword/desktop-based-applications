@@ -6,7 +6,9 @@ import java.text.ParseException;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
+import com.psm.database.StaffDao;
 import com.psm.database.StudentDao;
+import com.psm.model.NextOfKin;
 import com.psm.model.Parent;
 import com.psm.model.Staff;
 import com.psm.model.Student;
@@ -21,6 +23,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class MenuController implements Initializable{
@@ -114,54 +117,25 @@ public class MenuController implements Initializable{
 
 
     @FXML
-    void activateLoadStaffWindow(ActionEvent event) {
-    				
-    	
-
-    }
-
-    @FXML
-    void activateStaffSelection(ActionEvent event) {
-
-    	JFXButton b = (JFXButton) event.getSource() ;
-
-		switch(b.getId())
-		{
-
-//		case "" :
-//			student_table.getItems().removeAll() ;
-//			student_table.setItems(getStudents("nry1"));
-//			break ;
-//		case "" :
-//			student_table.getItems().removeAll() ;
-//			student_table.setItems(getStudents("nry2"));
-//			break ;
-//		case "" :
-//			student_table.getItems().removeAll() ;
-//			student_table.setItems(getStudents("nry3"));
-//			break ;
-//			default :
-		}
-
-    }
-
-
-
-    @FXML
     private JFXButton btn_show_student;
 
     private StudentDao stud_dao  ;
+    private StaffDao staff_dao ;
 
     private Student selected_student  ;
+
+    private Staff selected_staff ;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
 		//getting db connection
 		stud_dao = new StudentDao();
+		staff_dao = new StaffDao();
 
 
-		
+
+		// initializing the staff table and columns
 
 		staff_id_col.setCellValueFactory(new PropertyValueFactory<>("id"));
 
@@ -174,22 +148,25 @@ public class MenuController implements Initializable{
 		staff_classtaking_col.setCellValueFactory(new PropertyValueFactory<>("classTaking"));
 
 		staff_contact_col.setCellValueFactory(new PropertyValueFactory<>("contact"));
-		
+
 		staff_sex_col.setCellValueFactory(new PropertyValueFactory<>("sex"));
-		
+
 		staff_age_col.setCellValueFactory(new PropertyValueFactory<>("age"));
-		
-	
 
-		//inserting data into table
-		student_table.getSelectionModel().selectedItemProperty().addListener((v , s_old , s_new)->{
 
-			selected_student = s_new ;
+		//inserting  staff data into table
+		staff_table_view.getSelectionModel().selectedItemProperty().addListener((v , s_old , s_new)->{
+
+			selected_staff = s_new ;
 		});
-		
+
+
+
+
+
 
 		// initializing the staff table and columns
-		
+
 		student_id_column.setCellValueFactory(new PropertyValueFactory<>("id"));
 
 		student_name_column.setCellValueFactory(new PropertyValueFactory<>("otherName"));
@@ -203,11 +180,108 @@ public class MenuController implements Initializable{
 		stud_class_col.setCellValueFactory(new PropertyValueFactory<>("stud_class"));
 
 		stud_age_col.setCellValueFactory(new PropertyValueFactory<>("age"));
-		
+
+		//inserting data into table
+		student_table.getSelectionModel().selectedItemProperty().addListener((v , s_old , s_new)->{
+
+			selected_student = s_new ;
+		});
+
+
+		// adding staff to the database.
+		 // addStaff();
+		//addStudent();
+	}
+
+
+	@FXML
+    void activateAddStudentButton(MouseEvent event) {
+
+		Stage stage = null ;
+
+		try {
+
+			javafx.scene.Parent root = FXMLLoader.load(getClass().getResource("/com/psm/front_design/Add_Student.fxml"));
+			Scene scene = new Scene(root);
+			stage = new Stage();
+			stage.setScene(scene);
+			stage.setTitle("Add Student");
+			stage.show();
+
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+//		Staff staff1 = new Staff(01 , 23 , "Jhon" , "Rudmimant" , "street 1" , "08056453745" , false , "2019-02-07" , "2019-44-30" , "TEACHING_STAFF" , "NRY1" , new NextOfKin("adam1", "01233435456")) ;
+//		staff_dao.insertStaff(staff1);
+    }
+
+	public void addStaff(){
+
+		//staff = new Staff(id, age, firstName, otherName, address, contact , sex , formatter.format(DOE) , formatter.format(DOB) , staff_group , class_taking.toUpperCase() , new NextOfKin(kin_name , kin_contact));
+
+
+		Staff staff1 = new Staff(01 , 23 , "Jhon" , "Rudmimant" , "street 1" , "08056453745" , false , "2019-02-07" , "2019-44-30" , "TEACHING_STAFF" , "NRY1" , new NextOfKin("adam1", "01233435456")) ;
+		Staff staff2 = new Staff(02 , 45 , "Anna" , "lum" , "street 2" , "08056453745" , false ,       "2019-02-07" , "2019-44-30" , "NON_TEACHING_STAFF" , "NRY1" , new NextOfKin("adam2", "01233435456")) ;
+		Staff staff3 = new Staff(03 , 34 , "Bobs" , "kals" , "street 3" , "08056453745" , true ,       "2019-02-07" , "2019-44-30" , "TEACHING_STAFF" , "PRY1" , new NextOfKin("adam3", "01233435456")) ;
+		Staff staff4 = new Staff(04 , 23 , "luth" , "gigs" , "street 4" , "08056453745" , false ,      "2019-02-07" , "2019-44-30" , "NON_TEACHING_STAFF" , "PRY3" , new NextOfKin("adam4", "01233435456")) ;
+		Staff staff5 = new Staff(05 , 45 , "amma" , "Bumm" , "street 5" , "08056453745" , true ,       "2019-02-07" , "2019-44-30" , "TEACHING_STAFF" , "PRY2" , new NextOfKin("adam5", "01233435456")) ;
+		Staff staff6 = new Staff(06 , 55 , "Cipher" , "Samp" , "street 6" , "08056453745" , false ,    "2019-02-07" , "2019-44-30" , "TEACHING_STAFF" , "PRY3" , new NextOfKin("adam6", "01233435456")) ;
+		Staff staff7 = new Staff(07 , 24 , "Bobs" , "micheal" , "street 7" , "08056453745" , true ,    "2019-02-07" , "2019-44-30" , "TEACHING_STAFF" , "PRY5" , new NextOfKin("adam7", "01233435456")) ;
+		Staff staff8 = new Staff(10 , 27 , "Kamals" , "put" , "street 8" , "08056453745" , false ,     "2019-02-07" , "2019-44-30" , "TEACHING_STAFF" , "PRY5" , new NextOfKin("adam8", "01233435456")) ;
+
+		//return items ;
+
+
+
+		staff_dao.insertStaff(staff1);
+		staff_dao.insertStaff(staff2);
+		staff_dao.insertStaff(staff3);
+		staff_dao.insertStaff(staff4);
+		staff_dao.insertStaff(staff5);
+		staff_dao.insertStaff(staff6);
+		staff_dao.insertStaff(staff7);
+		//staff_dao.insertStaff(staff8);
+
+		System.out.println("staff insertion completed");
 
 	}
 
-//Student(int id , int age , String firstName , String otherName , String address , String DOB , String pay_status, String stud_class ,  boolean sex){
+
+	 @FXML void activateLoadStaffWindow(ActionEvent event) {
+
+	    }
+
+	 @FXML void activateStaffSelection(ActionEvent event) {
+
+	    	JFXButton b = (JFXButton) event.getSource() ;
+
+			switch(b.getId())
+			{
+
+			case "btn_aced_staff" :
+				staff_table_view.getItems().removeAll() ;
+				staff_table_view.setItems(getStaff("TEACHING_STAFF"));
+				break ;
+
+			case "btn_non_aced_staff" :
+				staff_table_view.getItems().removeAll() ;
+				staff_table_view.setItems(getStaff("NON_TEACHING_STAFF"));
+				break ;
+
+				default :
+					staff_table_view.getItems().removeAll() ;
+					staff_table_view.setItems(getStaff("TEACHING_STAFF"));
+
+			}// end of switch case statement....
+
+	    }
+
+
+
 
 
 	public ObservableList<Student> setTableData(){
@@ -238,6 +312,22 @@ public class MenuController implements Initializable{
 		stud_dao.insertStudent(stud4);
 
 	}
+
+	//helper method to student form database.....
+		public ObservableList<Staff> getStaff(String staff_group){
+
+			try {
+
+				return staff_dao.getStaffs(staff_group) ;
+
+			} catch (ParseException e) {
+
+				e.printStackTrace();
+
+				return null ;
+			}
+
+		}
 
 	//helper method to student form database.....
 	public ObservableList<Student> getStudents(String Class){
@@ -348,7 +438,6 @@ public class MenuController implements Initializable{
 			FXMLLoader loader = new  FXMLLoader(getClass().getResource(path));
 			loader.load();
 			StudentDetailController sd = loader.getController() ;
-			//sd.initStudent(selected_student);
 			javafx.scene.Parent root = FXMLLoader.load(getClass().getResource(path));
 			Scene scene = new Scene(root);
 			stage = new Stage();

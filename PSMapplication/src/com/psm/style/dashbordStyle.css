@@ -1,0 +1,29 @@
+
+.dashboard-cardview{
+
+	-fx-fill:white ;
+	-fx-background-radius: 20px 20xp 0px 0px ;
+	-fx-border-radius: 20px 20xp 0px 0px ;
+	-fx-background-color:#2B2B2B ;
+
+}
+
+
+.table-row-cell {
+ -fx-font-size: 10pt;
+ -fx-font-family: Arial;
+}
+
+
+/* Set the font size and text color for column headers */
+.table-view .column-header .label{
+ -fx-font-size: 10pt;
+ -fx-text-fill: white;
+}
+
+.table-view .column-header{
+
+ 	-fx-background-color:#104E8B ;
+ 	-fx-padding:4px;
+}
+

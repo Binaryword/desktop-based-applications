@@ -20,8 +20,8 @@ public class PsmApp extends Application{
 	public void start(Stage primaryStage) throws Exception {
 
 		Parent root =  FXMLLoader.load(getClass().getResource("/com/psm/front_design/menu_design.fxml"));
-		Scene scene = new Scene(root, 1000 , 650);
-		primaryStage.setTitle("School Management System");
+		Scene scene = new Scene(root);
+		primaryStage.setTitle("Rose Academic Login");
 		primaryStage.setScene(scene);
 		primaryStage.show();
 

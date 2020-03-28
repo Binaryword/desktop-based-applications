@@ -8,10 +8,11 @@ import java.sql.Statement;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
 
 import com.psm.model.NextOfKin;
 import com.psm.model.Staff;
-import com.psm.model.Student;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -42,9 +43,9 @@ public class StaffDao {
 		if (!hasTable) {
 			hasTable = true;
 
-			System.out.println("creat table called......................................");
+			System.out.println("create table called......................................");
 
-			String query = " select name from sqlite_master where type = 'table' and name = 'staffTable' ";
+			String query = "select name from sqlite_master where type = 'table' and name = 'staffTable' ";
 			try {
 				statement = connection.createStatement();
 				ResultSet set = statement.executeQuery(query);
@@ -69,20 +70,20 @@ public class StaffDao {
 	 */
 	private void initiateTable() {
 
-		String sql = "create table staffTable("
+		String sql = "create table staffTable ("
 				+ "id integer(10) primary key , "
 				+ "age integer(15) not null , "
 				+ "firstname varchar(30) not null , "
-				+ "othername varchar(100) not null , "
+				+ "othername varchar(100) not null ,  "
 				+ "address varchar(100) not null , "
 				+ "contact varchar(15) not null , "
 				+ "DOB DATE , "
-				+ "DOE DATE"
-				+ "staff_group varchar(20) , "
+				+ "DOE DATE ,"
+				+ "staff_group varchar(20) ,   "
 				+ "class_taking varchar(20) , "
 				+ "sex boolean default true, "
 				+ "kin_name varchar(30) not null , "
-				+ "kin_contact (15) not null  ) ; " ;
+				+ "kin_contact varchar(15) not null ) ; " ;
 
 		try {
 			statement = connection.createStatement();
@@ -101,6 +102,19 @@ public class StaffDao {
 	}// end of method.....
 
 
+	public void delet_table(){
+
+		String sql = "drop table staffTable" ;
+		try {
+			statement = connection.createStatement() ;
+			statement.execute(sql) ;
+			System.out.println("table deleted successfylly");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
 
 
 	public boolean insertStaff(Staff staff) {
@@ -119,8 +133,8 @@ public class StaffDao {
 			preStatement.setString(6, staff.getContact().toLowerCase());
 			preStatement.setString(7, staff.getDOB());
 			preStatement.setString(8, staff.getDOE());
-			preStatement.setString(9, staff.getStaffGroup());
-			preStatement.setString(10, staff.getClassTaking());
+			preStatement.setString(9, staff.getStaffGroup().toUpperCase());
+			preStatement.setString(10, staff.getClassTaking().toUpperCase());
 			preStatement.setBoolean(11, staff.getSex());
 			preStatement.setString(12, staff.getKin().getName());
 			preStatement.setString(13, staff.getKin().getContact());
@@ -144,7 +158,7 @@ public class StaffDao {
 
 
 
-	public ObservableList<Staff> getStaff(String staffGroup) throws ParseException {
+	public ObservableList<Staff> getStaffs(String staffGroup) throws ParseException {
 
 		ObservableList<Staff> staffList = FXCollections.observableArrayList();
 		Staff staff = null;
@@ -152,13 +166,15 @@ public class StaffDao {
 
 
 		try {
-			
+
 			preStatement  = connection.prepareStatement(sql);
-			preStatement.setString(1, staffGroup);
+			preStatement.setString(1, staffGroup.toUpperCase());
 			ResultSet resultSet = preStatement.executeQuery();
+			java.util.Date DOB = null ; 
+			java.util.Date DOE = null ; 
 
 			DateFormat formatter = new SimpleDateFormat("yyy-MM-dd") ;
-			
+
 
 //			= "create table staffTable("
 //					+ "id integer(10) primary key , "
@@ -183,8 +199,18 @@ public class StaffDao {
 				String otherName = resultSet.getString("othername");
 				String address = resultSet.getString("address");
 				String contact = resultSet.getString("contact");
-				java.util.Date DOB = formatter.parse(resultSet.getString("DOB"));
-				java.util.Date DOE = formatter.parse(resultSet.getString("DOE"));
+				
+				try{
+					
+					 DOB = formatter.parse(resultSet.getString("DOB"));
+					 DOE = formatter.parse(resultSet.getString("DOE"));
+					
+				}catch(NullPointerException x)
+				{
+					System.out.println("no Date");
+				}
+				
+				
 				String staff_group = resultSet.getString("staff_group");
 				String class_taking = resultSet.getString("class_taking");
 				boolean sex = resultSet.getBoolean("sex");
@@ -202,7 +228,7 @@ public class StaffDao {
 				System.out.println(" staff data found successfully...");
 			}
 
-		} catch (SQLException e) {
+		} catch (SQLException e ) {
 
 			e.printStackTrace();
 		}

@@ -1,6 +1,14 @@
 package com.psm.controller;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.URL;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
@@ -10,7 +18,6 @@ import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
 import com.psm.database.StudentDao;
-import com.psm.model.Parent;
 import com.psm.model.Student;
 
 import javafx.collections.FXCollections;
@@ -20,11 +27,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 
 public class StudentUpdateController implements Initializable{
 
-	  @FXML private AnchorPane root ;
+	    @FXML private AnchorPane root ;
 
 	    @FXML
 	    private JFXTextField txt_name;
@@ -99,33 +108,106 @@ public class StudentUpdateController implements Initializable{
 	    @FXML
 	    void activate_Image_selection(ActionEvent event) {
 
+	    	FileChooser filechooser = new FileChooser();
+	    	filechooser.setInitialDirectory((new File("C:\\")));
+	    	filechooser.setInitialFileName("image");
+	    	filechooser.getExtensionFilters().addAll(new ExtensionFilter("png" , "*.png")
+	    			, new ExtensionFilter("jpg", "*.jpg"));
+
+	    	File file = filechooser.showOpenDialog(new Stage());
+
+	    	if(file == null)
+	    		return ;
+
+
+	    	Path path = FileSystems.getDefault().getPath("").toAbsolutePath();
+
+
+	    	System.out.println(path.toString() + "/src/com/psm/image/new_image.png");
+
+	    	try {
+
+				copy(file , new File("C:\\JAVA WORKSPACE\\PSMapplication\\src\\com\\psm\\passports\\nn.jpg"));
+
+			} catch (IOException e) {
+
+				e.printStackTrace();
+			}
+
+
+
 	    }
+
+
+	   public static void copy(File src, File dest) throws IOException {
+
+
+	    	InputStream is = null;
+	    	OutputStream os = null;
+
+	    	try {
+
+	    		is = new FileInputStream(src);
+	    		os = new FileOutputStream(dest);
+	    		// buffer size 1K
+	    		byte[] buf = new byte[1024];
+	    		int bytesRead;
+
+	    		while ((bytesRead = is.read(buf)) > 0)
+
+	    		{
+	    			os.write(buf, 0, bytesRead);
+	    			System.out.println("RUN");
+
+	    		}// end of while
+
+	    		} finally {
+
+	    			if(is!=null && os != null)
+	    			{
+	    				is.close();
+		    			os.close();
+	    			}
+
+
+	    			}
+
+
+
+	    }
+
+
+
+
+
 
 	    @FXML
 	    void activate_update(ActionEvent event) {
 
 
-	    	int id = student.getId() ;
-	    	String name = txt_name.getText() ;
-	    	String othername = txt_name.getText();
-	    	String address = txt_address.getText();
-	    	int age = Integer.parseInt(txt_age.getText().trim());
-	    	String dob = dob_calender.getValue().toString() ;
-	    	String stud_class = combo_class.getValue() ;
-	    	String pay_status = combo_payment_status.getValue() ;
-	    	boolean sex  ;
 
-	    	if(radio_male.isSelected())
-	    		sex = true ;
-	    	else
-	    		sex = false ;
 
-	    	String famName = txt_family_name.getText() ;
-	    	String famAddress = txt_parent_address.getText();
-	    	String famContact = txt_parent_contact.getText() ;
-
-	    student = new Student(id, age, name, othername, address, dob , pay_status.toUpperCase() , stud_class.toUpperCase() , sex , new Parent(famName , famContact , famAddress));
-	    updateStudentRecord(student);
+//	    	int id = student.getId() ;
+//	    	String name = txt_name.getText() ;
+//	    	String othername = txt_otherName.getText();
+//	    	String address = txt_address.getText();
+//	    	int age = Integer.parseInt(txt_age.getText().trim());
+//	    	String dob = dob_calender.getValue().toString() ;
+//	    	String stud_class = combo_class.getValue() ;
+//	    	String pay_status = combo_payment_status.getValue() ;
+//	    	boolean sex  ;
+//
+//	    	if(radio_male.isSelected())
+//	    		sex = true ;
+//	    	else
+//	    		sex = false ;
+//
+//	    	String famName = txt_family_name.getText() ;
+//	    	String famAddress = txt_parent_address.getText();
+//	    	String famContact = txt_parent_contact.getText() ;
+//
+//	    student = new Student(id, age, name, othername, address, dob , pay_status.toUpperCase() , stud_class.toUpperCase() , sex , new Parent(famName , famContact , famAddress));
+//	    updateStudentRecord(student);
 
 	    }
 
@@ -144,6 +226,8 @@ public class StudentUpdateController implements Initializable{
 	    	student = stud ;
 	    	System.out.println("Student from update form " + student.toString() ) ;
 	    }
+
+
 
 	    public void initWidget(){
 
@@ -179,15 +263,26 @@ public class StudentUpdateController implements Initializable{
 	    		Stage stage = (Stage)root.getScene().getWindow() ;
 	    		stage.close();
 
+	    		Stage st = null ;
+
+//	    		try {
+//
+//					//AnchorPane pane = FXMLLoader.load(getClass().getResource("/com/psm/controller/StudentUpdateController.fxml"));
+//
+//	    		} catch (IOException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+//
 	    	}
 
 	    	else
 	    		System.out.println("Error");
 
 	    }
-	    
-	    
-	    
+
+
+
 
 
 }
