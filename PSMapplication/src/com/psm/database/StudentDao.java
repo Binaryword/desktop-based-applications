@@ -74,6 +74,7 @@ public class StudentDao {
 				+ "othername varchar(100) not null , "
 				+ "address varchar(100) not null , "
 				+ "pass_loc varchar(200) not null , "
+				+ "performance varchar(100) not null , "
 				+ "DOB DATE , "
 				+ "pay_status varchar(20) , "
 				+ "stud_class varchar(20) , "
@@ -102,7 +103,7 @@ public class StudentDao {
 
 	public boolean insertStudent(Student student) {
 
-		String sql = "insert into studentTable values (? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ?) ";
+		String sql = "insert into studentTable values (? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ?) ";
 		boolean isSuccessfull = false;
 
 		try {
@@ -113,13 +114,14 @@ public class StudentDao {
 			preStatement.setString(4, student.getOtherName().toLowerCase());
 			preStatement.setString(5, student.getAddress().toLowerCase());
 			preStatement.setString(6, student.getPassport_location());
-			preStatement.setString(7, student.getDOB().toLowerCase());
-			preStatement.setString(8, student.getPaymentStatus().toLowerCase());
-			preStatement.setString(9, student.getStud_class().toLowerCase());
-			preStatement.setBoolean(10, student.getSex());
-			preStatement.setString(11, student.getParent().getFamily_name().toLowerCase());
-			preStatement.setString(12, student.getParent().getFamily_address().toLowerCase());
-			preStatement.setString(13, student.getParent().getFamily_contact().toLowerCase());
+			preStatement.setString(7 , student.getStud_performance()) ;
+			preStatement.setString(8, student.getDOB().toLowerCase());
+			preStatement.setString(9, student.getPaymentStatus().toLowerCase());
+			preStatement.setString(10, student.getStud_class().toLowerCase());
+			preStatement.setBoolean(11, student.getSex());
+			preStatement.setString(12, student.getParent().getFamily_name().toLowerCase());
+			preStatement.setString(13, student.getParent().getFamily_address().toLowerCase());
+			preStatement.setString(14, student.getParent().getFamily_contact().toLowerCase());
 
 
 			boolean isFine = preStatement.execute();
@@ -163,6 +165,7 @@ public class StudentDao {
 				String firstName = resultSet.getString("firstname");
 				String otherName = resultSet.getString("othername");
 				String address = resultSet.getString("address");
+				String performance = resultSet.getString("performance");
 				java.util.Date DOB = formatter.parse(resultSet.getString("DOB"));
 				String pay_status = resultSet.getString("pay_status");
 				String stud_class = resultSet.getString("stud_class");
@@ -176,6 +179,7 @@ public class StudentDao {
 				System.out.println();
 				student = new Student(id, age, firstName, otherName, address, formatter.format(DOB) , pay_status , stud_class.toUpperCase() , sex , new Parent(familyName , family_contact , family_address));
 				student.setPassport_location(pass_loc);
+				student.setStud_performance(performance);
 
 				if (student != null)
 					studentList.add(student);
@@ -211,6 +215,7 @@ public class StudentDao {
 				String firstName = resultSet.getString("firstname");
 				String otherName = resultSet.getString("othername");
 				String address = resultSet.getString("address");
+				String performance = resultSet.getString("performance");
 				java.util.Date DOB = null ;
 				try {
 					DOB = formatter.parse(resultSet.getString("DOB"));
@@ -228,6 +233,7 @@ public class StudentDao {
 				System.out.println();
 				student = new Student(id, age, firstName, otherName, address, formatter.format(DOB) , pay_status , stud_class.toUpperCase() , sex , new Parent(familyName , family_contact , family_address));
 				student.setPassport_location(pass_loc);
+				student.setStud_performance(performance);
 				System.out.println(" Student data found successfully...");
 
 				return student;
@@ -262,8 +268,9 @@ public class StudentDao {
 //		+ "family_contact varchar(15) not null , "
 //		+ "family_address varchar(100) not null ) ; " ;
 
-		String sql = "update studentTable  set id=?, age=?, firstname=? , othername=? , address=?,  pass_loc=? , DOB=? ,"
+		String sql = "update studentTable  set id=?, age=?, firstname=? , othername=? , address=?,  pass_loc=? , performance=? ,  DOB=? ,"
 				+ "pay_status=? , stud_class=? , sex=? ,  family_name=? , family_contact=? , family_address=? where id = ? ; ";
+
 		boolean isSuccessfull = false;
 
 		try {
@@ -274,15 +281,16 @@ public class StudentDao {
 			preStatement.setString(4, student.getOtherName().toLowerCase());
 			preStatement.setString(5, student.getAddress().toLowerCase());
 			preStatement.setString(6, student.getPassport_location());
-			preStatement.setString(7, student.getDOB().toLowerCase());
-			preStatement.setString(8, student.getPaymentStatus().toLowerCase());
-			preStatement.setString(9, student.getStud_class().toLowerCase());
-			preStatement.setBoolean(10, student.getSex());
-			preStatement.setString(11, student.getParent().getFamily_name().toLowerCase());
-			preStatement.setString(12, student.getParent().getFamily_address().toLowerCase());
-			preStatement.setString(13, student.getParent().getFamily_contact().toLowerCase());
-			
-			preStatement.setInt(14, student.getId());
+			preStatement.setString(7, student.getStud_performance());
+			preStatement.setString(8, student.getDOB().toLowerCase());
+			preStatement.setString(9, student.getPaymentStatus().toLowerCase());
+			preStatement.setString(10, student.getStud_class().toLowerCase());
+			preStatement.setBoolean(11, student.getSex());
+			preStatement.setString(12, student.getParent().getFamily_name().toLowerCase());
+			preStatement.setString(13, student.getParent().getFamily_address().toLowerCase());
+			preStatement.setString(14, student.getParent().getFamily_contact().toLowerCase());
+
+			preStatement.setInt(15, student.getId());
 
 			boolean isFine = preStatement.execute();
 

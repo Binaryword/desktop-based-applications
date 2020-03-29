@@ -53,7 +53,7 @@
                         <JFXTextField fx:id="txt_otherName" focusColor="#051ad3" layoutX="30.0" layoutY="30.0" prefHeight="25.0" prefWidth="460.0" promptText="Last Name , Other Name" unFocusColor="#240475" />
                         <JFXTextField fx:id="txt_address" focusColor="#051ad3" layoutX="30.0" layoutY="70.0" prefHeight="25.0" prefWidth="460.0" promptText="Address" unFocusColor="#240475" />
                         <JFXTextField fx:id="txt_age" focusColor="#051ad3" layoutX="30.0" layoutY="110.0" prefHeight="25.0" prefWidth="460.0" promptText="Age" unFocusColor="#240475" />
-                        <JFXTextField focusColor="#051ad3" layoutX="30.0" layoutY="150.0" prefHeight="25.0" prefWidth="460.0" promptText="First Name" unFocusColor="#240475" />
+                        <JFXComboBox fx:id="combo_performance" layoutX="30.0" layoutY="229.0" prefHeight="25.0" prefWidth="263.0" promptText="Performance" />
                         <JFXDatePicker fx:id="dob_calender" defaultColor="#067c6c" prefHeight="25.0" prefWidth="192.0" promptText="MM/DD/YY (DOB)" />
                         <JFXComboBox fx:id="combo_class" prefHeight="25.0" prefWidth="263.0" promptText="Select Class" />
                         <JFXComboBox fx:id="combo_payment_status" layoutX="30.0" layoutY="240.0" prefHeight="25.0" prefWidth="263.0" promptText="Payment Status" />

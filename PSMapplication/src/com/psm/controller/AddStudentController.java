@@ -158,6 +158,7 @@ public class AddStudentController implements Initializable{
 
     	student = new Student(id, age, fName, oName, address, dob , pay_status.toUpperCase() , stud_class.toUpperCase() , sex , new Parent(famName , famContact , famAddress));
  	   	student.setPassport_location(pass_loc);
+ 	   	student.setStud_performance("EXCELLENT");
     	addStudentRecord(student);
 
 

@@ -17,6 +17,7 @@ public class Student {
 	private SimpleStringProperty  stud_class ;
 	private SimpleBooleanProperty sex   ;
 	private String passport_location ;
+	private String stud_performance ;
 	private Parent parent  ;
 
 
@@ -35,6 +36,21 @@ public class Student {
 		this.sex = new SimpleBooleanProperty(sex);
 		this.parent = parent ;
 
+
+	}
+
+
+
+
+	public String getStud_performance() {
+		return stud_performance;
+	}
+
+
+
+
+	public void setStud_performance(String stud_performance) {
+		this.stud_performance = stud_performance;
 	}
 
 

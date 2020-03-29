@@ -18,6 +18,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class StudentDetailController implements Initializable{
@@ -80,6 +81,7 @@ public class StudentDetailController implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 
     	System.out.println("the init method..");
+    	//System.out.println("this is called again"); 
 
     	if(!student.equals(null))
 			initWidget();
@@ -104,10 +106,10 @@ public class StudentDetailController implements Initializable{
     		StudentUpdateController.initStudent(student);
     		Parent root =  FXMLLoader.load(getClass().getResource("/com/psm/front_design/Update_Student.fxml"));
     		Scene scene = new Scene(root);
-			Stage stage = new Stage();
+			Stage stage = (Stage)this.root.getScene().getWindow() ; 
 			stage.setScene(scene);
 			stage.setTitle("Update Form");
-			stage.showAndWait();
+			stage.show();
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -130,6 +132,8 @@ public class StudentDetailController implements Initializable{
 
 
 	public void initWidget(){
+		
+		//student = stud_dao.getStudent(String.valueOf(student.getId()));
 
 		passport_holder.setImage(new Image(getClass().getResourceAsStream("/com/psm/passports/defaultImage.png")));
 		System.out.println("Password location :  " + student.getPassport_location());
@@ -137,8 +141,8 @@ public class StudentDetailController implements Initializable{
 		if(student.getPassport_location() != null){
 
 			try{
-				
-				String pass_loc = "/com/psm/passports/"+student.getFirstName().trim()+"_"+student.getId()+".png"; 
+
+				String pass_loc = "/com/psm/passports/"+student.getFirstName().trim()+"_"+student.getId()+".png";
 				passport_holder.setImage(new Image(getClass().getResourceAsStream(pass_loc)));
 				student.setPassport_location(pass_loc);
 
@@ -160,7 +164,7 @@ public class StudentDetailController implements Initializable{
 		txt_address.setText(txt_address.getText() + " " + student.getAddress());
 		txt_paymentStatus.setText(txt_paymentStatus.getText() + " " + student.getPaymentStatus());
 		txt_gender.setText(txt_gender.getText() + " " + ((student.getSex()==true) ? "MALE":"FEMALE"));
-		txt_aced_performance.setText(txt_aced_performance.getText() + " " + "GOOD");
+		txt_aced_performance.setText(txt_aced_performance.getText() + " " + student.getStud_performance());
 		txt_parent_name.setText(txt_parent_name.getText() + " " + student.getParent().getFamily_name());
 		txt_parent_address.setText(txt_parent_address.getText() + " " + student.getParent().getFamily_address());
 		txt_parent_contact.setText(txt_parent_contact.getText() + " " + student.getParent().getFamily_contact());
@@ -171,6 +175,28 @@ public class StudentDetailController implements Initializable{
 
 	public void reloadWidget(Student student){
 
+		System.out.println("THE STUDENT IS RELOAD");
+
+		passport_holder.setImage(new Image(getClass().getResourceAsStream("/com/psm/passports/defaultImage.png")));
+		System.out.println("Password location :  " + student.getPassport_location());
+
+		if(student.getPassport_location() != null){
+
+			try{
+
+				String pass_loc = "/com/psm/passports/"+student.getFirstName().trim()+"_"+student.getId()+".png";
+				passport_holder.setImage(new Image(getClass().getResourceAsStream(pass_loc)));
+				student.setPassport_location(pass_loc);
+
+			}catch(Exception e){
+
+				System.out.println("Error : " + e.getMessage() ) ;
+			}
+
+
+		}
+
+
 
 		txt_name.setText(txt_name.getText() + " " + student.getOtherName());
 		txt_firstname.setText(txt_firstname.getText() + " " + student.getFirstName());
@@ -180,15 +206,13 @@ public class StudentDetailController implements Initializable{
 		txt_address.setText(txt_address.getText() + " " + student.getAddress());
 		txt_paymentStatus.setText(txt_paymentStatus.getText() + " " + student.getPaymentStatus());
 		txt_gender.setText(txt_gender.getText() + " " + ((student.getSex()==true) ? "MALE":"FEMALE"));
-		txt_aced_performance.setText(txt_aced_performance.getText() + " " + "GOOD");
+		txt_aced_performance.setText(txt_aced_performance.getText() + " " + student.getStud_performance());
 		txt_parent_name.setText(txt_parent_name.getText() + " " + student.getParent().getFamily_name());
 		txt_parent_address.setText(txt_parent_address.getText() + " " + student.getParent().getFamily_address());
 		txt_parent_contact.setText(txt_parent_contact.getText() + " " + student.getParent().getFamily_contact());
 
 	}
 
-
-
-
+	
 
 }

@@ -24,6 +24,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class MenuController implements Initializable{
@@ -133,8 +134,6 @@ public class MenuController implements Initializable{
 		stud_dao = new StudentDao();
 		staff_dao = new StaffDao();
 
-
-
 		// initializing the staff table and columns
 
 		staff_id_col.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -187,10 +186,21 @@ public class MenuController implements Initializable{
 			selected_student = s_new ;
 		});
 
+		
+		 initTable();
 
 		// adding staff to the database.
 		 // addStaff();
 		//addStudent();
+	}
+
+
+	public void initTable() {
+			
+		System.out.println(" ***************************************    THE INIT METHOD IS CALLED  *************************************");
+		student_table.getItems().removeAll() ;
+		student_table.setItems(getStudents("nry1"));
+		
 	}
 
 
@@ -348,7 +358,8 @@ public class MenuController implements Initializable{
 
 	@FXML void activateClassButton(ActionEvent event) {
 
-
+		
+		
 		JFXButton b = (JFXButton) event.getSource() ;
 
 		switch(b.getId())
@@ -413,6 +424,7 @@ public class MenuController implements Initializable{
 			javafx.scene.Parent root = loader.load();
 			Scene scene = new Scene(root);
 			stage = new Stage();
+			stage.initModality(Modality.APPLICATION_MODAL);
 			stage.setScene(scene);
 			stage.setTitle("Student Panel");
 			stage.showAndWait();
@@ -454,5 +466,14 @@ public class MenuController implements Initializable{
 
 
 	}
+	
+	
+	public void reloadPanels(String Class){
+		
+		
+		
+	}//end of method....
+	
+	
 
 }

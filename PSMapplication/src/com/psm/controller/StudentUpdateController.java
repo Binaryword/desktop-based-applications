@@ -22,6 +22,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
@@ -53,6 +54,9 @@ public class StudentUpdateController implements Initializable{
 
 	    @FXML
 	    private JFXComboBox<String> combo_payment_status;
+
+	    @FXML
+	    private JFXComboBox<String> combo_performance;
 
 	    @FXML
 	    private JFXRadioButton radio_male;
@@ -95,6 +99,9 @@ public class StudentUpdateController implements Initializable{
 	    	ObservableList<String>  paymentList= FXCollections.observableArrayList("PAID" , "HALF_PAID"  , "NOT_PAID") ;
 	    	combo_payment_status.getItems().addAll(paymentList);
 
+	    	ObservableList<String>  performanceList= FXCollections.observableArrayList("EXCELLENT" , "GOOD"  , "POOR") ;
+	    	combo_performance.getItems().addAll(performanceList);
+
 	    	dob_calender.setValue(LocalDate.parse("2000-01-01"));
 
 	    	//setting student value to the gui widget
@@ -122,7 +129,7 @@ public class StudentUpdateController implements Initializable{
 	    	System.out.println(path.toString() + "\\src\\com\\psm\\passports\\new_image.png");
 	    	String passport_path = path.toString() + "\\src\\com\\psm\\passports\\" + student.getFirstName()+"_"+student.getId()+".png" ;
 	    	System.out.println(passport_path);
-	    	
+
 
 	    	try {
 
@@ -139,12 +146,6 @@ public class StudentUpdateController implements Initializable{
 	    }// end of method....
 
 
-	   
-
-
-
-
-
 	    @FXML
 	    void activate_update(ActionEvent event) {
 
@@ -159,6 +160,8 @@ public class StudentUpdateController implements Initializable{
 	    	String dob = dob_calender.getValue().toString() ;
 	    	String stud_class = combo_class.getValue() ;
 	    	String pay_status = combo_payment_status.getValue() ;
+	    	String stud_performance = combo_performance.getValue() ;
+
 	    	boolean sex  ;
 
 	    	if(radio_male.isSelected())
@@ -169,11 +172,12 @@ public class StudentUpdateController implements Initializable{
 	    	String famName = txt_family_name.getText() ;
 	    	String famAddress = txt_parent_address.getText();
 	    	String famContact = txt_parent_contact.getText() ;
-	    	
+
 	    	String pass_loc = "/com/psm/passports/"+name+"_"+id+".png";
 
 	    student = new Student(id, age, name, othername, address, dob , pay_status.toUpperCase() , stud_class.toUpperCase() , sex , new Parent(famName , famContact , famAddress));
 	    student.setPassport_location(pass_loc);
+	    student.setStud_performance(stud_performance);
 	    updateStudentRecord(student);
 
 	    }
@@ -205,6 +209,7 @@ public class StudentUpdateController implements Initializable{
 	    	dob_calender.setValue(LocalDate.parse(student.getDOB()));
 	    	combo_class.setValue(student.getStud_class().toUpperCase());
 	    	combo_payment_status.setValue(student.getPaymentStatus().toUpperCase());
+	    	combo_performance.setValue(student.getStud_performance().toUpperCase());
 
 	    	if(student.getSex() == true )
 	    		radio_male.setSelected(true);
@@ -226,21 +231,11 @@ public class StudentUpdateController implements Initializable{
 
 	    	if(success)
 	    	{
+
 	    		System.out.println("Update successfull");
 	    		Stage stage = (Stage)root.getScene().getWindow() ;
 	    		stage.close();
 
-	    		Stage st = null ;
-
-//	    		try {
-//
-//					//AnchorPane pane = FXMLLoader.load(getClass().getResource("/com/psm/controller/StudentUpdateController.fxml"));
-//
-//	    		} catch (IOException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-//
 	    	}
 
 	    	else
