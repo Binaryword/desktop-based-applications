@@ -486,7 +486,7 @@
                                  <left>
                                     <VBox prefHeight="335.0" prefWidth="181.0" style="-fx-background-color: #707070;" BorderPane.alignment="CENTER">
                                        <children>
-                                          <JFXButton fx:id="btn_aced_staff" alignment="BASELINE_LEFT" graphicTextGap="25.0" onAction="#activateStaffSelection" prefHeight="50.0" prefWidth="181.0" ripplerFill="WHITE" styleClass="button-menu" text="Academic Staff">
+                                          <JFXButton fx:id="btn_aced_staff" alignment="BASELINE_LEFT" graphicTextGap="25.0" onAction="#activateStaffButton" prefHeight="50.0" prefWidth="181.0" ripplerFill="WHITE" styleClass="button-menu" text="Academic Staff">
                                              <graphic>
                                                 <FontAwesomeIconView glyphName="USER" size="15" />
                                              </graphic>
@@ -494,7 +494,7 @@
                                                 <Insets left="25.0" />
                                              </padding>
                                           </JFXButton>
-                                          <JFXButton fx:id="btn_non_aced_staff" alignment="BASELINE_LEFT" graphicTextGap="25.0" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="181.0" ripplerFill="WHITE" styleClass="button-menu" text="Non Academic Staff">
+                                          <JFXButton fx:id="btn_non_aced_staff" alignment="BASELINE_LEFT" graphicTextGap="25.0" layoutX="10.0" layoutY="10.0" onAction="#activateStaffButton" prefHeight="50.0" prefWidth="181.0" ripplerFill="WHITE" styleClass="button-menu" text="Non Academic Staff">
                                              <graphic>
                                                 <FontAwesomeIconView glyphName="USER" size="15" />
                                              </graphic>
@@ -502,7 +502,7 @@
                                                 <Insets left="25.0" />
                                              </padding>
                                           </JFXButton>
-                                          <JFXButton fx:id="btn_staff_info" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="10.0" onAction="#activateLoadStudentWindow" prefHeight="50.0" prefWidth="154.0" ripplerFill="#450e94" styleClass="detail-button" text="Show Info">
+                                          <JFXButton fx:id="btn_staff_info" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="10.0" onAction="#activateLoadStaffWindow" prefHeight="50.0" prefWidth="154.0" ripplerFill="#450e94" styleClass="detail-button" text="Show Info">
                                              <graphic>
                                                 <FontAwesomeIconView glyphName="TABLE" size="15" text="" />
                                              </graphic>

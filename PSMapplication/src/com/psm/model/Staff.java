@@ -32,8 +32,8 @@ public class Staff {
 		this.address = new SimpleStringProperty(address);
 		this.staffGroup = new SimpleStringProperty(staffGroup);
 		this.classTaking = new SimpleStringProperty(class_taking) ;
-		this.DOE = new SimpleStringProperty();
-		this.DOB = new SimpleStringProperty();
+		this.DOE = new SimpleStringProperty(DOE);
+		this.DOB = new SimpleStringProperty(DOB);
 		this.kin = kin  ;
 
 	}

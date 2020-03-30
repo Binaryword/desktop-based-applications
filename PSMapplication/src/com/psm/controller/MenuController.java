@@ -186,21 +186,22 @@ public class MenuController implements Initializable{
 			selected_student = s_new ;
 		});
 
-		
+
 		 initTable();
 
+		// staff_dao.deletAllStaff();
 		// adding staff to the database.
-		 // addStaff();
+		 addStaff();
 		//addStudent();
 	}
 
 
 	public void initTable() {
-			
+
 		System.out.println(" ***************************************    THE INIT METHOD IS CALLED  *************************************");
 		student_table.getItems().removeAll() ;
 		student_table.setItems(getStudents("nry1"));
-		
+
 	}
 
 
@@ -241,7 +242,7 @@ public class MenuController implements Initializable{
 		Staff staff5 = new Staff(05 , 45 , "amma" , "Bumm" , "street 5" , "08056453745" , true ,       "2019-02-07" , "2019-44-30" , "TEACHING_STAFF" , "PRY2" , new NextOfKin("adam5", "01233435456")) ;
 		Staff staff6 = new Staff(06 , 55 , "Cipher" , "Samp" , "street 6" , "08056453745" , false ,    "2019-02-07" , "2019-44-30" , "TEACHING_STAFF" , "PRY3" , new NextOfKin("adam6", "01233435456")) ;
 		Staff staff7 = new Staff(07 , 24 , "Bobs" , "micheal" , "street 7" , "08056453745" , true ,    "2019-02-07" , "2019-44-30" , "TEACHING_STAFF" , "PRY5" , new NextOfKin("adam7", "01233435456")) ;
-		Staff staff8 = new Staff(10 , 27 , "Kamals" , "put" , "street 8" , "08056453745" , false ,     "2019-02-07" , "2019-44-30" , "TEACHING_STAFF" , "PRY5" , new NextOfKin("adam8", "01233435456")) ;
+	//	Staff staff8 = new Staff(10 , 27 , "Kamals" , "put" , "street 8" , "08056453745" , false ,     "2019-02-07" , "2019-44-30" , "TEACHING_STAFF" , "PRY5" , new NextOfKin("adam8", "01233435456")) ;
 
 		//return items ;
 
@@ -261,14 +262,10 @@ public class MenuController implements Initializable{
 	}
 
 
-	 @FXML void activateLoadStaffWindow(ActionEvent event) {
+	 @FXML void activateStaffButton(ActionEvent event) {
 
-	    }
-
-	 @FXML void activateStaffSelection(ActionEvent event) {
-
-	    	JFXButton b = (JFXButton) event.getSource() ;
-
+		 JFXButton b = (JFXButton) event.getSource() ;
+	    	System.out.println("Staff button selected");
 			switch(b.getId())
 			{
 
@@ -289,9 +286,6 @@ public class MenuController implements Initializable{
 			}// end of switch case statement....
 
 	    }
-
-
-
 
 
 	public ObservableList<Student> setTableData(){
@@ -358,8 +352,8 @@ public class MenuController implements Initializable{
 
 	@FXML void activateClassButton(ActionEvent event) {
 
-		
-		
+
+
 		JFXButton b = (JFXButton) event.getSource() ;
 
 		switch(b.getId())
@@ -437,25 +431,27 @@ public class MenuController implements Initializable{
 
     }
 
-	// load the detail layout
-	public void loadWindow(String title , String path){
 
+    @FXML
+    void activateLoadStaffWindow(ActionEvent event) {
 
+    	//loadWindow("Student Panel" , "/com/psm/front_design/menu_design.fxml") ;
+    	if(selected_staff==null)
+			return  ;
 
-		Stage stage = null ;
+    	Stage stage = null ;
 
 		try {
 
-
-			FXMLLoader loader = new  FXMLLoader(getClass().getResource(path));
-			loader.load();
-			StudentDetailController sd = loader.getController() ;
-			javafx.scene.Parent root = FXMLLoader.load(getClass().getResource(path));
+			//StudentDetailController.initStudent(selected_student);
+			FXMLLoader loader = new  FXMLLoader(getClass().getResource("/com/psm/front_design/Staff_detail.fxml"));
+			javafx.scene.Parent root = loader.load();
 			Scene scene = new Scene(root);
 			stage = new Stage();
+			stage.initModality(Modality.APPLICATION_MODAL);
 			stage.setScene(scene);
-			stage.setTitle(title);
-			stage.show();
+			stage.setTitle("Staff Panel");
+			stage.showAndWait();
 
 
 		} catch (IOException e) {
@@ -463,17 +459,17 @@ public class MenuController implements Initializable{
 			e.printStackTrace();
 		}
 
+    }
 
 
-	}
-	
-	
+
+
 	public void reloadPanels(String Class){
-		
-		
-		
+
+
+
 	}//end of method....
-	
-	
+
+
 
 }

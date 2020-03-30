@@ -71,7 +71,7 @@ public class StaffDao {
 	private void initiateTable() {
 
 		String sql = "create table staffTable ("
-				+ "id integer(10) primary key , "
+				+ "id integer(100) primary key , "
 				+ "age integer(15) not null , "
 				+ "firstname varchar(30) not null , "
 				+ "othername varchar(100) not null ,  "
@@ -119,7 +119,7 @@ public class StaffDao {
 
 	public boolean insertStaff(Staff staff) {
 
-		String sql = "insert into staffTable values (? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? ) ";
+		String sql = "insert into staffTable values (? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? ) ;  ";
 		boolean isSuccessfull = false;
 
 
@@ -170,9 +170,9 @@ public class StaffDao {
 			preStatement  = connection.prepareStatement(sql);
 			preStatement.setString(1, staffGroup.toUpperCase());
 			ResultSet resultSet = preStatement.executeQuery();
-			java.util.Date DOB = null ; 
-			java.util.Date DOE = null ; 
-
+			java.util.Date DOB = null ;
+			java.util.Date DOE = null ;
+//			System.out.println("STAFF GROUP  " + staffGroup.toUpperCase() );
 			DateFormat formatter = new SimpleDateFormat("yyy-MM-dd") ;
 
 
@@ -199,25 +199,25 @@ public class StaffDao {
 				String otherName = resultSet.getString("othername");
 				String address = resultSet.getString("address");
 				String contact = resultSet.getString("contact");
-				
+
 				try{
-					
+
 					 DOB = formatter.parse(resultSet.getString("DOB"));
 					 DOE = formatter.parse(resultSet.getString("DOE"));
-					
+
 				}catch(NullPointerException x)
 				{
 					System.out.println("no Date");
 				}
-				
-				
+
+
 				String staff_group = resultSet.getString("staff_group");
 				String class_taking = resultSet.getString("class_taking");
 				boolean sex = resultSet.getBoolean("sex");
 				String kin_name = resultSet.getString("kin_name");
 				String kin_contact = resultSet.getString("kin_contact");
 
-
+				//System.out.println("STAFF GROUP  >>>>>> " + staff_group.toUpperCase() );
 
 				System.out.println();
 				staff = new Staff(id, age, firstName, otherName, address, contact , sex , formatter.format(DOE) , formatter.format(DOB) , staff_group , class_taking.toUpperCase() , new NextOfKin(kin_name , kin_contact));
@@ -235,6 +235,23 @@ public class StaffDao {
 
 		return staffList;
 	}// end of method
+
+
+	public void deletAllStaff(){
+		String query = "delete from staffTable ;" ;
+		try {
+			Statement st = connection.createStatement() ;
+			boolean b = st.execute(query);
+			if(b)
+				System.out.print("delection completed");
+			else
+				System.out.print("no deletion...");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
 
 
 }
