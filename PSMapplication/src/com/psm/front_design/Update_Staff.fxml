@@ -8,6 +8,7 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -15,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane layoutX="150.0" layoutY="99.0" prefHeight="500.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -48,18 +49,21 @@
                               <Font name="Bell MT Bold" size="12.0" />
                            </font>
                         </Text>
-                        <JFXTextField focusColor="#051ad3" labelFloat="true" prefHeight="25.0" prefWidth="177.0" promptText="First Name" unFocusColor="#240475" />
-                        <JFXTextField focusColor="#051ad3" layoutX="30.0" layoutY="30.0" prefHeight="25.0" prefWidth="460.0" promptText="Last Name , Other Name" unFocusColor="#240475" />
-                        <JFXTextField focusColor="#051ad3" layoutX="30.0" layoutY="70.0" prefHeight="25.0" prefWidth="460.0" promptText="Address" unFocusColor="#240475" />
-                        <JFXTextField focusColor="#051ad3" layoutX="30.0" layoutY="110.0" prefHeight="25.0" prefWidth="460.0" promptText="Age" unFocusColor="#240475" />
-                        <JFXDatePicker defaultColor="#067c6c" layoutX="30.0" layoutY="194.0" prefHeight="25.0" prefWidth="192.0" promptText="MM/DD/YY (DOB)" />
-                        <JFXDatePicker defaultColor="#067c6c" prefHeight="25.0" prefWidth="192.0" promptText="MM/DD/YY (DOE)" />
-                        <JFXComboBox prefHeight="25.0" prefWidth="263.0" promptText="Staff Group" />
-                        <JFXComboBox layoutX="30.0" layoutY="240.0" prefHeight="25.0" prefWidth="263.0" promptText="Class Taking" />
+                        <JFXTextField fx:id="txt_firstname" focusColor="#051ad3" labelFloat="true" prefHeight="25.0" prefWidth="177.0" promptText="First Name" unFocusColor="#240475" />
+                        <JFXTextField focusColor="#051ad3" layoutX="30.0" layoutY="30.0" onAction="#txt_othername" prefHeight="25.0" prefWidth="460.0" promptText="Last Name , Other Name" unFocusColor="#240475" />
+                        <JFXTextField fx:id="txt_address" focusColor="#051ad3" layoutX="30.0" layoutY="70.0" prefHeight="25.0" prefWidth="460.0" promptText="Address" unFocusColor="#240475" />
+                        <JFXTextField fx:id="txt_age" focusColor="#051ad3" layoutX="30.0" layoutY="110.0" prefHeight="25.0" prefWidth="460.0" promptText="Age" unFocusColor="#240475" />
+                        <JFXDatePicker fx:id="txt_dob" defaultColor="#067c6c" layoutX="30.0" layoutY="194.0" prefHeight="25.0" prefWidth="192.0" promptText="MM/DD/YY (DOB)" />
+                        <JFXDatePicker fx:id="txt_doe" defaultColor="#067c6c" prefHeight="25.0" prefWidth="192.0" promptText="MM/DD/YY (DOE)" />
+                        <JFXComboBox fx:id="combo_staff_group" prefHeight="25.0" prefWidth="263.0" promptText="Staff Group" />
+                        <JFXComboBox fx:id="combo_class_taking" layoutX="30.0" layoutY="240.0" prefHeight="25.0" prefWidth="263.0" promptText="Class Taking" />
                         <HBox spacing="20.0">
                            <children>
-                              <JFXRadioButton text="Male" />
-                              <JFXRadioButton text="Female" />
+                              <JFXRadioButton fx:id="radio_male" selected="true" text="Male">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="sex_group" />
+                                 </toggleGroup></JFXRadioButton>
+                              <JFXRadioButton fx:id="radio_female" text="Female" toggleGroup="$sex_group" />
                            </children>
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -77,13 +81,18 @@
                               <Font name="Bell MT Bold" size="12.0" />
                            </font>
                         </Text>
-                        <JFXTextField focusColor="#051ad3" labelFloat="true" prefHeight="25.0" prefWidth="177.0" promptText="Full Name" unFocusColor="#240475" />
-                        <JFXTextField focusColor="#051ad3" layoutX="30.0" layoutY="46.0" prefHeight="25.0" prefWidth="177.0" promptText="Address" unFocusColor="#240475" />
-                        <JFXTextField focusColor="#051ad3" layoutX="30.0" layoutY="72.0" prefHeight="25.0" prefWidth="177.0" promptText="Phone No:" unFocusColor="#240475" />
+                        <JFXTextField fx:id="txt_kin_name" focusColor="#051ad3" labelFloat="true" prefHeight="25.0" prefWidth="177.0" promptText="Full Name" unFocusColor="#240475" />
+                        <JFXTextField fx:id="txt_kin_address" focusColor="#051ad3" layoutX="30.0" layoutY="46.0" prefHeight="25.0" prefWidth="177.0" promptText="Address" unFocusColor="#240475" />
+                        <JFXTextField fx:id="txt_kin_contact" focusColor="#051ad3" layoutX="30.0" layoutY="72.0" prefHeight="25.0" prefWidth="177.0" promptText="Phone No:" unFocusColor="#240475" />
+                        <JFXButton fx:id="btn_select_image" buttonType="RAISED" graphicTextGap="8.0" onAction="#activate_Image_selection" prefHeight="37.0" prefWidth="176.0" stylesheets="@../style/detailPaneStyle.css" text="Select Image ">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="USER" size="20" />
+                           </graphic>
+                        </JFXButton>
                         <HBox alignment="CENTER" prefHeight="37.0" prefWidth="177.0" spacing="15.0">
                            <children>
-                              <JFXButton buttonType="RAISED" prefHeight="40.0" prefWidth="76.0" stylesheets="@../style/detailPaneStyle.css" text="Submit" />
-                              <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="76.0" stylesheets="@../style/detailPaneStyle.css" text="Clear" />
+                              <JFXButton fx:id="btn_update" buttonType="RAISED" onAction="#activate_update" prefHeight="40.0" prefWidth="76.0" stylesheets="@../style/detailPaneStyle.css" text="Submit" />
+                              <JFXButton fx:id="btn_cancel" buttonType="RAISED" layoutX="10.0" layoutY="10.0" onAction="#active_close_window" prefHeight="40.0" prefWidth="76.0" stylesheets="@../style/detailPaneStyle.css" text="Cancel" />
                            </children>
                         </HBox>
                      </children>

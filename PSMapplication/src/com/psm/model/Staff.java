@@ -20,6 +20,7 @@ public class Staff {
 	private StringProperty DOE ;
 	private StringProperty DOB ;
 	private  NextOfKin kin ;
+	private String passport_location ; 
 
 
 	public Staff(int id , int age , String fn , String on , String address , String contact ,  boolean sex , String DOE , String DOB , String staffGroup , String class_taking , NextOfKin kin ){
@@ -37,6 +38,22 @@ public class Staff {
 		this.kin = kin  ;
 
 	}
+
+	
+	
+
+	public String getPassport_location() {
+		return passport_location;
+	}
+
+
+
+
+	public void setPassport_location(String passport_location) {
+		this.passport_location = passport_location;
+	}
+
+
 
 
 	public int getId() {

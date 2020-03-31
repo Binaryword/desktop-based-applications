@@ -443,7 +443,7 @@ public class MenuController implements Initializable{
 
 		try {
 
-			//StudentDetailController.initStudent(selected_student);
+			StaffDetailController.initStaff(selected_staff);
 			FXMLLoader loader = new  FXMLLoader(getClass().getResource("/com/psm/front_design/Staff_detail.fxml"));
 			javafx.scene.Parent root = loader.load();
 			Scene scene = new Scene(root);
