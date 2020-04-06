@@ -120,6 +120,9 @@ public class MenuController implements Initializable{
     @FXML
     private TableColumn<Staff, Integer> staff_age_col;
 
+    @FXML
+    private Text staff_current_name ;
+
 
     @FXML
     private JFXButton btn_show_student;
@@ -161,9 +164,13 @@ public class MenuController implements Initializable{
 		staff_table_view.getSelectionModel().selectedItemProperty().addListener((v , s_old , s_new)->{
 
 			selected_staff = s_new ;
-			student_current_name.setText("");
-			student_current_name.setText(": " + s_new.getFirstName() + " " + s_new.getOtherName());
-			System.out.println("Current Student name : " + student_current_name.getText());
+			staff_current_name.setText("");
+
+			staff_current_name.setText(" Name : " + s_new.getFirstName().toUpperCase() + " " + s_new.getOtherName().toUpperCase());
+			System.out.println("Current Student name : " + s_new.getFirstName());
+
+				if(staff_table_view.getSelectionModel().getSelectedItem() == null)
+					student_current_name.setText(" No Selection");
 
 		});
 
@@ -192,6 +199,13 @@ public class MenuController implements Initializable{
 		student_table.getSelectionModel().selectedItemProperty().addListener((v , s_old , s_new)->{
 
 			selected_student = s_new ;
+			student_current_name.setText(" Name : " + s_new.getFirstName().toUpperCase() + " " + s_new.getOtherName().toUpperCase());
+			System.out.println("Current Student name : " + s_new.getFirstName());
+
+				if(student_table.getSelectionModel().getSelectedItem() == null)
+					student_current_name.setText(" No Selection");
+
+
 		});
 
 
