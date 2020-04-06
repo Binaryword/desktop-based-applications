@@ -121,7 +121,7 @@ public class StaffDetailController implements Initializable{
 			//student = stud_dao.getStudent(String.valueOf(student.getId()));
 
 			passport_holder.setImage(new Image(getClass().getResourceAsStream("/com/psm/staff_passports/defaultImage.png")));
-			System.out.println("Password location :  " + staff.getPassport_location());
+			System.out.println("Passport location :  " + staff.getPassport_location());
 
 			if(staff.getPassport_location() != null){
 

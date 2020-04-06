@@ -24,6 +24,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -76,6 +77,9 @@ public class MenuController implements Initializable{
 
     @FXML
     private TableColumn<Student, Integer> stud_age_col;
+
+    @FXML
+    private Text student_current_name ;
 
 
 //    staff related instance variable
@@ -157,6 +161,10 @@ public class MenuController implements Initializable{
 		staff_table_view.getSelectionModel().selectedItemProperty().addListener((v , s_old , s_new)->{
 
 			selected_staff = s_new ;
+			student_current_name.setText("");
+			student_current_name.setText(": " + s_new.getFirstName() + " " + s_new.getOtherName());
+			System.out.println("Current Student name : " + student_current_name.getText());
+
 		});
 
 
@@ -191,7 +199,7 @@ public class MenuController implements Initializable{
 
 		// staff_dao.deletAllStaff();
 		// adding staff to the database.
-		 addStaff();
+		// addStaff();
 		//addStudent();
 	}
 
@@ -214,10 +222,42 @@ public class MenuController implements Initializable{
 
 			javafx.scene.Parent root = FXMLLoader.load(getClass().getResource("/com/psm/front_design/Add_Student.fxml"));
 			Scene scene = new Scene(root);
+
 			stage = new Stage();
+			stage.initModality(Modality.APPLICATION_MODAL);
+			stage.setResizable(false);
 			stage.setScene(scene);
 			stage.setTitle("Add Student");
-			stage.show();
+			stage.showAndWait();
+
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+//		Staff staff1 = new Staff(01 , 23 , "Jhon" , "Rudmimant" , "street 1" , "08056453745" , false , "2019-02-07" , "2019-44-30" , "TEACHING_STAFF" , "NRY1" , new NextOfKin("adam1", "01233435456")) ;
+//		staff_dao.insertStaff(staff1);
+    }
+
+
+	@FXML
+    void activateAddStaffButton(MouseEvent event) {
+
+		Stage stage = null ;
+
+		try {
+
+			javafx.scene.Parent root = FXMLLoader.load(getClass().getResource("/com/psm/front_design/Add_Staff.fxml"));
+			Scene scene = new Scene(root);
+
+			stage = new Stage();
+			stage.initModality(Modality.APPLICATION_MODAL);
+			stage.setResizable(false);
+			stage.setScene(scene);
+			stage.setTitle("Add Student");
+			stage.showAndWait();
 
 
 		} catch (IOException e) {
@@ -235,13 +275,13 @@ public class MenuController implements Initializable{
 		//staff = new Staff(id, age, firstName, otherName, address, contact , sex , formatter.format(DOE) , formatter.format(DOB) , staff_group , class_taking.toUpperCase() , new NextOfKin(kin_name , kin_contact));
 
 
-		Staff staff1 = new Staff(01 , 23 , "Jhon" , "Rudmimant" , "street 1" , "08056453745" , false , "2019-02-07" , "2019-44-30" , "TEACHING_STAFF" , "NRY1" , new NextOfKin("adam1", "01233435456")) ;
-		Staff staff2 = new Staff(02 , 45 , "Anna" , "lum" , "street 2" , "08056453745" , false ,       "2019-02-07" , "2019-44-30" , "NON_TEACHING_STAFF" , "NRY1" , new NextOfKin("adam2", "01233435456")) ;
-		Staff staff3 = new Staff(03 , 34 , "Bobs" , "kals" , "street 3" , "08056453745" , true ,       "2019-02-07" , "2019-44-30" , "TEACHING_STAFF" , "PRY1" , new NextOfKin("adam3", "01233435456")) ;
-		Staff staff4 = new Staff(04 , 23 , "luth" , "gigs" , "street 4" , "08056453745" , false ,      "2019-02-07" , "2019-44-30" , "NON_TEACHING_STAFF" , "PRY3" , new NextOfKin("adam4", "01233435456")) ;
-		Staff staff5 = new Staff(05 , 45 , "amma" , "Bumm" , "street 5" , "08056453745" , true ,       "2019-02-07" , "2019-44-30" , "TEACHING_STAFF" , "PRY2" , new NextOfKin("adam5", "01233435456")) ;
-		Staff staff6 = new Staff(06 , 55 , "Cipher" , "Samp" , "street 6" , "08056453745" , false ,    "2019-02-07" , "2019-44-30" , "TEACHING_STAFF" , "PRY3" , new NextOfKin("adam6", "01233435456")) ;
-		Staff staff7 = new Staff(07 , 24 , "Bobs" , "micheal" , "street 7" , "08056453745" , true ,    "2019-02-07" , "2019-44-30" , "TEACHING_STAFF" , "PRY5" , new NextOfKin("adam7", "01233435456")) ;
+		Staff staff1 = new Staff(11 , 23 , "Jhon" , "Rudmimant" , "street 1" , "08056453745" , false , "2019-02-07" , "2019-44-30" , "TEACHING_STAFF" , "NRY1" , new NextOfKin("adam1", "01233435456")) ;
+		Staff staff2 = new Staff(22 , 45 , "Anna" , "lum" , "street 2" , "08056453745" , false ,       "2019-02-07" , "2019-44-30" , "NON_TEACHING_STAFF" , "NRY1" , new NextOfKin("adam2", "01233435456")) ;
+		Staff staff3 = new Staff(33 , 34 , "Bobs" , "kals" , "street 3" , "08056453745" , true ,       "2019-02-07" , "2019-44-30" , "TEACHING_STAFF" , "PRY1" , new NextOfKin("adam3", "01233435456")) ;
+		Staff staff4 = new Staff(44 , 23 , "luth" , "gigs" , "street 4" , "08056453745" , false ,      "2019-02-07" , "2019-44-30" , "NON_TEACHING_STAFF" , "PRY3" , new NextOfKin("adam4", "01233435456")) ;
+		Staff staff5 = new Staff(55 , 45 , "amma" , "Bumm" , "street 5" , "08056453745" , true ,       "2019-02-07" , "2019-44-30" , "TEACHING_STAFF" , "PRY2" , new NextOfKin("adam5", "01233435456")) ;
+		Staff staff6 = new Staff(66 , 55 , "Cipher" , "Samp" , "street 6" , "08056453745" , false ,    "2019-02-07" , "2019-44-30" , "TEACHING_STAFF" , "PRY3" , new NextOfKin("adam6", "01233435456")) ;
+		Staff staff7 = new Staff(77 , 24 , "Bobs" , "micheal" , "street 7" , "08056453745" , true ,    "2019-02-07" , "2019-44-30" , "TEACHING_STAFF" , "PRY5" , new NextOfKin("adam7", "01233435456")) ;
 	//	Staff staff8 = new Staff(10 , 27 , "Kamals" , "put" , "street 8" , "08056453745" , false ,     "2019-02-07" , "2019-44-30" , "TEACHING_STAFF" , "PRY5" , new NextOfKin("adam8", "01233435456")) ;
 
 		//return items ;

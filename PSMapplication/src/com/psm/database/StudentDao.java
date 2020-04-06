@@ -254,20 +254,6 @@ public class StudentDao {
 
 	public boolean updateStudent(Student student){
 
-
-//		+ "id integer(10) primary key , "
-//		+ "age integer(15) not null , "
-//		+ "firstname varchar(30) not null , "
-//		+ "othername varchar(100) not null , "
-//		+ "address varchar(100) not null , "
-//		+ "DOB date , "
-//		+ "pay_status varchar(20) , "
-//		+ "stud_class varchar(20) , "
-//		+ "sex boolean default true, "
-//		+ "family_name varchar(30) not null , "
-//		+ "family_contact varchar(15) not null , "
-//		+ "family_address varchar(100) not null ) ; " ;
-
 		String sql = "update studentTable  set id=?, age=?, firstname=? , othername=? , address=?,  pass_loc=? , performance=? ,  DOB=? ,"
 				+ "pay_status=? , stud_class=? , sex=? ,  family_name=? , family_contact=? , family_address=? where id = ? ; ";
 

@@ -83,18 +83,18 @@ public class AddStudentController implements Initializable{
 
 	    @FXML
 	    private JFXButton btn_clear;
-	    
-	    private Student student ; 
 
-	    private File file ; 
-	    
+	    private Student student ;
+
+	    private File file ;
+
 	    private StudentDao stud_dao = new StudentDao();
 
     @FXML
     void activate_clear(ActionEvent event) {
 
     }
-    
+
     @FXML
     void activate_Image_selection(ActionEvent event) {
 
@@ -110,7 +110,7 @@ public class AddStudentController implements Initializable{
     		return ;
 
 
-    	
+
     }
 
     @FXML
@@ -136,15 +136,15 @@ public class AddStudentController implements Initializable{
     	String famName = txt_family_name.getText();
     	String famAddress = txt_parent_address.getText();
     	String famContact = txt_parent_contact.getText();
-    	
-    	
+
+
     	Path path = FileSystems.getDefault().getPath("").toAbsolutePath();
     	System.out.println(path.toString() + "\\src\\com\\psm\\passports\\new_image.png");
     	String passport_path = path.toString() + "\\src\\com\\psm\\passports\\" + fName+"_"+id+".png" ;
-    	String pass_loc = "/com/psm/passports/"+fName+"_"+id+".png"; 
+    	String pass_loc = "/com/psm/passports/"+fName+"_"+id+".png";
 
     	System.out.println(passport_path);
-    	
+
 
     	try {
 
