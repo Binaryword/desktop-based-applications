@@ -5,5 +5,7 @@
 	<classpathentry kind="lib" path="src/com/psm/lib/fontawesomefx-8.9.jar"/>
 	<classpathentry kind="lib" path="src/com/psm/lib/jfoenix-8.0.8.jar"/>
 	<classpathentry kind="lib" path="src/com/psm/lib/sqlite-jdbc-3.27.2.jar"/>
+	<classpathentry kind="lib" path="src/com/psm/lib/gson-2.8.1 (1).jar"/>
+	<classpathentry kind="lib" path="src/com/psm/lib/jfoenix-9.0.8.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

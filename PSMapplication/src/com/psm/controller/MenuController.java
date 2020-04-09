@@ -6,10 +6,13 @@ import java.text.ParseException;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPopup;
 import com.psm.database.StaffDao;
 import com.psm.database.StudentDao;
+import com.psm.model.DynamicTime;
 import com.psm.model.NextOfKin;
 import com.psm.model.Parent;
+//import com.psm.model.Preferences;
 import com.psm.model.Staff;
 import com.psm.model.Student;
 
@@ -24,18 +27,27 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class MenuController implements Initializable{
 
+	
+	@FXML
+	private AnchorPane root ; 
+	
 	@FXML
     private JFXButton nusery_one_button;
+	
+	@FXML
+    private JFXButton nursery_two_button ; 
 
     @FXML
-    private JFXButton nursery_two_button;
-
+    private JFXButton logout_button;
+    
     @FXML
     private JFXButton nursery_3_button;
 
@@ -122,15 +134,25 @@ public class MenuController implements Initializable{
 
     @FXML
     private Text staff_current_name ;
+    
+    @FXML 
+    private Text text_dashboard_date ; 
+    
+    @FXML 
+    private Text txt_day_greeting ; 
 
 
     @FXML
     private JFXButton btn_show_student;
+    
+    private JFXPopup popup ; 
 
     private StudentDao stud_dao  ;
+    
     private StaffDao staff_dao ;
 
     private Student selected_student  ;
+    
 
     private Staff selected_staff ;
 
@@ -140,6 +162,7 @@ public class MenuController implements Initializable{
 		//getting db connection
 		stud_dao = new StudentDao();
 		staff_dao = new StaffDao();
+		
 
 		// initializing the staff table and columns
 
@@ -169,8 +192,7 @@ public class MenuController implements Initializable{
 			staff_current_name.setText(" Name : " + s_new.getFirstName().toUpperCase() + " " + s_new.getOtherName().toUpperCase());
 			System.out.println("Current Student name : " + s_new.getFirstName());
 
-				if(staff_table_view.getSelectionModel().getSelectedItem() == null)
-					student_current_name.setText(" No Selection");
+				
 
 		});
 
@@ -202,14 +224,16 @@ public class MenuController implements Initializable{
 			student_current_name.setText(" Name : " + s_new.getFirstName().toUpperCase() + " " + s_new.getOtherName().toUpperCase());
 			System.out.println("Current Student name : " + s_new.getFirstName());
 
-				if(student_table.getSelectionModel().getSelectedItem() == null)
-					student_current_name.setText(" No Selection");
-
-
+				
 		});
 
 
 		 initTable();
+		 initPopup();
+		 
+		 
+		 //initializing the dashboard time
+		 DynamicTime.startTime(text_dashboard_date , txt_day_greeting);
 
 		// staff_dao.deletAllStaff();
 		// adding staff to the database.
@@ -318,8 +342,10 @@ public class MenuController implements Initializable{
 
 	 @FXML void activateStaffButton(ActionEvent event) {
 
-		 JFXButton b = (JFXButton) event.getSource() ;
+		 	JFXButton b = (JFXButton) event.getSource() ;
 	    	System.out.println("Staff button selected");
+	    	
+	    	
 			switch(b.getId())
 			{
 
@@ -514,9 +540,43 @@ public class MenuController implements Initializable{
 		}
 
     }
+    
+    public void initPopup(){
+    	
+    	JFXButton refreshButton = new JFXButton("Refresh"); 
+    	JFXButton deleteButton = new JFXButton("Delete"); 
+    	JFXButton updateButton = new JFXButton("Update"); 
+    	
+    	VBox vbox =  new VBox();
+    	vbox.getChildren().addAll(refreshButton , deleteButton , updateButton) ; 
+    	
+    	popup = new JFXPopup() ;
+    	popup.setPopupContent(vbox);
+    	//popup.getWindowOwner().set
+ 
+    }
 
 
 
+
+    @FXML
+    void activateLogout(ActionEvent event) throws IOException {
+    	
+    	Stage stage = (Stage)root.getScene().getWindow() ; 
+    	stage.close(); 
+    	
+    	javafx.scene.Parent parent =  FXMLLoader.load(getClass().getResource("/com/psm/front_design/login_design.fxml"));
+		Scene scene = new Scene(parent);
+		Stage windows = new Stage();
+		windows.setTitle("Praise Fountain Login");
+		windows.setScene(scene);
+		windows.show();
+		
+		DynamicTime.stopTime();
+		
+		//Preferences.initConfig();
+    	
+    }
 
 	public void reloadPanels(String Class){
 

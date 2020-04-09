@@ -1,13 +1,13 @@
 .root{
 
 	-fx-background-color:linear-gradient(#1C86EE 50% , white 50%);
-
 }
 
 .mini-root{
 
-	-fx-background-color:white;
+	-fx-background-color:blue;
 	-fx-background-radius:0px 20px 0px 20px;
+
 }
 
 

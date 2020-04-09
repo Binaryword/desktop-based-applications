@@ -10,22 +10,33 @@ import javafx.util.Duration;
 public class DynamicTime {
 
 	
-	private Time time  = null ; 
+	private  static Time time  = null ; 
+	private static Timeline line ; 
 	
-	public void startTime(Text text){
+	public static void startTime(Text showTime , Text grettings){
 		
 		EventHandler<ActionEvent> handle = e ->{
 			
 			time = new Time();
-			text.setText(time.toString());
+			if(showTime != null)
+			showTime.setText(time.toString());
+			if(grettings != null)
+				grettings.setText("Good " + time.getMorning_afternoon());
+			System.out.println(time.toString());
 			
 		};
 		
-		Timeline line = new Timeline(new KeyFrame(Duration.seconds(1) , handle ));
+		line = new Timeline(new KeyFrame(Duration.seconds(1) , handle ));
 		line.setCycleCount(Timeline.INDEFINITE); 
 		line.play();
 	}
 	
+	
+	public static void stopTime(){
+		
+		line.stop();
+		
+	}
 	
 
 }

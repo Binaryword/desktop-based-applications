@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 
 import javafx.event.ActionEvent;
@@ -26,7 +27,7 @@ public class LoginController implements Initializable {
 	    private JFXTextField txt_username;
 
 	    @FXML
-	    private JFXTextField txt_password;
+	    private JFXPasswordField txt_password;
 
 	    @FXML
 	    private JFXButton btn_login;
