@@ -45,8 +45,13 @@ public class LoginController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-
-
+		
+		 preferences = Preferences.getConfig() ; 
+		 txt_username.setText(preferences.getAdmin_username().toLowerCase());
+		 txt_username.setFocusTraversable(false);
+		 
+    	 USER_NAME = preferences.getAdmin_username().trim().toLowerCase() ; 
+    	 PASSWORD = preferences.getAdmin_password().trim().toLowerCase() ; 
 
 	}
 
@@ -56,10 +61,7 @@ public class LoginController implements Initializable {
     	 
     	 USER_NAME = txt_username.getText().toLowerCase() ;
     	 PASSWORD = txt_password.getText().toLowerCase() ;
-    	 preferences = Preferences.getConfig() ; 
-    	 
-    	 USER_NAME = preferences.getAdmin_username().trim().toLowerCase() ; 
-    	 PASSWORD = preferences.getAdmin_password().trim().toLowerCase() ; 
+    
     	 
     	 if(USER_NAME.equals(txt_username.getText().toLowerCase()) && PASSWORD.equals(txt_password.getText().toLowerCase())){
 
@@ -91,7 +93,7 @@ public class LoginController implements Initializable {
 
      }
 
-
+ 
 
 
 }

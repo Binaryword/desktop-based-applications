@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXPopup;
 import com.jfoenix.controls.JFXTextField;
 import com.psm.database.StaffDao;
@@ -149,7 +150,7 @@ public class MenuController implements Initializable{
     private JFXTextField txt_admin_setting ;
 
     @FXML
-    private JFXTextField txt_password_setting ;
+    private JFXPasswordField txt_password_setting ;
 
 
 
