@@ -16,7 +16,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class Menubar {
+public class Windowbar {
 
 	private Stage stage ;
 	private boolean isClosedAdd ;
@@ -27,12 +27,12 @@ public class Menubar {
 	private double offsetX ; 
 	private double offsetY ; 
 
-	public Menubar(){
+	public Windowbar(){
 
 
 	}
 
-	public Menubar(boolean addCloseButton , boolean addMinimizeButton){
+	public Windowbar(boolean addCloseButton , boolean addMinimizeButton){
 
 		this.isClosedAdd = addCloseButton ;
 		this.isMinimizeAdd = addMinimizeButton ;

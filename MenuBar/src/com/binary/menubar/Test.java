@@ -15,7 +15,7 @@ public class Test extends Application{
 	
 	public void start(Stage stage){
 		
-		Menubar menubar  = new Menubar(true , true);
+		Windowbar menubar  = new Windowbar(true , true);
 		menubar.setTitle("Menu");
 	
 		
