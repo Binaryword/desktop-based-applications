@@ -195,7 +195,7 @@ public class AddStaffController implements Initializable{
 	    	combo_class_taking.setValue(combo_class_taking.getValue().toUpperCase()) ;
 
 
-	    	boolean sex  ;
+	    	boolean sex = true ;
 
 	    	if(radio_male.isSelected())
 	    		sex = true ;
