@@ -188,10 +188,10 @@ public class MenuController implements Initializable{
 
 			selected_staff = s_new ;
 			staff_current_name.setText("");
-
+			
+			if(s_new != null )
 			staff_current_name.setText(" Name : " + s_new.getFirstName().toUpperCase() + " " + s_new.getOtherName().toUpperCase());
-			System.out.println("Current Student name : " + s_new.getFirstName());
-
+	
 				
 
 		});

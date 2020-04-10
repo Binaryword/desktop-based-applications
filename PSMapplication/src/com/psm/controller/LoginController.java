@@ -8,6 +8,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import com.psm.model.Preferences;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -36,8 +37,9 @@ public class LoginController implements Initializable {
 	    private JFXCheckBox check_rember_mi;
 
 
-	    private String USER_NAME = "admin";
-	    private String PASSWORD = "admin";
+	    private String USER_NAME ;
+	    private String PASSWORD ;
+	  
 
 
 	@Override
@@ -53,9 +55,9 @@ public class LoginController implements Initializable {
     	 
     	 USER_NAME = txt_username.getText().toLowerCase() ;
     	 PASSWORD = txt_password.getText().toLowerCase() ;
+    	// Preferences.getConfig() ; 
 
-
-    	 if(USER_NAME.equals("admin") && PASSWORD.equals("admin") ){
+    	 if(USER_NAME.equals("") && PASSWORD.equals("")){
 
     		 // close login
     		 Stage window = (Stage)root.getScene().getWindow() ;

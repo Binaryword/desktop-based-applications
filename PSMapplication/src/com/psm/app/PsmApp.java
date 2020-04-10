@@ -27,7 +27,7 @@ public class PsmApp extends Application{
 		primaryStage.setTitle("Praise Fountain Login");
 		primaryStage.setScene(scene);
 		primaryStage.show();
-		Preferences.initConfig();
+		Preferences.getConfig(); 
 
 	}
 
