@@ -87,7 +87,11 @@ public class StaffDetailController implements Initializable{
 
 	    @FXML
 	    void activateDeleteStudent(ActionEvent event) {
-
+	    		
+	    	staff_dao.deleteStaff(staff.getId());
+	    	System.out.println("Staff deleted successfull");
+	    	Stage stage = (Stage)root.getScene().getWindow() ;
+	    	stage.close();
 	    }
 
 	    @FXML

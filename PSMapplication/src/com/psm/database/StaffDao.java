@@ -360,11 +360,13 @@ public class StaffDao {
 
 
 
-	public void deletAllStaff(){
-		String query = "delete from staffTable ;" ;
+	public void deleteStaff(int id){
+		String query = "delete from staffTable  where id=?;" ;
 		try {
-			Statement st = connection.createStatement() ;
-			boolean b = st.execute(query);
+			preStatement = connection.prepareStatement(query) ;
+			preStatement.setInt(1, id);
+			boolean b = preStatement.execute() ;
+
 			if(b)
 				System.out.print("delection completed");
 			else
