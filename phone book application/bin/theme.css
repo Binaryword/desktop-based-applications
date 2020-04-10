@@ -1,0 +1,104 @@
+.root{
+
+		
+}
+
+
+#navButton{
+
+	-fx-background-color: #104E8B ; 
+	-fx-text-fill:white ; 
+	-fx-pref-width:120px ; 
+	-fx-font-width:bold ; 
+	-fx-font-size:9pt ;
+}
+
+
+#navButton:hover{
+
+	-fx-background-color: #27408B ; 
+	-fx-text-fill:white ; 
+	-fx-pref-width:120px ; 
+	-fx-font-width:bold ; 
+	-fx-font-size:9pt ;
+}
+
+
+.label{
+	
+	-fx-font-size:11pt ; 
+	-fx-text-fill : red ; 
+	-fx-font-wieght  : bold ; 
+	-fx-font-family: time new roman ; 
+}
+
+
+.table-view .column-header .label{
+	-fx-font-size: 10.5pt;
+	-fx-text-fill: blue;
+}
+
+.table-view{
+		-fx-border-color: black ;
+		-fx-font-size:9pt ;
+		-fx-font-wieght :semibold ; 
+		-fx-font-family: Arial;
+}
+
+
+#inputText{
+
+		-fx-border-width:0px ; 
+		-fx-border-color:transparent ; 
+		-fx-background-color:null ; 
+		-fx-prompt-text-fill: #6495ED ; 
+		-fx-font-size:11pt ; 
+}
+
+
+.button{
+
+	-fx-background-color:linear-gradient(#6495ED , #191970) ;
+		-fx-text-fill : white ; 
+		-fx-border-color:null ;
+		-fx-font-size:10pt ; 
+}
+
+
+.button:hover{
+
+		 -fx-background-color:linear-gradient(#191970 , #6495ED) ;
+		-fx-font-size:10pt ; 
+		-fx-text-fill : white ; 
+		-fx-border-color:null ; 
+	
+   }
+
+
+
+
+#alertButton{
+
+   -fx-background-color:linear-gradient(#6495ED , #191970) ;
+     -fx-text-fill: white ; 
+	 -fx-border-color:linear-gradient(#6495ED , #191970);
+}
+
+#alertButton:hover{
+
+   -fx-background-color:linear-gradient(#191970 , #6495ED) ;
+     -fx-text-fill: white ; 
+	 -fx-border-color:linear-gradient(#191970 , #6495ED);
+}
+
+#delete-button{
+	-fx-background-color:linear-gradient( #FF3030,#CD0000)
+
+}
+
+#delete-button:hover{
+	-fx-background-color:linear-gradient(#CD0000,#FF3030)
+
+}
+
+
