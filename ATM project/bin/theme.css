@@ -1,0 +1,85 @@
+.root{
+		-fx-background-image:url(image/blueBackground.jpg);
+		-fx-background-repeat: stretch; 
+		-fx-background-size:stretch; 
+	 background-color:linear-gradient(#F5FFFA , #00CD00);
+		-fx-image-repeat:no-repeat;
+		-fx-font-size: 17pt ;
+		
+
+}
+
+
+
+.button{
+
+	
+ 
+	-fx-border-radius:80;
+	-fx-font-size:17pt; 
+	-fx-background-radius:10 ; 
+	-fx-background-color:linear-gradient(#00CD00,green) ;
+	-fx-text-fill:white;  
+	 
+
+}
+
+
+.button:hover{
+-fx-border-radius:80;
+	-fx-font-size:17pt; 
+	-fx-background-radius:10 ; 
+	-fx-background-color:linear-gradient(green , #00CD00) ;
+	-fx-text-fill:white;  
+
+}
+
+
+
+
+#cancel-button{
+	-fx-border-radius:80;
+	-fx-font-size:17pt; 
+	-fx-background-radius:10 ;
+	-fx-background-color:linear-gradient(red ,  #800000) ;   
+	-fx-text-fill:white;  
+
+}
+
+
+#cancel-button:hover{
+	-fx-border-radius:80;
+	-fx-font-size:17pt; 
+	-fx-background-radius:10 ;
+	-fx-background-color:linear-gradient( #800000 , red) ;   
+	-fx-text-fill:white;  
+
+}
+
+#amount-button{
+    -fx-border-radius:80;
+	-fx-font-size:17pt; 
+	-fx-background-radius:10 ;
+	-fx-background-color:linear-gradient(#1874CD , #104E8B) ;   
+	-fx-text-fill:white;  
+
+}
+
+#amount-button:hover{
+    -fx-border-radius:80;
+	-fx-font-size:17pt; 
+	-fx-background-radius:10 ;
+	-fx-background-color:linear-gradient( #104E8B,#1874CD) ;   
+	-fx-text-fill:white;  
+
+}
+
+
+.text-field{
+		-fx-background-color: linear-gradient( 	#98FB98 ,	#ffffff ) ; 
+		-fx-border-width:3px ; 
+		-fx-border-color:#006400;
+		-fx-border-radius:10px; 
+		-fx-background-radius:10px; 
+
+}
