@@ -7,12 +7,13 @@ import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPopup;
+import com.jfoenix.controls.JFXTextField;
 import com.psm.database.StaffDao;
 import com.psm.database.StudentDao;
 import com.psm.model.DynamicTime;
 import com.psm.model.NextOfKin;
 import com.psm.model.Parent;
-//import com.psm.model.Preferences;
+import com.psm.model.Preferences;
 import com.psm.model.Staff;
 import com.psm.model.Student;
 
@@ -35,19 +36,19 @@ import javafx.stage.Stage;
 
 public class MenuController implements Initializable{
 
-	
+
 	@FXML
-	private AnchorPane root ; 
-	
+	private AnchorPane root ;
+
 	@FXML
     private JFXButton nusery_one_button;
-	
+
 	@FXML
-    private JFXButton nursery_two_button ; 
+    private JFXButton nursery_two_button ;
 
     @FXML
     private JFXButton logout_button;
-    
+
     @FXML
     private JFXButton nursery_3_button;
 
@@ -134,25 +135,38 @@ public class MenuController implements Initializable{
 
     @FXML
     private Text staff_current_name ;
-    
-    @FXML 
-    private Text text_dashboard_date ; 
-    
-    @FXML 
-    private Text txt_day_greeting ; 
+
+    @FXML
+    private Text text_dashboard_date ;
+
+    @FXML
+    private Text txt_day_greeting ;
+
+    @FXML
+    private JFXButton btn_settings;
+
+    @FXML
+    private JFXTextField txt_admin_setting ;
+
+    @FXML
+    private JFXTextField txt_password_setting ;
+
 
 
     @FXML
     private JFXButton btn_show_student;
-    
-    private JFXPopup popup ; 
+
+    private JFXPopup popup ;
 
     private StudentDao stud_dao  ;
-    
+
     private StaffDao staff_dao ;
 
     private Student selected_student  ;
-    
+
+    private Preferences preferences ;
+
+
 
     private Staff selected_staff ;
 
@@ -162,7 +176,8 @@ public class MenuController implements Initializable{
 		//getting db connection
 		stud_dao = new StudentDao();
 		staff_dao = new StaffDao();
-		
+		preferences = Preferences.getConfig() ;
+
 
 		// initializing the staff table and columns
 
@@ -188,11 +203,11 @@ public class MenuController implements Initializable{
 
 			selected_staff = s_new ;
 			staff_current_name.setText("");
-			
+
 			if(s_new != null )
 			staff_current_name.setText(" Name : " + s_new.getFirstName().toUpperCase() + " " + s_new.getOtherName().toUpperCase());
-	
-				
+
+
 
 		});
 
@@ -224,14 +239,15 @@ public class MenuController implements Initializable{
 			student_current_name.setText(" Name : " + s_new.getFirstName().toUpperCase() + " " + s_new.getOtherName().toUpperCase());
 			System.out.println("Current Student name : " + s_new.getFirstName());
 
-				
+
 		});
 
 
 		 initTable();
 		 initPopup();
-		 
-		 
+		 initSetting();
+
+
 		 //initializing the dashboard time
 		 DynamicTime.startTime(text_dashboard_date , txt_day_greeting);
 
@@ -241,6 +257,24 @@ public class MenuController implements Initializable{
 		//addStudent();
 	}
 
+	public void initSetting(){
+
+		txt_admin_setting.setText(preferences.getAdmin_username());
+		txt_password_setting.setText(preferences.getAdmin_password());
+
+	}
+
+
+	@FXML void activateUpdateSetting(ActionEvent event) {
+
+		String uName = txt_admin_setting.getText().toLowerCase() ;
+		String pass = txt_password_setting.getText().toLowerCase() ;
+
+		preferences.setAdmin_username(uName);
+		preferences.setAdmin_password(pass);
+		Preferences.jSon_to_file(preferences);
+		System.out.println("settings update successfull");
+	}
 
 	public void initTable() {
 
@@ -344,8 +378,8 @@ public class MenuController implements Initializable{
 
 		 	JFXButton b = (JFXButton) event.getSource() ;
 	    	System.out.println("Staff button selected");
-	    	
-	    	
+
+
 			switch(b.getId())
 			{
 
@@ -540,20 +574,20 @@ public class MenuController implements Initializable{
 		}
 
     }
-    
+
     public void initPopup(){
-    	
-    	JFXButton refreshButton = new JFXButton("Refresh"); 
-    	JFXButton deleteButton = new JFXButton("Delete"); 
-    	JFXButton updateButton = new JFXButton("Update"); 
-    	
+
+    	JFXButton refreshButton = new JFXButton("Refresh");
+    	JFXButton deleteButton = new JFXButton("Delete");
+    	JFXButton updateButton = new JFXButton("Update");
+
     	VBox vbox =  new VBox();
-    	vbox.getChildren().addAll(refreshButton , deleteButton , updateButton) ; 
-    	
+    	vbox.getChildren().addAll(refreshButton , deleteButton , updateButton) ;
+
     	popup = new JFXPopup() ;
     	popup.setPopupContent(vbox);
     	//popup.getWindowOwner().set
- 
+
     }
 
 
@@ -561,21 +595,21 @@ public class MenuController implements Initializable{
 
     @FXML
     void activateLogout(ActionEvent event) throws IOException {
-    	
-    	Stage stage = (Stage)root.getScene().getWindow() ; 
-    	stage.close(); 
-    	
+
+    	Stage stage = (Stage)root.getScene().getWindow() ;
+    	stage.close();
+
     	javafx.scene.Parent parent =  FXMLLoader.load(getClass().getResource("/com/psm/front_design/login_design.fxml"));
 		Scene scene = new Scene(parent);
 		Stage windows = new Stage();
 		windows.setTitle("Praise Fountain Login");
 		windows.setScene(scene);
 		windows.show();
-		
+
 		DynamicTime.stopTime();
-		
+
 		//Preferences.initConfig();
-    	
+
     }
 
 	public void reloadPanels(String Class){

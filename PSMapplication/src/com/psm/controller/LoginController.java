@@ -35,7 +35,8 @@ public class LoginController implements Initializable {
 
 	    @FXML
 	    private JFXCheckBox check_rember_mi;
-
+	    
+	    private Preferences preferences  ; 
 
 	    private String USER_NAME ;
 	    private String PASSWORD ;
@@ -55,9 +56,12 @@ public class LoginController implements Initializable {
     	 
     	 USER_NAME = txt_username.getText().toLowerCase() ;
     	 PASSWORD = txt_password.getText().toLowerCase() ;
-    	// Preferences.getConfig() ; 
-
-    	 if(USER_NAME.equals("") && PASSWORD.equals("")){
+    	 preferences = Preferences.getConfig() ; 
+    	 
+    	 USER_NAME = preferences.getAdmin_username().trim().toLowerCase() ; 
+    	 PASSWORD = preferences.getAdmin_password().trim().toLowerCase() ; 
+    	 
+    	 if(USER_NAME.equals(txt_username.getText().toLowerCase()) && PASSWORD.equals(txt_password.getText().toLowerCase())){
 
     		 // close login
     		 Stage window = (Stage)root.getScene().getWindow() ;

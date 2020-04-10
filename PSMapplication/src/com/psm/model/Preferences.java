@@ -3,10 +3,7 @@ package com.psm.model;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Formatter;
-
 import com.google.gson.Gson;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonSyntaxException;
@@ -54,23 +51,20 @@ public class Preferences{
 
 	public static void initConfig(){
 
-		FileWriter writer = null ;
-
-		try {
-
 			Preferences preferences = new Preferences();
 			System.out.println(preferences);
 			gson = new Gson();
-			writer = new FileWriter(FILE_LOCATION);
-			writer.write(preferences.toString());
 			String data = gson.toJson(preferences);
 			writeToFile(data);
 
-		} catch (IOException e) {
-			System.out.println("Error : " + e.getMessage());
-			e.printStackTrace();
-		}
+	}
 
+
+	public static void jSon_to_file(Preferences preferences){
+
+		Gson gson = new Gson();
+		String data = gson.toJson(preferences);
+		writeToFile(data);
 
 	}
 
@@ -105,14 +99,16 @@ public class Preferences{
 	public static Preferences getConfig() {
 
 		Preferences preferences = null;
+		Gson gson  = new Gson();
 
 		try {
 
-			preferences = gson.fromJson(new FileReader(FILE_LOCATION) , Preferences.class );
+			preferences = (Preferences) gson.fromJson(new FileReader(FILE_LOCATION) , Preferences.class );
 
 		} catch (JsonSyntaxException | JsonIOException | FileNotFoundException e) {
 
 			System.out.println(e.getMessage());
+			System.out.println("initaiting  config");
 			initConfig();
 		}
 
