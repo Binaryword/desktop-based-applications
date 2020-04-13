@@ -6,8 +6,11 @@ import java.net.URL;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
+import com.binary.alert.Alert;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
@@ -25,13 +28,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 import javafx.stage.FileChooser.ExtensionFilter;
+import javafx.stage.Stage;
 
 public class AddStudentController implements Initializable{
 
 	    @FXML private AnchorPane root ;
+
+	    @FXML private StackPane stackpane ;
 
 	    @FXML
 	    private JFXTextField txt_name;
@@ -93,6 +99,26 @@ public class AddStudentController implements Initializable{
     @FXML
     void activate_clear(ActionEvent event) {
 
+    	JFXButton button1 = new JFXButton("Yes");
+    	JFXButton button2 = new JFXButton("No");
+    	
+    	button1.setOnAction(e->{
+    		
+    		System.out.println("Yes");
+    	});
+    	button2.setOnAction(e->{
+    		
+    		System.out.println("No");
+    		Alert.getDialog().close();
+    	});
+    	
+    	List<JFXButton> buttons = new ArrayList<>();
+    	buttons.add(button1);
+    	buttons.add(button2) ; 
+    	
+    	Alert.showConfirmation(stackpane, root, buttons, "Successfully added" , "Alert");
+ 
+    	
     }
 
     @FXML
@@ -151,8 +177,8 @@ public class AddStudentController implements Initializable{
 			ChangeDirectory.copy(file , new File(passport_path));
 
 		} catch (IOException e) {
-			
-			
+
+
 			e.printStackTrace();
 		}
 

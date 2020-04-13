@@ -17,11 +17,16 @@ public class Test {
 		
 		for(Student s: student){
 			
-			boolean success = WriteToCSV.writeToCSV(s.toCSV(), "student.csv"); 
+			boolean success = CsvIO.writeToCSV(s.toCSV(), "student.csv" , true); 
 			
 			if(success)
 				System.out.println("Succefully.... inserted" + s.toCSV());
 		}
+		
+		String[] data = new String[]{"id" , "name" , "sex" , "age"};
+	    CsvIO.readFromCSV(data , "student.csv"); 
+		
+		
 		
 	}
 	

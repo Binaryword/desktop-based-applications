@@ -626,7 +626,7 @@
                                                             <Font name="Serif Regular" size="18.0" />
                                                          </font>
                                                       </Text>
-                                                      <JFXPasswordField labelFloat="true" prefHeight="34.0" prefWidth="254.0" promptText="Enter Admin Key" unFocusColor="#1d53d0" />
+                                                      <JFXPasswordField fx:id="txt_password_setting" labelFloat="true" prefHeight="34.0" prefWidth="254.0" promptText="Enter Admin Key" unFocusColor="#1d53d0" />
                                                    </children>
                                                 </HBox>
                                                 <HBox alignment="CENTER" prefHeight="72.0" prefWidth="418.0">

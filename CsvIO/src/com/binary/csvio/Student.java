@@ -1,13 +1,19 @@
 package com.binary.csvio;
 
-public class Student {
+import java.io.Serializable;
+
+
+public class Student implements Serializable{
+
+	
+	private static final long serialVersionUID = 1L;
 	
 	private int id ; 
 	private String name ; 
 	private boolean sex ; 
 	private int age ;
+	
 	public Student(int id, String name, boolean sex, int age) {
-		super();
 		this.id = id;
 		this.name = name;
 		this.sex = sex;
@@ -39,9 +45,15 @@ public class Student {
 	}
 
 	
-	public String toCSV(){
-		return String.format("%d,%s,%b,%d", getId() , getName() , isSex() , getAge()); 
+	public String[] toCSV(){
+		return String.format("%d,%s,%b,%d", getId() , getName() , isSex() , getAge()).split(","); 
 	}
+	
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", sex=" + sex + ", age=" + age + "]";
+	}
+	
 	
 
 }
