@@ -1,0 +1,38 @@
+* {
+
+-fx-white:#ffffff;
+-fx-orange:#FF8000;
+-fx-light-orange:#FFE4C4;
+-fx-primary:#ffffff;
+-fx-secondary:#0A0A0A;
+
+}
+
+
+.root{
+
+-fx-background-color:red;
+
+}
+
+
+.alert_button{
+
+	-fx-background-color:-fx-secondary;
+	-fx-border-color:-fx-secondary;
+	-fx-background-radius:20px ; 
+	-fx-border-radius:20px;
+	-fx-text-fill:-fx-primary ;
+	
+
+}
+
+
+.alert_button:hover{
+	
+	-fx-background-color:-fx-primary;
+	-fx-border-color:-fx-secondary;
+	-fx-background-radius:20px ; 
+	-fx-border-radius:20px;
+	-fx-text-fill:-fx-secondary ;
+}
