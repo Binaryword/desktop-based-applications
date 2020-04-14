@@ -19,9 +19,9 @@ import javafx.scene.text.Text;
 
 public class Alert {
 
-	
-	private static JFXDialog log ; 
-	
+
+	private static JFXDialog log ;
+
 	public static void showAlert(StackPane stackpane , Pane pane , JFXButton button  , String information, String title){
 
 		BoxBlur blur = new BoxBlur(3,3,3);
@@ -32,8 +32,10 @@ public class Alert {
 		layout.setHeading(new Label(title));
 		layout.setBody(new Text(information));
 		layout.setActions(box);
-		
-		log = dialog ; 
+
+		log = dialog ;
+		layout.getStylesheets().add("com/binary/alert/alert.css");
+		button.getStyleClass().add("alert_button");
 
 		dialog.setOnDialogClosed((EventHandler<JFXDialogEvent>) e->{
 
@@ -62,48 +64,55 @@ public class Alert {
 		layout.setHeading(new Label(title));
 		layout.setBody(new Text(information));
 		layout.setActions(box);
-		
-		log = dialog ; 
-		
+
+		log = dialog ;
+		layout.getStylesheets().add("com/binary/alert/alert.css");
+		//button.getStyleClass().add("alert_button");
+
 		dialog.setOnDialogClosed((EventHandler<JFXDialogEvent>) e->{
 
 				pane.setEffect(null);
 		});
 
-		
+
 		dialog.show();
 		pane.setEffect(blur);
 
 	}
-	
+
 
 	private static void addControll(JFXButton button , HBox box){
 
 		// controll layout.
+		button.setPrefWidth(100);
+		button.setPrefHeight(30);
 		box.setSpacing(10);
 		box.setPadding(new Insets(10));
 		box.getChildren().add(button);
 
 	}// end of methods....
-	
 
-	
+
+
 	private static void addControll(List<JFXButton> buttons , HBox box){
 
 		// controll layout.
 		box.setSpacing(10);
 		box.setPadding(new Insets(10));
-		
+
 		for(JFXButton button : buttons){
-		
+
+			button.getStyleClass().add("alert_button");
+			button.setPrefWidth(100);
+			button.setPrefHeight(30);
 			box.getChildren().add(button);
-		
+
 		}
 
 	}// end of methods....
-	
+
 	public static JFXDialog  getDialog(){
-		return log ; 
+		return log ;
 	}
 
 }
