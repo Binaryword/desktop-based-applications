@@ -2,9 +2,13 @@ package com.psm.controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
+import com.binary.alert.Alert;
 import com.jfoenix.controls.JFXButton;
+import com.psm.database.DBFactory;
 import com.psm.database.StudentDao;
 import com.psm.model.Student;
 
@@ -17,13 +21,15 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class StudentDetailController implements Initializable{
-
-
+	
+	@FXML
+	private StackPane stackpane ;
+	
 	@FXML
 	private AnchorPane root ;
 
@@ -74,7 +80,7 @@ public class StudentDetailController implements Initializable{
 
     private static Student student = null ;
 
-    private StudentDao stud_dao = new StudentDao();
+    private StudentDao stud_dao = DBFactory.access_student();
 
 
     @Override
@@ -90,8 +96,32 @@ public class StudentDetailController implements Initializable{
     @FXML
     void activateDeleteStudent(ActionEvent event) {
 
+    	
+    	 JFXButton yesButton = new JFXButton("Yes");
+	    	JFXButton noButton = new JFXButton("No");
+	  
 
-    	stud_dao.deleteStudentRecord(student.getId());
+	    	// if yesButton selected perform update operation
+	    	yesButton.setOnAction(e->{
+	    		Alert.getDialog().close();
+	    	 	stud_dao.deleteStudentRecord(student.getId());
+	    		Stage stage = (Stage)root.getScene().getWindow() ;
+	 	    	stage.close();
+	    	});
+
+	    	//if noButton selected cancel operation.
+	    	noButton.setOnAction(e->{
+	    		System.out.println("No");
+	    		Alert.getDialog().close();
+	    	});
+
+	    	List<JFXButton> buttons = new ArrayList<>();
+	    	buttons.add(yesButton);
+	    	buttons.add(noButton) ;
+
+	    	Alert.showConfirmation(stackpane, root, buttons, "Are you Sure ? " , "Delete Confirm");
+    
+ 
     }
 
     @FXML

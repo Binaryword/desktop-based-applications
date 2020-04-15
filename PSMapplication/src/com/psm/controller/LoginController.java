@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.binary.alert.Alert;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
@@ -85,7 +86,7 @@ public class LoginController implements Initializable {
 
     	 }else{
 
-
+    		
     		 txt_username.getStyleClass().add("wrong-credentials");
     		 txt_password.getStyleClass().add("wrong-credentials");
 

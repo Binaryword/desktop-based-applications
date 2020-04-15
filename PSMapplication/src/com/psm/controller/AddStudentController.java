@@ -16,6 +16,7 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
+import com.psm.database.DBFactory;
 import com.psm.database.StudentDao;
 import com.psm.model.ChangeDirectory;
 import com.psm.model.Parent;
@@ -94,31 +95,34 @@ public class AddStudentController implements Initializable{
 
 	    private File file ;
 
-	    private StudentDao stud_dao = new StudentDao();
+	    private StudentDao stud_dao = DBFactory.access_student();
 
     @FXML
     void activate_clear(ActionEvent event) {
 
-    	JFXButton button1 = new JFXButton("Yes");
-    	JFXButton button2 = new JFXButton("No");
-    	
-    	button1.setOnAction(e->{
-    		
-    		System.out.println("Yes");
-    	});
-    	button2.setOnAction(e->{
-    		
-    		System.out.println("No");
-    		Alert.getDialog().close();
-    	});
-    	
-    	List<JFXButton> buttons = new ArrayList<>();
-    	buttons.add(button1);
-    	buttons.add(button2) ; 
-    	
-    	Alert.showConfirmation(stackpane, root, buttons, "Successfully added" , "Alert");
- 
-    	
+//    	JFXButton button1 = new JFXButton("Yes");
+//    	JFXButton button2 = new JFXButton("No");
+//
+//    	button1.setOnAction(e->{
+//
+//    		System.out.println("Yes");
+//    	});
+//    	button2.setOnAction(e->{
+//
+//    		System.out.println("No");
+//    		Alert.getDialog().close();
+//    	});
+//
+//    	List<JFXButton> buttons = new ArrayList<>();
+//    	buttons.add(button1);
+//    	buttons.add(button2) ;
+//
+//    	Alert.showConfirmation(stackpane, root, buttons, "Successfully added" , "Alert");
+
+    	Stage stage = (Stage) root.getScene().getWindow() ;
+		stage.close();
+
+
     }
 
     @FXML
@@ -136,6 +140,12 @@ public class AddStudentController implements Initializable{
     		return ;
 
 
+    	JFXButton comfirmButton = new JFXButton("Ok");
+		Alert.showAlert(stackpane, root , comfirmButton , file.getName() + " selected successfully", "Alert");
+
+		comfirmButton.setOnAction(e->{
+			Alert.getDialog().close();
+		});
 
     }
 
@@ -164,32 +174,61 @@ public class AddStudentController implements Initializable{
     	String famContact = txt_parent_contact.getText();
 
 
-    	Path path = FileSystems.getDefault().getPath("").toAbsolutePath();
-    	System.out.println(path.toString() + "\\src\\com\\psm\\passports\\new_image.png");
-    	String passport_path = path.toString() + "\\src\\com\\psm\\passports\\" + fName+"_"+id+".png" ;
-    	String pass_loc = "/com/psm/passports/"+fName+"_"+id+".png";
-
-    	System.out.println(passport_path);
-
-
-    	try {
-
-			ChangeDirectory.copy(file , new File(passport_path));
-
-		} catch (IOException e) {
-
-
-			e.printStackTrace();
-		}
-
-
     	student = new Student(id, age, fName, oName, address, dob , pay_status.toUpperCase() , stud_class.toUpperCase() , sex , new Parent(famName , famContact , famAddress));
- 	   	student.setPassport_location(pass_loc);
+    	
+    	if(file!=null){
+    		
+    		Path path = FileSystems.getDefault().getPath("").toAbsolutePath();
+        	System.out.println(path.toString() + "\\src\\com\\psm\\passports\\new_image.png");
+        	String passport_path = path.toString() + "\\src\\com\\psm\\passports\\" + fName+"_"+id+".png" ;
+        	String pass_loc = "/com/psm/passports/"+fName+"_"+id+".png";
+
+        	System.out.println(passport_path);
+
+
+        	try {
+
+    			ChangeDirectory.copy(file , new File(passport_path));
+
+    		} catch (IOException e) {
+
+
+    			e.printStackTrace();
+    		}
+        	
+        	student.setPassport_location(pass_loc);
+    	}
+    	
  	   	student.setStud_performance("EXCELLENT");
-    	addStudentRecord(student);
+ 	   	
+ 	   	
+ 	   JFXButton yesButton = new JFXButton("Yes");
+   	JFXButton noButton = new JFXButton("No");
 
+   	// if yesButton selected perform update operation
+   	yesButton.setOnAction(e->{
+   		
+   		Alert.getDialog().close();
+   		addStudentRecord(student);
+   		
+   	});
 
+   	//if noButton selected cancel operation.
+   	noButton.setOnAction(e->{
+
+   		System.out.println("No");
+   		Alert.getDialog().close();
+   	});
+
+   	List<JFXButton> buttons = new ArrayList<>();
+   	buttons.add(yesButton);
+   	buttons.add(noButton) ;
+   	Alert.showConfirmation(stackpane, root, buttons, "Are you sure to add  " + student.getFirstName() + "  " +student.getOtherName() , "Confirmation");
+
+ 	   
     }
+    
+    
 
 	private void addStudentRecord(Student student) {
 
@@ -198,15 +237,31 @@ public class AddStudentController implements Initializable{
 		if(status)
 		{
 
-			System.out.println("student added successfully") ;
-			Stage stage = (Stage) root.getScene().getWindow() ;
-			stage.close();
+			JFXButton comfirmButton = new JFXButton("Ok");
+			Alert.showAlert(stackpane, root , comfirmButton , "Student Registered Successfully !!", "Add Student Alert");
+
+			comfirmButton.setOnAction(e->{
+
+				Alert.getDialog().close();
+				Stage stage = (Stage) root.getScene().getWindow() ;
+				stage.close();
+
+			});
+
 
 		}else{
 
+			JFXButton comfirmButton = new JFXButton("Ok");
+			Alert.showAlert(stackpane, root , comfirmButton , "Registration Fail Try again !!", "Error Alert");
+
+			comfirmButton.setOnAction(e->{
+				Alert.getDialog().close();
+			});
+
 			initWidget(student);
 		}
-	}
+	}// end of methods.....
+	
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

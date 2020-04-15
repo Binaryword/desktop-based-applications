@@ -8,15 +8,14 @@ import java.sql.Statement;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.Date;
 
 import com.psm.model.NextOfKin;
 import com.psm.model.Staff;
-import com.psm.model.Student;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 public class StaffDao {
 
@@ -153,6 +152,12 @@ public class StaffDao {
 
 			isSuccessfull = false;
 			System.out.println("An erro as occur while inserting into staff table.....");
+
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setContentText(e.getMessage());
+			alert.setHeaderText("Technical Error");
+			alert.showAndWait();
+
 			e.printStackTrace();
 		}
 
@@ -224,6 +229,10 @@ public class StaffDao {
 
 		} catch (SQLException e ) {
 
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setContentText(e.getMessage());
+			alert.setHeaderText("Technical Error");
+			alert.showAndWait();
 			e.printStackTrace();
 		}
 
@@ -288,7 +297,11 @@ public class StaffDao {
 			}
 
 		} catch (SQLException e ) {
-
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setContentText(e.getMessage());
+			alert.setHeaderText("Technical Error");
+			alert.showAndWait();
+			e.printStackTrace();
 			e.printStackTrace();
 		}
 
@@ -347,7 +360,10 @@ public class StaffDao {
 			isSuccessfull = true;
 
 		} catch (SQLException e) {
-
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setContentText(e.getMessage());
+			alert.setHeaderText("Technical Error");
+			alert.showAndWait();
 			isSuccessfull = false;
 			System.out.println("An erro as occur while updating into staff table.....");
 			e.printStackTrace();
@@ -372,7 +388,10 @@ public class StaffDao {
 			else
 				System.out.print("no deletion...");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setContentText(e.getMessage());
+			alert.setHeaderText("Technical Error");
+			alert.showAndWait();
 			e.printStackTrace();
 		}
 

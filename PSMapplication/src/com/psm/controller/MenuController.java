@@ -3,12 +3,16 @@ package com.psm.controller;
 import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
+import com.binary.alert.Alert;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXPopup;
 import com.jfoenix.controls.JFXTextField;
+import com.psm.database.DBFactory;
 import com.psm.database.StaffDao;
 import com.psm.database.StudentDao;
 import com.psm.model.DynamicTime;
@@ -30,6 +34,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
@@ -37,6 +42,8 @@ import javafx.stage.Stage;
 
 public class MenuController implements Initializable{
 
+	@FXML
+	private StackPane stackpane ;
 
 	@FXML
 	private AnchorPane root ;
@@ -167,6 +174,9 @@ public class MenuController implements Initializable{
 
     private Preferences preferences ;
 
+    private String stud_catchData ;
+
+    private String staff_catchData ;
 
 
     private Staff selected_staff ;
@@ -175,8 +185,8 @@ public class MenuController implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 
 		//getting db connection
-		stud_dao = new StudentDao();
-		staff_dao = new StaffDao();
+		stud_dao = DBFactory.access_student();
+		staff_dao = DBFactory.access_staff();
 		preferences = Preferences.getConfig() ;
 
 
@@ -271,10 +281,60 @@ public class MenuController implements Initializable{
 		String uName = txt_admin_setting.getText().toLowerCase() ;
 		String pass = txt_password_setting.getText().toLowerCase() ;
 
-		preferences.setAdmin_username(uName);
-		preferences.setAdmin_password(pass);
-		Preferences.jSon_to_file(preferences);
+		JFXButton yesButton = new JFXButton("Yes");
+    	JFXButton noButton = new JFXButton("No");
+
+    	// if yesButton selected perform update operation
+    	yesButton.setOnAction(e->{
+
+    		preferences.setAdmin_username(uName);
+    		preferences.setAdmin_password(pass);
+    		Preferences.jSon_to_file(preferences);
+    		Alert.getDialog().close();
+    		showAlert(true);
+
+    	});
+
+    	//if noButton selected cancel operation.
+    	noButton.setOnAction(e->{
+
+    		System.out.println("No");
+    		Alert.getDialog().close();
+    		showAlert(false);
+    	});
+
+    	List<JFXButton> buttons = new ArrayList<>();
+    	buttons.add(yesButton);
+    	buttons.add(noButton) ;
+
+
+    	Alert.showConfirmation(stackpane, root , buttons, "Are you sure ? " , "Update Alert");
+
 		System.out.println("settings update successfull");
+	}
+
+	public void showAlert(boolean option){
+
+		if(option){
+			JFXButton comfirmButton = new JFXButton("Ok");
+    		Alert.showAlert(stackpane, root , comfirmButton ,  "Setting updated successfully", "Success Alert");
+
+    		comfirmButton.setOnAction(e->{
+    			Alert.getDialog().close();
+
+    		});
+
+		}else{
+
+			JFXButton comfirmButton = new JFXButton("Ok");
+    		Alert.showAlert(stackpane, root , comfirmButton ,  "Operation Canceled", "Error Alert");
+
+    		comfirmButton.setOnAction(e->{
+    			Alert.getDialog().close();
+
+    		});
+
+		}// end of if/else ...
 	}
 
 	public void initTable() {
@@ -465,11 +525,19 @@ public class MenuController implements Initializable{
 	}
 
 
-	@FXML void activateClassButton(ActionEvent event) {
+	public  void ReloadTable(){
 
 
+	}
 
-		JFXButton b = (JFXButton) event.getSource() ;
+
+	@FXML void  activateClassButton(ActionEvent event) {
+
+		JFXButton b = null ;
+
+		if(event != null)
+		 b = (JFXButton) event.getSource() ;
+
 
 		switch(b.getId())
 		{

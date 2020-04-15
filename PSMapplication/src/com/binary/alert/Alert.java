@@ -42,11 +42,11 @@ public class Alert {
 				pane.setEffect(null);
 		});
 
-		button.setOnAction((EventHandler<ActionEvent>) e->{
-
-			dialog.close();
-
-		});
+//		button.setOnAction((EventHandler<ActionEvent>) e->{
+//
+//			dialog.close();
+//
+//		});
 
 		dialog.show();
 		pane.setEffect(blur);

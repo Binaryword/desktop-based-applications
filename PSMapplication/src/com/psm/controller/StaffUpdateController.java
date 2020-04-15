@@ -7,14 +7,17 @@ import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.text.ParseException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import com.binary.alert.Alert;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
+import com.psm.database.DBFactory;
 import com.psm.database.StaffDao;
 import com.psm.model.ChangeDirectory;
 import com.psm.model.NextOfKin;
@@ -27,13 +30,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 
 public class StaffUpdateController implements Initializable{
-
-
+	@FXML
+    private StackPane stackpane ;
 	@FXML
     private AnchorPane root;
 
@@ -90,7 +94,7 @@ public class StaffUpdateController implements Initializable{
 
 
 	private static Staff staff ;
-	private StaffDao staffDao = new StaffDao() ;
+	private StaffDao staffDao = DBFactory.access_staff() ;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -152,6 +156,13 @@ public class StaffUpdateController implements Initializable{
 				e.printStackTrace();
 			}
 
+	    	JFXButton comfirmButton = new JFXButton("Ok");
+			Alert.showAlert(stackpane, root , comfirmButton , file.getName() + " selected successfully", "Alert");
+
+			comfirmButton.setOnAction(e->{
+				Alert.getDialog().close();
+			});
+
 
 	    }
 
@@ -184,7 +195,28 @@ public class StaffUpdateController implements Initializable{
 	    staff = new Staff(id, age, name, othername, address, address , sex , doe , dob , staff_group.toUpperCase() , class_taking.toUpperCase() , new NextOfKin(kin_name , kin_contact));
 	    //staff = new Staff(id, age, name, othername, address, dob , pay_status.toUpperCase() , stud_class.toUpperCase() , sex , new Parent(famName , famContact , famAddress));
 	    staff.setPassport_location(pass_loc);
-	    updateStaffRecord(staff);
+
+    	JFXButton yesButton = new JFXButton("Yes");
+    	JFXButton noButton = new JFXButton("No");
+
+    	// if yesButton selected perform update operation
+    	yesButton.setOnAction(e->{
+    		Alert.getDialog().close();
+    		 updateStaffRecord(staff);
+    	});
+
+    	//if noButton selected cancel operation.
+    	noButton.setOnAction(e->{
+
+    		System.out.println("No");
+    		Alert.getDialog().close();
+    	});
+
+    	List<JFXButton> buttons = new ArrayList<>();
+    	buttons.add(yesButton);
+    	buttons.add(noButton) ;
+
+    	Alert.showConfirmation(stackpane, root, buttons, "Are you sure to update " + staff.getFirstName() + " " + staff.getOtherName() , "Update Alert");
 
 	    }
 
@@ -220,31 +252,48 @@ public class StaffUpdateController implements Initializable{
 	    private void updateStaffRecord(Staff staff2) {
 
 	    	System.out.println("STUDENT UPDATE BUTTON AS BEEN CLICKED......................");
-	    	
+
 	    	// updating database
 	    	boolean success = staffDao.updateStaff(staff2);
-	    	
+
 	    	try {
 				List<Staff> list = staffDao.getStaffs();
 				for(Staff l : list)
 					System.out.println(l.toString());
-				
+
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			} 
+			}
 
 	    	if(success)
 	    	{
 
-	    		System.out.println("Update successfull");
-	    		Stage stage = (Stage)root.getScene().getWindow() ;
-	    		stage.close();
+	    		JFXButton comfirmButton = new JFXButton("Ok");
+	    		Alert.showAlert(stackpane, root , comfirmButton ,  "Staff updated successfully", "Success Alert");
+
+	    		comfirmButton.setOnAction(e->{
+	    			Alert.getDialog().close();
+	    			Stage stage = (Stage)root.getScene().getWindow() ;
+		    		stage.close();
+	    		});
+
 
 	    	}
 
-	    	else
-	    		System.out.println("Error");
+	    	else{
+
+	    		JFXButton comfirmButton = new JFXButton("Ok");
+				Alert.showAlert(stackpane, root , comfirmButton , "Update Fail Try again !!", "Error Alert");
+
+				comfirmButton.setOnAction(e->{
+					Alert.getDialog().close();
+				});
+
+	    	}
+
+
+
 		}
 
 		@FXML

@@ -15,6 +15,8 @@ import com.psm.model.Student;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 public class StudentDao {
 
@@ -92,7 +94,10 @@ public class StudentDao {
 			}
 
 		} catch (SQLException e) {
-
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setContentText(e.getMessage());
+			alert.setHeaderText("Technical Error");
+			alert.showAndWait();
 			System.out.println("An erro as occur while creating Student table.....");
 			e.printStackTrace();
 		}
@@ -133,7 +138,10 @@ public class StudentDao {
 			isSuccessfull = true;
 
 		} catch (SQLException e) {
-
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setContentText(e.getMessage());
+			alert.setHeaderText("Technical Error");
+			alert.showAndWait();
 			isSuccessfull = false;
 			System.out.println("An erro as occur while inserting into student table.....");
 			e.printStackTrace();
@@ -188,7 +196,10 @@ public class StudentDao {
 			}
 
 		} catch (SQLException e) {
-
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setContentText(e.getMessage());
+			alert.setHeaderText("Technical Error");
+			alert.showAndWait();
 			e.printStackTrace();
 		}
 
@@ -240,11 +251,15 @@ public class StudentDao {
 
 			}else
 			{
+
 				System.out.println(" Student NOT data found successfully...");
 			}
 
 		} catch (SQLException e) {
-
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setContentText(e.getMessage());
+			alert.setHeaderText("Technical Error");
+			alert.showAndWait();
 			System.out.println("");
 		}
 
@@ -287,7 +302,10 @@ public class StudentDao {
 			isSuccessfull = true;
 
 		} catch (SQLException e) {
-
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setContentText(e.getMessage());
+			alert.setHeaderText("Technical Error");
+			alert.showAndWait();
 			isSuccessfull = false;
 			System.out.println("An erro as occur while updating into student table.....");
 			e.printStackTrace();
@@ -311,8 +329,11 @@ public class StudentDao {
 			isSuccessfull = preStatement.execute() ;
 
 		} catch (SQLException e) {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setContentText(e.getMessage());
+			alert.setHeaderText("Technical Error");
+			alert.showAndWait();
 			e.printStackTrace();
-
 			return false ;
 		}
 

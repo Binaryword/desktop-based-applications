@@ -6,13 +6,17 @@ import java.net.URL;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
+import com.binary.alert.Alert;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
+import com.psm.database.DBFactory;
 import com.psm.database.StaffDao;
 import com.psm.model.ChangeDirectory;
 import com.psm.model.NextOfKin;
@@ -25,11 +29,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 
 public class AddStaffController implements Initializable{
+
+	@FXML
+	private StackPane stackpane ;
 
 	 @FXML
 	    private AnchorPane root;
@@ -92,7 +100,7 @@ public class AddStaffController implements Initializable{
 
 	    private File file ;
 
-	    private StaffDao staff_dao = new StaffDao();
+	    private StaffDao staff_dao = DBFactory.access_staff();
 
 	    @Override
 		public void initialize(URL location, ResourceBundle resources) {
@@ -141,26 +149,56 @@ public class AddStaffController implements Initializable{
 	    	String kin_name = txt_kin_name.getText() ;
 	    	String kin_contact = txt_kin_contact.getText() ;
 
-	    	Path path = FileSystems.getDefault().getPath("").toAbsolutePath();
-	    	System.out.println(path.toString() + "\\src\\com\\psm\\passports\\new_image.png");
-	    	String passport_path = path.toString() + "\\src\\com\\psm\\staff_passports\\" + name+"_"+id+".png" ;
-	    	String pass_loc = "/com/psm/passports/"+name+"_"+id+".png";
+	    	staff = new Staff(id, age, name, othername, address, address , sex , doe , dob , staff_group.toUpperCase() , class_taking.toUpperCase() , new NextOfKin(kin_name , kin_contact));
 
-	    	System.out.println(passport_path);
+	    	if(file!=null){
+
+	    		Path path = FileSystems.getDefault().getPath("").toAbsolutePath();
+		    	System.out.println(path.toString() + "\\src\\com\\psm\\passports\\new_image.png");
+		    	String passport_path = path.toString() + "\\src\\com\\psm\\staff_passports\\" + name+"_"+id+".png" ;
+		    	String pass_loc = "/com/psm/passports/"+name+"_"+id+".png";
+
+		    	System.out.println(passport_path);
 
 
-	    	try {
+		    	try {
 
-				ChangeDirectory.copy(file , new File(passport_path));
+					ChangeDirectory.copy(file , new File(passport_path));
 
-			} catch (IOException e) {
+				} catch (IOException e) {
 
-				e.printStackTrace();
-			}
+					e.printStackTrace();
+				}
 
-	    staff = new Staff(id, age, name, othername, address, address , sex , doe , dob , staff_group.toUpperCase() , class_taking.toUpperCase() , new NextOfKin(kin_name , kin_contact));
-	    staff.setPassport_location(pass_loc);
-	    addStaffRecord(staff);
+		    	 staff.setPassport_location(pass_loc);
+	    	}
+
+
+
+	    JFXButton yesButton = new JFXButton("Yes");
+    	JFXButton noButton = new JFXButton("No");
+
+    	// if yesButton selected perform update operation
+    	yesButton.setOnAction(e->{
+    		   Alert.getDialog().close();
+    		   addStaffRecord(staff);
+    		  
+    	});
+
+    	//if noButton selected cancel operation.
+    	noButton.setOnAction(e->{
+
+    		System.out.println("No");
+    		Alert.getDialog().close();
+    	});
+
+    	List<JFXButton> buttons = new ArrayList<>();
+    	buttons.add(yesButton);
+    	buttons.add(noButton) ;
+
+    	Alert.showConfirmation(stackpane, root, buttons, "Are you sure to add  " + staff.getFirstName() + " " +staff.getOtherName() , "Confirmation");
+
+
 
 	    }
 
@@ -172,11 +210,26 @@ public class AddStaffController implements Initializable{
 			if(status)
 			{
 
-				System.out.println("staff added successfully") ;
-				Stage stage = (Stage) root.getScene().getWindow() ;
-				stage.close();
+				JFXButton comfirmButton = new JFXButton("Ok");
+				Alert.showAlert(stackpane, root , comfirmButton , "Staff Registered Successfully !!", "Add Staff Alert");
+
+				comfirmButton.setOnAction(e->{
+
+					Alert.getDialog().close();
+					Stage stage = (Stage) root.getScene().getWindow() ;
+					stage.close();
+
+				});
+
 
 			}else{
+
+				JFXButton comfirmButton = new JFXButton("Ok");
+				Alert.showAlert(stackpane, root , comfirmButton , "Registration Fail Try again !!", "Error Alert");
+
+				comfirmButton.setOnAction(e->{
+					Alert.getDialog().close();
+				});
 
 				initWidget(staff);
 			}
@@ -221,6 +274,13 @@ public class AddStaffController implements Initializable{
 
 	    	if(file == null)
 	    		return ;
+
+	    	JFXButton comfirmButton = new JFXButton("Ok");
+			Alert.showAlert(stackpane, root , comfirmButton , file.getName() + " selected successfully", "Alert");
+
+			comfirmButton.setOnAction(e->{
+				Alert.getDialog().close();
+			});
 
 	    }
 

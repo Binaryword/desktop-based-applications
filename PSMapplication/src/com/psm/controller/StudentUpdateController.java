@@ -6,13 +6,17 @@ import java.net.URL;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
+import com.binary.alert.Alert;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
+import com.psm.database.DBFactory;
 import com.psm.database.StudentDao;
 import com.psm.model.ChangeDirectory;
 import com.psm.model.Parent;
@@ -26,11 +30,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 
 public class StudentUpdateController implements Initializable{
+
+	    @FXML private StackPane stackpane ;
 
 	    @FXML private AnchorPane root ;
 
@@ -86,7 +94,7 @@ public class StudentUpdateController implements Initializable{
 	    private JFXButton btn_cancel;
 
 	    private static Student student ;
-	    private StudentDao studDao = new StudentDao() ;
+	    private StudentDao studDao = DBFactory.access_student() ;
 
 	    @Override
 		public void initialize(URL location, ResourceBundle resources) {
@@ -178,7 +186,30 @@ public class StudentUpdateController implements Initializable{
 	    student = new Student(id, age, name, othername, address, dob , pay_status.toUpperCase() , stud_class.toUpperCase() , sex , new Parent(famName , famContact , famAddress));
 	    student.setPassport_location(pass_loc);
 	    student.setStud_performance(stud_performance);
-	    updateStudentRecord(student);
+
+
+	    JFXButton yesButton = new JFXButton("Yes");
+    	JFXButton noButton = new JFXButton("No");
+
+    	// if yesButton selected perform update operation
+    	yesButton.setOnAction(e->{
+    		 Alert.getDialog().close();
+    		 updateStudentRecord(student);
+    	});
+
+    	//if noButton selected cancel operation.
+    	noButton.setOnAction(e->{
+
+    		System.out.println("No");
+    		Alert.getDialog().close();
+    	});
+
+    	List<JFXButton> buttons = new ArrayList<>();
+    	buttons.add(yesButton);
+    	buttons.add(noButton) ;
+
+    	Alert.showConfirmation(stackpane, root, buttons, "Are you sure to update " + student.getFirstName() + " " + student.getOtherName() , "Update Alert");
+
 
 	    }
 
@@ -232,16 +263,32 @@ public class StudentUpdateController implements Initializable{
 	    	if(success)
 	    	{
 
-	    		System.out.println("Update successfull");
-	    		Stage stage = (Stage)root.getScene().getWindow() ;
-	    		stage.close();
+	    		JFXButton comfirmButton = new JFXButton("Ok");
+	    		Alert.showAlert(stackpane, root , comfirmButton ,  "Sudent updated successfully", "Success Alert");
 
+	    		comfirmButton.setOnAction(e->{
+	    			Alert.getDialog().close();
+	    			Stage stage = (Stage)root.getScene().getWindow() ;
+		    		stage.close();
+	    		});
+
+	    		try {
+
+	    			FXMLLoader fxmlLoader = new FXMLLoader();
+					fxmlLoader.load(getClass().getResource("/com/psm/front_design/menu_design.fxml").openStream());
+					MenuController menucontrol = (MenuController) fxmlLoader.getController();
+					menucontrol.ReloadTable();
+
+				} catch (IOException e) {
+					e.printStackTrace();
+
+				}// end of try catch ...
 	    	}
 
 	    	else
 	    		System.out.println("Error");
 
-	    }
+	    }// end of method
 
 
 

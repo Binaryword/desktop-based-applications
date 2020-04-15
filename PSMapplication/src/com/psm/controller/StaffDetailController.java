@@ -2,9 +2,13 @@ package com.psm.controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
+import com.binary.alert.Alert;
 import com.jfoenix.controls.JFXButton;
+import com.psm.database.DBFactory;
 import com.psm.database.StaffDao;
 import com.psm.model.Staff;
 
@@ -17,11 +21,16 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class StaffDetailController implements Initializable{
-		@FXML
+
+	@FXML
+    private StackPane stackpane;
+
+	@FXML
 	    private AnchorPane root;
 
 	    @FXML
@@ -74,7 +83,7 @@ public class StaffDetailController implements Initializable{
 
 	    private static Staff staff = null ;
 
-	    private StaffDao staff_dao = new StaffDao();
+	    private StaffDao staff_dao = DBFactory.access_staff();
 
 	    @Override
 		public void initialize(URL location, ResourceBundle resources) {
@@ -87,11 +96,34 @@ public class StaffDetailController implements Initializable{
 
 	    @FXML
 	    void activateDeleteStudent(ActionEvent event) {
-	    		
-	    	staff_dao.deleteStaff(staff.getId());
-	    	System.out.println("Staff deleted successfull");
-	    	Stage stage = (Stage)root.getScene().getWindow() ;
-	    	stage.close();
+
+
+		    JFXButton yesButton = new JFXButton("Yes");
+	    	JFXButton noButton = new JFXButton("No");
+
+
+	    	// if yesButton selected perform update operation
+	    	yesButton.setOnAction(e->{
+	    		 Alert.getDialog().close();
+	    		staff_dao.deleteStaff(staff.getId());
+	    		Stage stage = (Stage)root.getScene().getWindow() ;
+	 	    	stage.close();
+	    	});
+
+	    	//if noButton selected cancel operation.
+	    	noButton.setOnAction(e->{
+	    		System.out.println("No");
+	    		Alert.getDialog().close();
+	    	});
+
+	    	List<JFXButton> buttons = new ArrayList<>();
+	    	buttons.add(yesButton);
+	    	buttons.add(noButton) ;
+
+	    	Alert.showConfirmation(stackpane, root, buttons,  "Are you Sure ? " , "Delete Confirm");
+
+
+
 	    }
 
 	    @FXML

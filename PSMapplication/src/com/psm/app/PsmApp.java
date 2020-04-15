@@ -1,5 +1,6 @@
  package com.psm.app;
 
+import com.psm.database.DBFactory;
 import com.psm.model.Preferences;
 
 import javafx.application.Application;
@@ -11,10 +12,8 @@ import javafx.stage.Stage;
 public class PsmApp extends Application{
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		launch(args);
-
 
 	}
 
@@ -27,6 +26,7 @@ public class PsmApp extends Application{
 		primaryStage.setTitle("Praise Fountain Login");
 		primaryStage.setScene(scene);
 		primaryStage.show();
+		DBFactory.connect_database();
 		Preferences.getConfig(); 
 
 	}

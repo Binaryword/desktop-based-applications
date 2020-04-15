@@ -23,695 +23,709 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1000.0" stylesheets="@../style/dashbordStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.psm.controller.MenuController">
+
+<StackPane fx:id="stackpane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.psm.controller.MenuController">
    <children>
-      <BorderPane layoutX="220.0" layoutY="118.0" prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@../style/appStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <center>
-            <JFXTabPane prefHeight="318.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-               <tabs>
-               <Tab text="Dashboard">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="backImage">
-                           <children>
-                              <BorderPane layoutX="164.0" layoutY="56.0" prefHeight="335.0" prefWidth="800.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <bottom>
-                                    <VBox prefHeight="170.0" prefWidth="800.0" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <HBox alignment="CENTER_RIGHT" prefHeight="90.0" prefWidth="800.0" spacing="10.0">
+      <AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1000.0" stylesheets="@../style/dashbordStyle.css">
+         <children>
+            <BorderPane layoutX="220.0" layoutY="118.0" prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@../style/appStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <center>
+                  <JFXTabPane prefHeight="318.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                     <tabs>
+                     <Tab text="Dashboard">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="backImage">
+                                 <children>
+                                    <BorderPane layoutX="164.0" layoutY="56.0" prefHeight="335.0" prefWidth="800.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <bottom>
+                                          <VBox prefHeight="170.0" prefWidth="800.0" BorderPane.alignment="CENTER">
                                              <children>
-                                                <Region prefHeight="75.0" prefWidth="399.0" />
-                                                <HBox alignment="CENTER" onMouseClicked="#activateAddStudentButton" prefHeight="104.0" prefWidth="400.0" style="-fx-background-color: #8B4500;" styleClass="cardshow">
+                                                <HBox alignment="CENTER_RIGHT" prefHeight="90.0" prefWidth="800.0" spacing="10.0">
                                                    <children>
-                                                      <VBox alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="115.0" spacing="10.0">
+                                                      <Region prefHeight="75.0" prefWidth="399.0" />
+                                                      <HBox alignment="CENTER" onMouseClicked="#activateAddStudentButton" prefHeight="104.0" prefWidth="400.0" style="-fx-background-color: #8B4500;" styleClass="cardshow">
                                                          <children>
-                                                            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Student">
-                                                               <font>
-                                                                  <Font size="14.0" />
-                                                               </font>
-                                                            </Text>
-                                                            <Text fill="WHITE" layoutX="10.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103 Student">
-                                                               <font>
-                                                                  <Font size="14.0" />
-                                                               </font>
-                                                            </Text>
+                                                            <VBox alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="115.0" spacing="10.0">
+                                                               <children>
+                                                                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Student">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Text>
+                                                                  <Text fill="WHITE" layoutX="10.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103 Student">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Text>
+                                                               </children>
+                                                            </VBox>
+                                                            <VBox alignment="TOP_RIGHT" prefHeight="62.0" prefWidth="91.0">
+                                                               <children>
+                                                                  <FontAwesomeIconView glyphName="USER_PLUS" size="30" wrappingWidth="45.28571319580078" />
+                                                               </children>
+                                                               <HBox.margin>
+                                                                  <Insets top="5.0" />
+                                                               </HBox.margin>
+                                                            </VBox>
                                                          </children>
-                                                      </VBox>
-                                                      <VBox alignment="TOP_RIGHT" prefHeight="62.0" prefWidth="91.0">
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" layoutX="541.0" layoutY="15.0" onMouseClicked="#activateAddStaffButton" prefHeight="104.0" prefWidth="400.0" style="-fx-background-color: #8B0000;" styleClass="cardshow">
                                                          <children>
-                                                            <FontAwesomeIconView glyphName="USER_PLUS" size="30" wrappingWidth="45.28571319580078" />
+                                                            <VBox alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="115.0" spacing="10.0">
+                                                               <children>
+                                                                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Staff">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Text>
+                                                                  <Text fill="WHITE" layoutX="10.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="50 Staff">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Text>
+                                                               </children>
+                                                            </VBox>
+                                                            <VBox alignment="TOP_RIGHT" prefHeight="62.0" prefWidth="91.0">
+                                                               <children>
+                                                                  <FontAwesomeIconView glyphName="USER_PLUS" size="30" wrappingWidth="45.28571319580078" />
+                                                               </children>
+                                                               <opaqueInsets>
+                                                                  <Insets top="10.0" />
+                                                               </opaqueInsets>
+                                                               <HBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </HBox.margin>
+                                                            </VBox>
                                                          </children>
-                                                         <HBox.margin>
-                                                            <Insets top="5.0" />
-                                                         </HBox.margin>
-                                                      </VBox>
+                                                      </HBox>
                                                    </children>
-                                                </HBox>
-                                                <HBox alignment="CENTER" layoutX="541.0" layoutY="15.0" onMouseClicked="#activateAddStaffButton" prefHeight="104.0" prefWidth="400.0" style="-fx-background-color: #8B0000;" styleClass="cardshow">
-                                                   <children>
-                                                      <VBox alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="115.0" spacing="10.0">
-                                                         <children>
-                                                            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Staff">
-                                                               <font>
-                                                                  <Font size="14.0" />
-                                                               </font>
-                                                            </Text>
-                                                            <Text fill="WHITE" layoutX="10.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="50 Staff">
-                                                               <font>
-                                                                  <Font size="14.0" />
-                                                               </font>
-                                                            </Text>
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox alignment="TOP_RIGHT" prefHeight="62.0" prefWidth="91.0">
-                                                         <children>
-                                                            <FontAwesomeIconView glyphName="USER_PLUS" size="30" wrappingWidth="45.28571319580078" />
-                                                         </children>
-                                                         <opaqueInsets>
-                                                            <Insets top="10.0" />
-                                                         </opaqueInsets>
-                                                         <HBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </HBox.margin>
-                                                      </VBox>
-                                                   </children>
-                                                </HBox>
-                                             </children>
-                                             <padding>
-                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                             </padding>
-                                             <VBox.margin>
-                                                <Insets right="10.0" />
-                                             </VBox.margin>
-                                          </HBox>
-                                          <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="90.0" prefWidth="800.0" spacing="10.0">
-                                             <children>
-                                                <Region prefHeight="75.0" prefWidth="397.0" />
-                                                <HBox alignment="CENTER" prefHeight="104.0" prefWidth="400.0" style="-fx-background-color: #458B00;" styleClass="cardshow2">
-                                                   <children>
-                                                      <VBox alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="115.0" spacing="5.0">
-                                                         <children>
-                                                            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Acedemic Info">
-                                                               <font>
-                                                                  <Font size="14.0" />
-                                                               </font>
-                                                            </Text>
-                                                            <Text fill="WHITE" layoutX="10.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Time">
-                                                               <font>
-                                                                  <Font size="14.0" />
-                                                               </font>
-                                                            </Text>
-                                                            <Text fill="WHITE" layoutX="10.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Closing hour">
-                                                               <font>
-                                                                  <Font size="14.0" />
-                                                               </font>
-                                                            </Text>
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox alignment="TOP_RIGHT" prefHeight="62.0" prefWidth="91.0">
-                                                         <children>
-                                                            <FontAwesomeIconView glyphName="BOOK" size="30" wrappingWidth="45.28571319580078" />
-                                                         </children>
-                                                         <HBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </HBox.margin>
-                                                      </VBox>
-                                                   </children>
-                                                </HBox>
-                                                <HBox alignment="CENTER" layoutX="541.0" layoutY="15.0" prefHeight="104.0" prefWidth="400.0" style="-fx-background-color: #2E2E2E;" styleClass="cardshow2">
-                                                   <children>
-                                                      <VBox alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="115.0" spacing="10.0">
-                                                         <children>
-                                                            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Calender">
-                                                               <font>
-                                                                  <Font size="14.0" />
-                                                               </font>
-                                                            </Text>
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox alignment="TOP_RIGHT" prefHeight="62.0" prefWidth="91.0">
-                                                         <children>
-                                                            <FontAwesomeIconView glyphName="TABLE" size="30" wrappingWidth="45.28571319580078" />
-                                                         </children>
-                                                         <opaqueInsets>
-                                                            <Insets top="10.0" />
-                                                         </opaqueInsets>
-                                                         <padding>
-                                                            <Insets top="10.0" />
-                                                         </padding>
-                                                      </VBox>
-                                                   </children>
-                                                </HBox>
-                                             </children>
-                                             <padding>
-                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                             </padding>
-                                             <VBox.margin>
-                                                <Insets right="10.0" />
-                                             </VBox.margin>
-                                          </HBox>
-                                       </children>
-                                    </VBox>
-                                 </bottom>
-                                 <left>
-                                    <VBox prefHeight="253.0" prefWidth="223.0" spacing="5.0" styleClass="dashboard-cardview" stylesheets="@../style/dashbordStyle.css" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <VBox>
-                                             <children>
-                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="REMINDER">
-                                                   <font>
-                                                      <Font size="14.0" />
-                                                   </font>
-                                                </Text>
-                                                <Separator prefHeight="13.0" prefWidth="223.0" />
-                                             </children>
-                                          </VBox>
-                                          <HBox spacing="5.0">
-                                             <children>
-                                                <FontAwesomeIconView glyphName="CIRCLE" style="-fx-fill: white;" />
-                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text=" Mid term Break sept 1" wrappingWidth="209.595703125">
-                                                   <font>
-                                                      <Font name="Footlight MT Light" size="14.0" />
-                                                   </font>
-                                                </Text>
-                                             </children>
-                                          </HBox>
-                                          <HBox layoutX="15.0" layoutY="50.0" spacing="5.0">
-                                             <children>
-                                                <FontAwesomeIconView glyphName="CIRCLE" style="-fx-fill: white;" />
-                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="PTA metting on 2nd of Match" wrappingWidth="209.595703125">
-                                                   <font>
-                                                      <Font name="Footlight MT Light" size="14.0" />
-                                                   </font>
-                                                </Text>
-                                             </children>
-                                          </HBox>
-                                          <HBox layoutX="15.0" layoutY="68.0" spacing="5.0">
-                                             <children>
-                                                <FontAwesomeIconView glyphName="CIRCLE" style="-fx-fill: white;" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="Pry one Escortion excersise  " wrappingWidth="209.595703125">
-                                                   <font>
-                                                      <Font name="Footlight MT Light" size="14.0" />
-                                                   </font>
-                                                </Text>
-                                             </children>
-                                          </HBox>
-                                          <HBox layoutX="15.0" layoutY="87.0" spacing="5.0" />
-                                          <HBox layoutX="15.0" layoutY="106.0" spacing="5.0" />
-                                          <VBox>
-                                             <children>
-                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="NOTIFICATION">
-                                                   <font>
-                                                      <Font size="14.0" />
-                                                   </font>
-                                                </Text>
-                                                <Separator prefHeight="13.0" prefWidth="223.0" />
-                                             </children>
-                                          </VBox>
-                                          <HBox layoutX="15.0" layoutY="125.0" spacing="5.0">
-                                             <children>
-                                                <FontAwesomeIconView glyphName="CIRCLE" style="-fx-fill: white;" />
-                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text=" Mid term Break sept 1" wrappingWidth="209.595703125">
-                                                   <font>
-                                                      <Font name="Footlight MT Light" size="14.0" />
-                                                   </font>
-                                                </Text>
-                                             </children>
-                                          </HBox>
-                                          <HBox layoutX="15.0" layoutY="144.0" spacing="5.0">
-                                             <children>
-                                                <FontAwesomeIconView glyphName="CIRCLE" style="-fx-fill: white;" />
-                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text=" Mid term Break sept 1" wrappingWidth="209.595703125">
-                                                   <font>
-                                                      <Font name="Footlight MT Light" size="14.0" />
-                                                   </font>
-                                                </Text>
-                                             </children>
-                                          </HBox>
-                                          <HBox layoutX="15.0" layoutY="163.0" spacing="5.0">
-                                             <children>
-                                                <FontAwesomeIconView glyphName="CIRCLE" style="-fx-fill: white;" />
-                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text=" Mid term Break sept 1" wrappingWidth="209.595703125">
-                                                   <font>
-                                                      <Font name="Footlight MT Light" size="14.0" />
-                                                   </font>
-                                                </Text>
-                                             </children>
-                                          </HBox>
-                                          <HBox layoutX="15.0" layoutY="182.0" spacing="5.0">
-                                             <children>
-                                                <FontAwesomeIconView glyphName="CIRCLE" style="-fx-fill: white;" />
-                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text=" Mid term Break sept 1" wrappingWidth="209.595703125">
-                                                   <font>
-                                                      <Font name="Footlight MT Light" size="14.0" />
-                                                   </font>
-                                                </Text>
-                                             </children>
-                                          </HBox>
-                                       </children>
-                                       <BorderPane.margin>
-                                          <Insets />
-                                       </BorderPane.margin>
-                                       <padding>
-                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                       </padding></VBox>
-                                 </left>
-                                 <top>
-                                    <VBox alignment="CENTER_LEFT" prefHeight="82.0" prefWidth="1000.0" spacing="10.0" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <Text fill="#0c16cd" strokeType="OUTSIDE" strokeWidth="0.0" text="Praise Fountain Primary &amp; Nursery School">
-                                             <font>
-                                                <Font name="Berlin Sans FB Bold" size="36.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets left="30.0" />
-                                             </VBox.margin>
-                                          </Text>
-                                          <Separator prefWidth="200.0" style="-fx-background-color: #104E8B; -fx-border-color: #104E8B;" />
-                                       </children>
-                                       <padding>
-                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                       </padding>
-                                    </VBox>
-                                 </top>
-                                 <center>
-                                    <HBox prefHeight="233.0" prefWidth="1019.0" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <VBox prefHeight="233.0" prefWidth="781.0" spacing="10.0">
-                                             <children>
-                                                <Text fx:id="txt_day_greeting" fill="#970606" strokeType="OUTSIDE" strokeWidth="0.0" text="Good Moring">
-                                                   <font>
-                                                      <Font name="Comic Sans MS" size="64.0" />
-                                                   </font>
-                                                </Text>
-                                                <Text fx:id="text_dashboard_date" fill="#0033ff" stroke="#1d06ee" strokeType="OUTSIDE" strokeWidth="0.0" text="10:30 am  Monday" textAlignment="CENTER" wrappingWidth="755.9090728759766">
-                                                   <font>
-                                                      <Font name="Digital-7 Mono" size="55.0" />
-                                                   </font>
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </padding>
                                                    <VBox.margin>
-                                                      <Insets />
+                                                      <Insets right="10.0" />
                                                    </VBox.margin>
-                                                   <effect>
-                                                      <InnerShadow />
-                                                   </effect>
-                                                </Text>
+                                                </HBox>
+                                                <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="90.0" prefWidth="800.0" spacing="10.0">
+                                                   <children>
+                                                      <Region prefHeight="75.0" prefWidth="397.0" />
+                                                      <HBox alignment="CENTER" prefHeight="104.0" prefWidth="400.0" style="-fx-background-color: #458B00;" styleClass="cardshow2">
+                                                         <children>
+                                                            <VBox alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="115.0" spacing="5.0">
+                                                               <children>
+                                                                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Acedemic Info">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Text>
+                                                                  <Text fill="WHITE" layoutX="10.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Time">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Text>
+                                                                  <Text fill="WHITE" layoutX="10.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Closing hour">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Text>
+                                                               </children>
+                                                            </VBox>
+                                                            <VBox alignment="TOP_RIGHT" prefHeight="62.0" prefWidth="91.0">
+                                                               <children>
+                                                                  <FontAwesomeIconView glyphName="BOOK" size="30" wrappingWidth="45.28571319580078" />
+                                                               </children>
+                                                               <HBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </HBox.margin>
+                                                            </VBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" layoutX="541.0" layoutY="15.0" prefHeight="104.0" prefWidth="400.0" style="-fx-background-color: #2E2E2E;" styleClass="cardshow2">
+                                                         <children>
+                                                            <VBox alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="115.0" spacing="10.0">
+                                                               <children>
+                                                                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Calender">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Text>
+                                                               </children>
+                                                            </VBox>
+                                                            <VBox alignment="TOP_RIGHT" prefHeight="62.0" prefWidth="91.0">
+                                                               <children>
+                                                                  <FontAwesomeIconView glyphName="TABLE" size="30" wrappingWidth="45.28571319580078" />
+                                                               </children>
+                                                               <opaqueInsets>
+                                                                  <Insets top="10.0" />
+                                                               </opaqueInsets>
+                                                               <padding>
+                                                                  <Insets top="10.0" />
+                                                               </padding>
+                                                            </VBox>
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </padding>
+                                                   <VBox.margin>
+                                                      <Insets right="10.0" />
+                                                   </VBox.margin>
+                                                </HBox>
                                              </children>
-                                             <HBox.margin>
+                                          </VBox>
+                                       </bottom>
+                                       <left>
+                                          <VBox prefHeight="253.0" prefWidth="223.0" spacing="5.0" styleClass="dashboard-cardview" stylesheets="@../style/dashbordStyle.css" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <VBox>
+                                                   <children>
+                                                      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="REMINDER">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Separator prefHeight="13.0" prefWidth="223.0" />
+                                                   </children>
+                                                </VBox>
+                                                <HBox spacing="5.0">
+                                                   <children>
+                                                      <FontAwesomeIconView glyphName="CIRCLE" style="-fx-fill: white;" />
+                                                      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text=" Mid term Break sept 1" wrappingWidth="209.595703125">
+                                                         <font>
+                                                            <Font name="Footlight MT Light" size="14.0" />
+                                                         </font>
+                                                      </Text>
+                                                   </children>
+                                                </HBox>
+                                                <HBox layoutX="15.0" layoutY="50.0" spacing="5.0">
+                                                   <children>
+                                                      <FontAwesomeIconView glyphName="CIRCLE" style="-fx-fill: white;" />
+                                                      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="PTA metting on 2nd of Match" wrappingWidth="209.595703125">
+                                                         <font>
+                                                            <Font name="Footlight MT Light" size="14.0" />
+                                                         </font>
+                                                      </Text>
+                                                   </children>
+                                                </HBox>
+                                                <HBox layoutX="15.0" layoutY="68.0" spacing="5.0">
+                                                   <children>
+                                                      <FontAwesomeIconView glyphName="CIRCLE" style="-fx-fill: white;" />
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="Pry one Escortion excersise  " wrappingWidth="209.595703125">
+                                                         <font>
+                                                            <Font name="Footlight MT Light" size="14.0" />
+                                                         </font>
+                                                      </Text>
+                                                   </children>
+                                                </HBox>
+                                                <HBox layoutX="15.0" layoutY="87.0" spacing="5.0" />
+                                                <HBox layoutX="15.0" layoutY="106.0" spacing="5.0" />
+                                                <VBox>
+                                                   <children>
+                                                      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="NOTIFICATION">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Separator prefHeight="13.0" prefWidth="223.0" />
+                                                   </children>
+                                                </VBox>
+                                                <HBox layoutX="15.0" layoutY="125.0" spacing="5.0">
+                                                   <children>
+                                                      <FontAwesomeIconView glyphName="CIRCLE" style="-fx-fill: white;" />
+                                                      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text=" Mid term Break sept 1" wrappingWidth="209.595703125">
+                                                         <font>
+                                                            <Font name="Footlight MT Light" size="14.0" />
+                                                         </font>
+                                                      </Text>
+                                                   </children>
+                                                </HBox>
+                                                <HBox layoutX="15.0" layoutY="144.0" spacing="5.0">
+                                                   <children>
+                                                      <FontAwesomeIconView glyphName="CIRCLE" style="-fx-fill: white;" />
+                                                      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text=" Mid term Break sept 1" wrappingWidth="209.595703125">
+                                                         <font>
+                                                            <Font name="Footlight MT Light" size="14.0" />
+                                                         </font>
+                                                      </Text>
+                                                   </children>
+                                                </HBox>
+                                                <HBox layoutX="15.0" layoutY="163.0" spacing="5.0">
+                                                   <children>
+                                                      <FontAwesomeIconView glyphName="CIRCLE" style="-fx-fill: white;" />
+                                                      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text=" Mid term Break sept 1" wrappingWidth="209.595703125">
+                                                         <font>
+                                                            <Font name="Footlight MT Light" size="14.0" />
+                                                         </font>
+                                                      </Text>
+                                                   </children>
+                                                </HBox>
+                                                <HBox layoutX="15.0" layoutY="182.0" spacing="5.0">
+                                                   <children>
+                                                      <FontAwesomeIconView glyphName="CIRCLE" style="-fx-fill: white;" />
+                                                      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text=" Mid term Break sept 1" wrappingWidth="209.595703125">
+                                                         <font>
+                                                            <Font name="Footlight MT Light" size="14.0" />
+                                                         </font>
+                                                      </Text>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <BorderPane.margin>
                                                 <Insets />
-                                             </HBox.margin>
+                                             </BorderPane.margin>
                                              <padding>
-                                                <Insets left="20.0" top="30.0" />
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                              </padding>
                                           </VBox>
-                                       </children>
-                                    </HBox>
-                                 </center></BorderPane>
-                           </children></AnchorPane>
-                    </content>
-                  </Tab>
-                  <Tab text="Student Section">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <BorderPane layoutX="164.0" layoutY="56.0" prefHeight="335.0" prefWidth="800.0" styleClass="student-main-backgroound" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <left>
-                                    <HBox BorderPane.alignment="CENTER">
-                                       <children>
-                                          <VBox alignment="TOP_CENTER" prefHeight="335.0" prefWidth="181.0" style="-fx-background-color: #707070;">
+                                       </left>
+                                       <top>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="82.0" prefWidth="1000.0" spacing="10.0" BorderPane.alignment="CENTER">
                                              <children>
-                                                <JFXButton fx:id="nusery_one_button" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="25.0" onAction="#activateClassButton" prefHeight="50.0" prefWidth="181.0" ripplerFill="WHITE" styleClass="button-menu" text="Nusery 1">
-                                                   <graphic>
-                                                      <FontAwesomeIconView glyphName="BOOK" size="15" />
-                                                   </graphic>
+                                                <Text fill="#0c16cd" strokeType="OUTSIDE" strokeWidth="0.0" text="Praise Fountain Primary &amp; Nursery School">
+                                                   <font>
+                                                      <Font name="Berlin Sans FB Bold" size="36.0" />
+                                                   </font>
                                                    <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                   <padding>
                                                       <Insets left="30.0" />
-                                                   </padding>
-                                                </JFXButton>
-                                                <JFXButton fx:id="nursery_two_button" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="25.0" layoutX="10.0" layoutY="10.0" onAction="#activateClassButton" prefHeight="50.0" prefWidth="181.0" ripplerFill="WHITE" styleClass="button-menu" text="Nusery 2">
-                                                   <graphic>
-                                                      <FontAwesomeIconView glyphName="USER" size="15" />
-                                                   </graphic>
-                                                   <VBox.margin>
-                                                      <Insets />
                                                    </VBox.margin>
-                                                   <padding>
-                                                      <Insets left="30.0" />
-                                                   </padding>
-                                                </JFXButton>
-                                                <JFXButton fx:id="nursery_3_button" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="25.0" layoutX="10.0" layoutY="60.0" onAction="#activateClassButton" prefHeight="50.0" prefWidth="181.0" ripplerFill="WHITE" styleClass="button-menu" text="Nusery 3">
-                                                   <graphic>
-                                                      <FontAwesomeIconView glyphName="USER" size="15" />
-                                                   </graphic>
-                                                   <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                   <padding>
-                                                      <Insets left="30.0" />
-                                                   </padding>
-                                                </JFXButton>
-                                                <JFXButton fx:id="pry_1_button" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="25.0" layoutX="10.0" layoutY="110.0" onAction="#activateClassButton" prefHeight="50.0" prefWidth="181.0" ripplerFill="WHITE" styleClass="button-menu" text="Primary One">
-                                                   <graphic>
-                                                      <FontAwesomeIconView glyphName="USER" size="15" />
-                                                   </graphic>
-                                                   <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                   <padding>
-                                                      <Insets left="30.0" />
-                                                   </padding>
-                                                </JFXButton>
-                                                <JFXButton fx:id="pry_2_button" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="25.0" layoutX="10.0" layoutY="160.0" onAction="#activateClassButton" prefHeight="50.0" prefWidth="181.0" ripplerFill="WHITE" styleClass="button-menu" text="Primary Two">
-                                                   <graphic>
-                                                      <FontAwesomeIconView glyphName="USER" size="15" />
-                                                   </graphic>
-                                                   <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                   <padding>
-                                                      <Insets left="30.0" />
-                                                   </padding>
-                                                </JFXButton>
-                                                <JFXButton fx:id="pry_3_button" alignment="BASELINE_LEFT" graphicTextGap="25.0" layoutX="10.0" layoutY="210.0" onAction="#activateClassButton" prefHeight="50.0" prefWidth="181.0" ripplerFill="WHITE" styleClass="button-menu" text="Primary Three">
-                                                   <graphic>
-                                                      <FontAwesomeIconView glyphName="USER" size="15" />
-                                                   </graphic>
-                                                   <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                   <padding>
-                                                      <Insets left="30.0" />
-                                                   </padding>
-                                                </JFXButton>
-                                                <JFXButton fx:id="pry_4_button" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="25.0" layoutX="10.0" layoutY="260.0" onAction="#activateClassButton" prefHeight="50.0" prefWidth="181.0" ripplerFill="WHITE" styleClass="button-menu" text="Primary Four">
-                                                   <graphic>
-                                                      <FontAwesomeIconView glyphName="USER" size="15" />
-                                                   </graphic>
-                                                   <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                   <padding>
-                                                      <Insets left="30.0" />
-                                                   </padding>
-                                                </JFXButton>
-                                                <JFXButton fx:id="pry_5_button" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="25.0" layoutX="10.0" layoutY="298.0" onAction="#activateClassButton" prefHeight="50.0" prefWidth="181.0" ripplerFill="WHITE" styleClass="button-menu" text="Primary Five">
-                                                   <graphic>
-                                                      <FontAwesomeIconView glyphName="USER" size="15" />
-                                                   </graphic>
-                                                   <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                   <padding>
-                                                      <Insets left="30.0" />
-                                                   </padding>
-                                                </JFXButton>
-                                                <JFXButton fx:id="btn_show_student" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="10.0" layoutX="10.0" layoutY="360.0" onAction="#activateLoadStudentWindow" prefHeight="50.0" prefWidth="154.0" ripplerFill="#450e94" styleClass="detail-button" text="Show Info">
-                                                   <graphic>
-                                                      <FontAwesomeIconView fx:id="btn_student_detail" glyphName="TABLE" size="15" text="" />
-                                                   </graphic>
-                                                   <padding>
-                                                      <Insets left="30.0" />
-                                                   </padding>
-                                                   <VBox.margin>
-                                                      <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
-                                                   </VBox.margin>
-                                                </JFXButton>
-                                             </children>
-                                          </VBox>
-                                          <Separator orientation="VERTICAL" prefHeight="200.0" style="-fx-background-color: black;" />
-                                       </children>
-                                    </HBox>
-                                 </left>
-                                 <center>
-                                    <AnchorPane BorderPane.alignment="CENTER">
-                                       <children>
-                                          <VBox layoutX="8.0" prefHeight="335.0" prefWidth="619.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <children>
-                                                <HBox>
-                                                   <VBox.margin>
-                                                      <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
-                                                   </VBox.margin>
-                                                   <children>
-                                                      <Text fill="#240540" strokeType="OUTSIDE" strokeWidth="0.0" text="STUDENT INFORMATION PANEL" textAlignment="CENTER" wrappingWidth="391.119140625">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                      </Text>
-                                                      <Text fx:id="student_current_name" fill="#240540" layoutX="10.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="340.119140625">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                      </Text>
-                                                   </children>
-                                                </HBox>
-                                                <TableView fx:id="student_table" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
-                                                  <columns>
-                                                      <TableColumn fx:id="student_id_column" maxWidth="1.7976931348623157E308" prefWidth="70.0" text="ID" />
-                                                    <TableColumn fx:id="student_name_column" maxWidth="1.7976931348623157E308" prefWidth="183.0" text="Name" />
-                                                    <TableColumn fx:id="student_surname_column" maxWidth="1.7976931348623157E308" prefWidth="190.0" text="Surname" />
-                                                      <TableColumn fx:id="stud_DOB_column" maxWidth="1.7976931348623157E308" prefWidth="150.0" text="DOB" />
-                                                      <TableColumn fx:id="stud_payStatus_col" maxWidth="1.7976931348623157E308" prefWidth="150.0" text="Payment Status" />
-                                                      <TableColumn fx:id="stud_class_col" maxWidth="1.7976931348623157E308" prefWidth="150.0" text="Class" />
-                                                      <TableColumn fx:id="stud_age_col" maxWidth="1.7976931348623157E308" prefWidth="150.0" text="Age" />
-                                                  </columns>
-                                                   <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                </TableView>
-                                             </children>
-                                          </VBox>
-                                       </children>
-                                       <BorderPane.margin>
-                                          <Insets bottom="30.0" left="30.0" right="30.0" top="10.0" />
-                                       </BorderPane.margin>
-                                    </AnchorPane>
-                                 </center></BorderPane>
-                           </children></AnchorPane>
-                    </content>
-                  </Tab>
-                  <Tab text="Staff Section">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <BorderPane prefHeight="335.0" prefWidth="800.0" styleClass="student-main-backgroound" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <left>
-                                    <VBox prefHeight="335.0" prefWidth="181.0" style="-fx-background-color: #707070;" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <JFXButton fx:id="btn_aced_staff" alignment="BASELINE_LEFT" graphicTextGap="25.0" onAction="#activateStaffButton" prefHeight="50.0" prefWidth="181.0" ripplerFill="WHITE" styleClass="button-menu" text="Academic Staff">
-                                             <graphic>
-                                                <FontAwesomeIconView glyphName="USER" size="15" />
-                                             </graphic>
-                                             <padding>
-                                                <Insets left="25.0" />
-                                             </padding>
-                                          </JFXButton>
-                                          <JFXButton fx:id="btn_non_aced_staff" alignment="BASELINE_LEFT" graphicTextGap="25.0" layoutX="10.0" layoutY="10.0" onAction="#activateStaffButton" prefHeight="50.0" prefWidth="181.0" ripplerFill="WHITE" styleClass="button-menu" text="Non Academic Staff">
-                                             <graphic>
-                                                <FontAwesomeIconView glyphName="USER" size="15" />
-                                             </graphic>
-                                             <padding>
-                                                <Insets left="25.0" />
-                                             </padding>
-                                          </JFXButton>
-                                          <JFXButton fx:id="btn_staff_info" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="10.0" onAction="#activateLoadStaffWindow" prefHeight="50.0" prefWidth="154.0" ripplerFill="#450e94" styleClass="detail-button" text="Show Info">
-                                             <graphic>
-                                                <FontAwesomeIconView glyphName="TABLE" size="15" text="" />
-                                             </graphic>
-                                             <padding>
-                                                <Insets left="30.0" />
-                                             </padding>
-                                             <VBox.margin>
-                                                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                                             </VBox.margin>
-                                          </JFXButton>
-                                       </children>
-                                    </VBox>
-                                 </left>
-                                 <center>
-                                    <AnchorPane BorderPane.alignment="CENTER">
-                                       <children>
-                                          <VBox layoutX="8.0" prefHeight="335.0" prefWidth="619.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <children>
-                                                <HBox prefHeight="27.0" prefWidth="448.0">
-                                                   <VBox.margin>
-                                                      <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
-                                                   </VBox.margin>
-                                                   <children>
-                                                      <Text fill="#240540" strokeType="OUTSIDE" strokeWidth="0.0" text="STAFF INFORMATION PANEL" textAlignment="CENTER" wrappingWidth="356.119140625">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                      </Text>
-                                                      <Text fx:id="staff_current_name" fill="#240540" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="410.119140625">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                      </Text>
-                                                   </children>
-                                                </HBox>
-                                                <TableView fx:id="staff_table_view" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
-                                                   <columns>
-                                                      <TableColumn fx:id="staff_id_col" prefWidth="70.0" text="ID" />
-                                                      <TableColumn fx:id="staff_othername_col" prefWidth="150.0" text="Name" />
-                                                      <TableColumn fx:id="staff_firstname_col" prefWidth="150.0" text="Surname" />
-                                                      <TableColumn fx:id="staff_doe_col" prefWidth="150.0" text="DOE" />
-                                                      <TableColumn fx:id="staff_classtaking_col" prefWidth="150.0" text="Class Taking" />
-                                                      <TableColumn fx:id="staff_sex_col" prefWidth="150.0" text="Gender" />
-                                                      <TableColumn fx:id="staff_age_col" prefWidth="150.0" text="Age" />
-                                                      <TableColumn fx:id="staff_contact_col" maxWidth="800.0" prefWidth="150.0" text="Phone Contact" />
-                                                   </columns>
-                                                   <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                </TableView>
-                                             </children>
-                                          </VBox>
-                                       </children>
-                                       <BorderPane.margin>
-                                          <Insets bottom="30.0" left="30.0" right="30.0" top="10.0" />
-                                       </BorderPane.margin>
-                                    </AnchorPane>
-                                 </center>
-                              </BorderPane>
-                           </children></AnchorPane>
-                    </content>
-                  </Tab>
-                  <Tab text="Settings">
-                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <BorderPane layoutX="319.0" layoutY="100.0" prefHeight="485.0" prefWidth="1000.0" styleClass="backImage" stylesheets="@../style/detailPaneStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <top>
-                                    <VBox alignment="CENTER_LEFT" prefHeight="82.0" prefWidth="1000.0" spacing="10.0" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <Text fill="#0c16cd" strokeType="OUTSIDE" strokeWidth="0.0" text="SETTINGS">
-                                             <font>
-                                                <Font name="Berlin Sans FB Bold" size="36.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets left="30.0" />
-                                             </VBox.margin>
-                                          </Text>
-                                          <Separator prefWidth="200.0" style="-fx-background-color: #104E8B; -fx-border-color: #104E8B;" />
-                                       </children>
-                                       <padding>
-                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                       </padding>
-                                    </VBox>
-                                 </top>
-                                 <center>
-                                    <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <VBox opacity="0.66" prefHeight="403.0" prefWidth="438.0" style="-fx-background-color: #FFFFFF;">
-                                             <children>
-                                                <HBox alignment="BOTTOM_LEFT" prefHeight="69.0" prefWidth="343.0">
-                                                   <children>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Admin" wrappingWidth="128.13671875">
-                                                         <font>
-                                                            <Font name="Serif Regular" size="18.0" />
-                                                         </font>
-                                                      </Text>
-                                                      <JFXTextField fx:id="txt_admin_setting" labelFloat="true" prefHeight="34.0" prefWidth="254.0" promptText="Enter Admin Name" unFocusColor="#0511ff">
-                                                         <HBox.margin>
-                                                            <Insets bottom="5.0" />
-                                                         </HBox.margin>
-                                                      </JFXTextField>
-                                                   </children>
-                                                </HBox>
-                                                <HBox alignment="BOTTOM_LEFT" layoutX="20.0" layoutY="20.0" prefHeight="69.0" prefWidth="343.0">
-                                                   <children>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="128.13671875">
-                                                         <font>
-                                                            <Font name="Serif Regular" size="18.0" />
-                                                         </font>
-                                                      </Text>
-                                                      <JFXPasswordField fx:id="txt_password_setting" labelFloat="true" prefHeight="34.0" prefWidth="254.0" promptText="Enter Admin Key" unFocusColor="#1d53d0" />
-                                                   </children>
-                                                </HBox>
-                                                <HBox alignment="CENTER" prefHeight="72.0" prefWidth="418.0">
-                                                   <children>
-                                                      <JFXButton fx:id="btn_settings" buttonType="RAISED" onAction="#activateUpdateSetting" prefHeight="45.0" prefWidth="150.0" ripplerFill="#21c1cd" text="Update Setting" />
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets top="10.0" />
-                                                   </VBox.margin>
-                                                </HBox>
+                                                </Text>
+                                                <Separator prefWidth="200.0" style="-fx-background-color: #104E8B; -fx-border-color: #104E8B;" />
                                              </children>
                                              <padding>
                                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                              </padding>
                                           </VBox>
-                                          <VBox prefHeight="200.0" prefWidth="100.0" />
-                                       </children>
-                                    </HBox>
-                                 </center>
-                                 <right>
-                                    <VBox alignment="BOTTOM_CENTER" prefHeight="403.0" prefWidth="462.0" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #4A4A4A;">
+                                       </top>
+                                       <center>
+                                          <HBox prefHeight="233.0" prefWidth="1019.0" BorderPane.alignment="CENTER">
                                              <children>
-                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="   Praise      Fountain School" textAlignment="CENTER" wrappingWidth="317.099609375">
-                                                   <font>
-                                                      <Font name="Elephant" size="38.0" />
-                                                   </font>
-                                                </Text>
+                                                <VBox prefHeight="233.0" prefWidth="781.0" spacing="10.0">
+                                                   <children>
+                                                      <Text fx:id="txt_day_greeting" fill="#970606" strokeType="OUTSIDE" strokeWidth="0.0" text="Good Moring">
+                                                         <font>
+                                                            <Font name="Comic Sans MS" size="64.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Text fx:id="text_dashboard_date" fill="#0033ff" stroke="#1d06ee" strokeType="OUTSIDE" strokeWidth="0.0" text="10:30 am  Monday" textAlignment="CENTER" wrappingWidth="755.9090728759766">
+                                                         <font>
+                                                            <Font name="Digital-7 Mono" size="55.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                         <effect>
+                                                            <InnerShadow />
+                                                         </effect>
+                                                      </Text>
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                   <padding>
+                                                      <Insets left="20.0" top="30.0" />
+                                                   </padding>
+                                                </VBox>
                                              </children>
-                                          </StackPane>
+                                          </HBox>
+                                       </center>
+                                    </BorderPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab text="Student Section">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <BorderPane layoutX="164.0" layoutY="56.0" prefHeight="335.0" prefWidth="800.0" styleClass="student-main-backgroound" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <left>
+                                          <HBox BorderPane.alignment="CENTER">
+                                             <children>
+                                                <VBox alignment="TOP_CENTER" prefHeight="335.0" prefWidth="181.0" style="-fx-background-color: #707070;">
+                                                   <children>
+                                                      <JFXButton fx:id="nusery_one_button" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="25.0" onAction="#activateClassButton" prefHeight="50.0" prefWidth="181.0" ripplerFill="WHITE" styleClass="button-menu" text="Nusery 1">
+                                                         <graphic>
+                                                            <FontAwesomeIconView glyphName="BOOK" size="15" />
+                                                         </graphic>
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                         <padding>
+                                                            <Insets left="30.0" />
+                                                         </padding>
+                                                      </JFXButton>
+                                                      <JFXButton fx:id="nursery_two_button" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="25.0" layoutX="10.0" layoutY="10.0" onAction="#activateClassButton" prefHeight="50.0" prefWidth="181.0" ripplerFill="WHITE" styleClass="button-menu" text="Nusery 2">
+                                                         <graphic>
+                                                            <FontAwesomeIconView glyphName="USER" size="15" />
+                                                         </graphic>
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                         <padding>
+                                                            <Insets left="30.0" />
+                                                         </padding>
+                                                      </JFXButton>
+                                                      <JFXButton fx:id="nursery_3_button" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="25.0" layoutX="10.0" layoutY="60.0" onAction="#activateClassButton" prefHeight="50.0" prefWidth="181.0" ripplerFill="WHITE" styleClass="button-menu" text="Nusery 3">
+                                                         <graphic>
+                                                            <FontAwesomeIconView glyphName="USER" size="15" />
+                                                         </graphic>
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                         <padding>
+                                                            <Insets left="30.0" />
+                                                         </padding>
+                                                      </JFXButton>
+                                                      <JFXButton fx:id="pry_1_button" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="25.0" layoutX="10.0" layoutY="110.0" onAction="#activateClassButton" prefHeight="50.0" prefWidth="181.0" ripplerFill="WHITE" styleClass="button-menu" text="Primary One">
+                                                         <graphic>
+                                                            <FontAwesomeIconView glyphName="USER" size="15" />
+                                                         </graphic>
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                         <padding>
+                                                            <Insets left="30.0" />
+                                                         </padding>
+                                                      </JFXButton>
+                                                      <JFXButton fx:id="pry_2_button" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="25.0" layoutX="10.0" layoutY="160.0" onAction="#activateClassButton" prefHeight="50.0" prefWidth="181.0" ripplerFill="WHITE" styleClass="button-menu" text="Primary Two">
+                                                         <graphic>
+                                                            <FontAwesomeIconView glyphName="USER" size="15" />
+                                                         </graphic>
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                         <padding>
+                                                            <Insets left="30.0" />
+                                                         </padding>
+                                                      </JFXButton>
+                                                      <JFXButton fx:id="pry_3_button" alignment="BASELINE_LEFT" graphicTextGap="25.0" layoutX="10.0" layoutY="210.0" onAction="#activateClassButton" prefHeight="50.0" prefWidth="181.0" ripplerFill="WHITE" styleClass="button-menu" text="Primary Three">
+                                                         <graphic>
+                                                            <FontAwesomeIconView glyphName="USER" size="15" />
+                                                         </graphic>
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                         <padding>
+                                                            <Insets left="30.0" />
+                                                         </padding>
+                                                      </JFXButton>
+                                                      <JFXButton fx:id="pry_4_button" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="25.0" layoutX="10.0" layoutY="260.0" onAction="#activateClassButton" prefHeight="50.0" prefWidth="181.0" ripplerFill="WHITE" styleClass="button-menu" text="Primary Four">
+                                                         <graphic>
+                                                            <FontAwesomeIconView glyphName="USER" size="15" />
+                                                         </graphic>
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                         <padding>
+                                                            <Insets left="30.0" />
+                                                         </padding>
+                                                      </JFXButton>
+                                                      <JFXButton fx:id="pry_5_button" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="25.0" layoutX="10.0" layoutY="298.0" onAction="#activateClassButton" prefHeight="50.0" prefWidth="181.0" ripplerFill="WHITE" styleClass="button-menu" text="Primary Five">
+                                                         <graphic>
+                                                            <FontAwesomeIconView glyphName="USER" size="15" />
+                                                         </graphic>
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                         <padding>
+                                                            <Insets left="30.0" />
+                                                         </padding>
+                                                      </JFXButton>
+                                                      <JFXButton fx:id="btn_show_student" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="10.0" layoutX="10.0" layoutY="360.0" onAction="#activateLoadStudentWindow" prefHeight="50.0" prefWidth="154.0" ripplerFill="#450e94" styleClass="detail-button" text="Show Info">
+                                                         <graphic>
+                                                            <FontAwesomeIconView fx:id="btn_student_detail" glyphName="TABLE" size="15" text="" />
+                                                         </graphic>
+                                                         <padding>
+                                                            <Insets left="30.0" />
+                                                         </padding>
+                                                         <VBox.margin>
+                                                            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                                         </VBox.margin>
+                                                      </JFXButton>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                       </left>
+                                       <center>
+                                          <AnchorPane BorderPane.alignment="CENTER">
+                                             <children>
+                                                <VBox layoutX="8.0" prefHeight="335.0" prefWidth="619.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <HBox>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+                                                         </VBox.margin>
+                                                         <children>
+                                                            <Text fill="#240540" strokeType="OUTSIDE" strokeWidth="0.0" text="STUDENT INFORMATION PANEL" textAlignment="CENTER" wrappingWidth="391.119140625">
+                                                               <font>
+                                                                  <Font name="System Bold" size="20.0" />
+                                                               </font>
+                                                            </Text>
+                                                            <Text fx:id="student_current_name" fill="#240540" layoutX="10.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="340.119140625">
+                                                               <font>
+                                                                  <Font name="System Bold" size="20.0" />
+                                                               </font>
+                                                            </Text>
+                                                         </children>
+                                                      </HBox>
+                                                      <TableView fx:id="student_table" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                                        <columns>
+                                                            <TableColumn fx:id="student_id_column" maxWidth="1.7976931348623157E308" prefWidth="70.0" text="ID" />
+                                                          <TableColumn fx:id="student_name_column" maxWidth="1.7976931348623157E308" prefWidth="183.0" text="Name" />
+                                                          <TableColumn fx:id="student_surname_column" maxWidth="1.7976931348623157E308" prefWidth="190.0" text="Surname" />
+                                                            <TableColumn fx:id="stud_DOB_column" maxWidth="1.7976931348623157E308" prefWidth="150.0" text="DOB" />
+                                                            <TableColumn fx:id="stud_payStatus_col" maxWidth="1.7976931348623157E308" prefWidth="150.0" text="Payment Status" />
+                                                            <TableColumn fx:id="stud_class_col" maxWidth="1.7976931348623157E308" prefWidth="150.0" text="Class" />
+                                                            <TableColumn fx:id="stud_age_col" maxWidth="1.7976931348623157E308" prefWidth="150.0" text="Age" />
+                                                        </columns>
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                      </TableView>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                             <BorderPane.margin>
+                                                <Insets bottom="30.0" left="30.0" right="30.0" top="10.0" />
+                                             </BorderPane.margin>
+                                          </AnchorPane>
+                                       </center>
+                                    </BorderPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab text="Staff Section">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <BorderPane prefHeight="335.0" prefWidth="800.0" styleClass="student-main-backgroound" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <left>
+                                          <VBox prefHeight="335.0" prefWidth="181.0" style="-fx-background-color: #707070;" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <JFXButton fx:id="btn_aced_staff" alignment="BASELINE_LEFT" graphicTextGap="25.0" onAction="#activateStaffButton" prefHeight="50.0" prefWidth="181.0" ripplerFill="WHITE" styleClass="button-menu" text="Academic Staff">
+                                                   <graphic>
+                                                      <FontAwesomeIconView glyphName="USER" size="15" />
+                                                   </graphic>
+                                                   <padding>
+                                                      <Insets left="25.0" />
+                                                   </padding>
+                                                </JFXButton>
+                                                <JFXButton fx:id="btn_non_aced_staff" alignment="BASELINE_LEFT" graphicTextGap="25.0" layoutX="10.0" layoutY="10.0" onAction="#activateStaffButton" prefHeight="50.0" prefWidth="181.0" ripplerFill="WHITE" styleClass="button-menu" text="Non Academic Staff">
+                                                   <graphic>
+                                                      <FontAwesomeIconView glyphName="USER" size="15" />
+                                                   </graphic>
+                                                   <padding>
+                                                      <Insets left="25.0" />
+                                                   </padding>
+                                                </JFXButton>
+                                                <JFXButton fx:id="btn_staff_info" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="10.0" onAction="#activateLoadStaffWindow" prefHeight="50.0" prefWidth="154.0" ripplerFill="#450e94" styleClass="detail-button" text="Show Info">
+                                                   <graphic>
+                                                      <FontAwesomeIconView glyphName="TABLE" size="15" text="" />
+                                                   </graphic>
+                                                   <padding>
+                                                      <Insets left="30.0" />
+                                                   </padding>
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                                   </VBox.margin>
+                                                </JFXButton>
+                                             </children>
+                                          </VBox>
+                                       </left>
+                                       <center>
+                                          <AnchorPane BorderPane.alignment="CENTER">
+                                             <children>
+                                                <VBox layoutX="8.0" prefHeight="335.0" prefWidth="619.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <HBox prefHeight="27.0" prefWidth="448.0">
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+                                                         </VBox.margin>
+                                                         <children>
+                                                            <Text fill="#240540" strokeType="OUTSIDE" strokeWidth="0.0" text="STAFF INFORMATION PANEL" textAlignment="CENTER" wrappingWidth="356.119140625">
+                                                               <font>
+                                                                  <Font name="System Bold" size="20.0" />
+                                                               </font>
+                                                            </Text>
+                                                            <Text fx:id="staff_current_name" fill="#240540" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="410.119140625">
+                                                               <font>
+                                                                  <Font name="System Bold" size="20.0" />
+                                                               </font>
+                                                            </Text>
+                                                         </children>
+                                                      </HBox>
+                                                      <TableView fx:id="staff_table_view" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                                         <columns>
+                                                            <TableColumn fx:id="staff_id_col" prefWidth="70.0" text="ID" />
+                                                            <TableColumn fx:id="staff_othername_col" prefWidth="150.0" text="Name" />
+                                                            <TableColumn fx:id="staff_firstname_col" prefWidth="150.0" text="Surname" />
+                                                            <TableColumn fx:id="staff_doe_col" prefWidth="150.0" text="DOE" />
+                                                            <TableColumn fx:id="staff_classtaking_col" prefWidth="150.0" text="Class Taking" />
+                                                            <TableColumn fx:id="staff_sex_col" prefWidth="150.0" text="Gender" />
+                                                            <TableColumn fx:id="staff_age_col" prefWidth="150.0" text="Age" />
+                                                            <TableColumn fx:id="staff_contact_col" maxWidth="800.0" prefWidth="150.0" text="Phone Contact" />
+                                                         </columns>
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                      </TableView>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                             <BorderPane.margin>
+                                                <Insets bottom="30.0" left="30.0" right="30.0" top="10.0" />
+                                             </BorderPane.margin>
+                                          </AnchorPane>
+                                       </center>
+                                    </BorderPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab text="Settings">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <BorderPane prefHeight="485.0" prefWidth="1000.0" styleClass="backImage" stylesheets="@../style/detailPaneStyle.css">
+                                             <top>
+                                                <VBox alignment="CENTER_LEFT" prefHeight="82.0" prefWidth="1000.0" spacing="10.0" BorderPane.alignment="CENTER">
+                                                   <children>
+                                                      <Text fill="#0c16cd" strokeType="OUTSIDE" strokeWidth="0.0" text="SETTINGS">
+                                                         <font>
+                                                            <Font name="Berlin Sans FB Bold" size="36.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="30.0" />
+                                                         </VBox.margin>
+                                                      </Text>
+                                                      <Separator prefWidth="200.0" style="-fx-background-color: #104E8B; -fx-border-color: #104E8B;" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </VBox>
+                                             </top>
+                                             <center>
+                                                <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                                   <children>
+                                                      <VBox opacity="0.66" prefHeight="403.0" prefWidth="438.0" style="-fx-background-color: #FFFFFF;">
+                                                         <children>
+                                                            <HBox alignment="BOTTOM_LEFT" prefHeight="69.0" prefWidth="343.0">
+                                                               <children>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Admin" wrappingWidth="128.13671875">
+                                                                     <font>
+                                                                        <Font name="Serif Regular" size="18.0" />
+                                                                     </font>
+                                                                  </Text>
+                                                                  <JFXTextField fx:id="txt_admin_setting" labelFloat="true" prefHeight="34.0" prefWidth="254.0" promptText="Enter Admin Name" unFocusColor="#0511ff">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </JFXTextField>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="BOTTOM_LEFT" layoutX="20.0" layoutY="20.0" prefHeight="69.0" prefWidth="343.0">
+                                                               <children>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="128.13671875">
+                                                                     <font>
+                                                                        <Font name="Serif Regular" size="18.0" />
+                                                                     </font>
+                                                                  </Text>
+                                                                  <JFXPasswordField fx:id="txt_password_setting" labelFloat="true" prefHeight="34.0" prefWidth="254.0" promptText="Enter Admin Key" unFocusColor="#1d53d0" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER" prefHeight="72.0" prefWidth="418.0">
+                                                               <children>
+                                                                  <JFXButton fx:id="btn_settings" buttonType="RAISED" onAction="#activateUpdateSetting" prefHeight="45.0" prefWidth="150.0" ripplerFill="#21c1cd" text="Update Setting" />
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0" />
+                                                   </children>
+                                                </HBox>
+                                             </center>
+                                             <right>
+                                                <VBox alignment="BOTTOM_CENTER" prefHeight="403.0" prefWidth="462.0" BorderPane.alignment="CENTER">
+                                                   <children>
+                                                      <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #4A4A4A;">
+                                                         <children>
+                                                            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="   Praise      Fountain School" textAlignment="CENTER" wrappingWidth="317.099609375">
+                                                               <font>
+                                                                  <Font name="Elephant" size="38.0" />
+                                                               </font>
+                                                            </Text>
+                                                         </children>
+                                                      </StackPane>
+                                                   </children>
+                                                </VBox>
+                                             </right>
+                                          </BorderPane>
                                        </children>
-                                    </VBox>
-                                 </right>
-                              </BorderPane>
-                           </children>
-                        </AnchorPane>
-                     </content>
-                  </Tab>
-               </tabs>
-            </JFXTabPane>
-         </center>
-         <top>
-            <VBox BorderPane.alignment="CENTER">
-               <children>
-                  <MenuBar>
-                    <menus>
-                      <Menu mnemonicParsing="false" text="File">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="Close" />
-                        </items>
-                      </Menu>
-                      <Menu mnemonicParsing="false" text="Edit">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="Delete" />
-                        </items>
-                      </Menu>
-                      <Menu mnemonicParsing="false" text="Help">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="About" />
-                        </items>
-                      </Menu>
-                    </menus>
-                  </MenuBar>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </VBox.margin>
-                  </Text>
-               </children>
-            </VBox>
-         </top>
-         <bottom>
-            <HBox alignment="CENTER_RIGHT" maxWidth="2000.0" prefHeight="42.0" prefWidth="800.0" style="-fx-background-color: #333333;" BorderPane.alignment="CENTER_RIGHT">
-               <padding>
-                  <Insets bottom="5.0" left="5.0" right="20.0" top="5.0" />
-               </padding>
-               <children>
-                  <JFXButton fx:id="logout_button" buttonType="RAISED" onAction="#activateLogout" opacity="0.57" prefHeight="38.0" prefWidth="86.0" ripplerFill="#c35353" style="-fx-background-color: red;" text="LOG OUT" />
-               </children>
-            </HBox>
-         </bottom>
-      </BorderPane>
+                                    </StackPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </JFXTabPane>
+               </center>
+               <top>
+                  <VBox BorderPane.alignment="CENTER">
+                     <children>
+                        <MenuBar>
+                          <menus>
+                            <Menu mnemonicParsing="false" text="File">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="Close" />
+                              </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="Edit">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="Delete" />
+                              </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="Help">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="About" />
+                              </items>
+                            </Menu>
+                          </menus>
+                        </MenuBar>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                  </VBox>
+               </top>
+               <bottom>
+                  <HBox alignment="CENTER_RIGHT" maxWidth="2000.0" prefHeight="42.0" prefWidth="800.0" style="-fx-background-color: #333333;" BorderPane.alignment="CENTER_RIGHT">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="20.0" top="5.0" />
+                     </padding>
+                     <children>
+                        <JFXButton fx:id="logout_button" buttonType="RAISED" onAction="#activateLogout" opacity="0.57" prefHeight="38.0" prefWidth="86.0" ripplerFill="#c35353" style="-fx-background-color: red;" text="LOG OUT" />
+                     </children>
+                  </HBox>
+               </bottom>
+            </BorderPane>
+         </children>
+      </AnchorPane>
    </children>
-</AnchorPane>
+</StackPane>
