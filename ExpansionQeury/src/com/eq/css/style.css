@@ -1,0 +1,38 @@
+.root{
+
+	-fx-background:white;
+}
+
+
+.text-field
+{
+	-fx-background-radius:40px; 
+	-fx-border-radius:40px; 
+	-fx-border-color:gray ;
+	-fx-background-color:white; 
+	-fx-box-shadow:black 10px 10px; 
+	-fx-effect:dropshadow(gaussian, gray, 5, 0.4, 4, 4);	
+}
+
+
+.firstLayer
+{
+	
+	
+}
+
+.secondLayer
+{
+	
+	-fx-background-color:white; 
+	-fx-border-color:white ; 
+	-fx-border-radius:40px; 
+	-fx-background-radius:40px;  
+	-fx-effect:dropshadow(gaussian, gray, 5, 0.9, 1, 6);
+}
+
+
+.app_background{
+	
+	 -fx-background-image:url("/ont2.png");
+}

@@ -1,0 +1,15 @@
+.root{
+
+	-fx-background:white;
+}
+
+
+.text-field
+{
+	-fx-background-radius:40px; 
+	-fx-border-radius:40px; 
+	-fx-border-color:gray ;
+	-fx-background-color:white; 
+	-fx-box-shadow:black 10px 10px;
+	 
+}

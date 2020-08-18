@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_131"/>
+	<classpathentry kind="lib" path="C:/JAVA WORKSPACE/ExpansionQeury/src/com/eq/lib/edu.mit.jwi_2.4.0_jdk.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/collection-0.7.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/commons-cli-1.4.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/commons-codec-1.11.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/commons-compress-1.18.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/commons-csv-1.5.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/commons-io-2.6.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/httpclient-4.5.5.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/httpclient-cache-4.5.5.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/httpcore-4.4.9.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/jackson-annotations-2.9.0.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/jackson-core-2.9.9.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/jackson-databind-2.9.9.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/jcl-over-slf4j-1.7.26.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/jena-arq-3.12.0.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/jena-base-3.12.0.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/jena-cmds-3.12.0.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/jena-core-3.12.0.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/jena-dboe-base-3.12.0.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/jena-dboe-index-3.12.0.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/jena-dboe-transaction-3.12.0.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/jena-dboe-trans-data-3.12.0.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/jena-iri-3.12.0.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/jena-rdfconnection-3.12.0.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/jena-shaded-guava-3.12.0.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/jena-tdb2-3.12.0.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/jena-tdb-3.12.0.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/jsonld-java-0.12.3.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/libthrift-0.12.0.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/slf4j-api-1.7.26.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/slf4j-log4j12-1.7.26.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/menubar.jar"/>
+	<classpathentry kind="lib" path="src/com/eq/lib/jfoenix-8.0.8.jar"/>
+	<classpathentry kind="lib" path="C:/JAVA WORKSPACE/ExpansionQeury/src/com/eq/lib/fontawesomefx-8.9.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
