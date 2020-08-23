@@ -9,6 +9,7 @@ public class Test {
 		Wordnet.loadWordNet("C:\\Program Files (x86)\\WordNet\\2.1\\Dict");
 		
 		Scanner input = new Scanner(System.in);
+		
 		String text;
 
 		do {
@@ -20,7 +21,7 @@ public class Test {
 		} while (text != "1");
 		
 		
-		
+		input.close();
 		
 		
 

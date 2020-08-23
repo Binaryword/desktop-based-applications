@@ -7,10 +7,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.eq.model.Relevance;
-import com.eq.model.TFIDFCalculator;
-import com.eq.model.TextPreprocessing;
-
 import edu.mit.jwi.Dictionary;
 import edu.mit.jwi.IDictionary;
 import edu.mit.jwi.IRAMDictionary;
@@ -209,6 +205,7 @@ public class Wordnet {
 			builder.append("Defination = " + w.getSynset().getGloss());
 			List<String> doc = TextPreprocessing.remove_stopword(TextPreprocessing.remove_punctuation(TextPreprocessing.tokenize_query(builder.toString()))); 
 			documents.add(doc);
+			
 		}
 
 		
@@ -404,6 +401,7 @@ public class Wordnet {
 
 		WordCorpus wordCorpus = WordPresicion.getWordCorpus();
 		boolean wdNet = false;
+		@SuppressWarnings("unused")
 		boolean wdCorpus = false;
 		String foundWordNet = null;
 		String foundWordCorpus = null;

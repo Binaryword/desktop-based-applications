@@ -80,6 +80,11 @@ public class ScreenController implements Initializable {
 			} else {
 
 				linkLayout.getItems().add("ACTIVATE ONTOLOGY LEARNING");
+				
+				/*
+				 * 		implementing onto learning using word net...
+				 * 
+				 */
 
 			}
 

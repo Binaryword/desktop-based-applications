@@ -682,6 +682,29 @@ public class Ontology {
 		System.out.println(filter); 
 		return filter;
 	}
+	
+	public Set<String> getAllOntologyConcept() {
+		
+		List<String> domain = new LinkedList<>();
+		List<String> range = new LinkedList<>();
+		//List<String> object = new LinkedList<>();
+		Set<String> filterList = new HashSet<>(); 
+		
+		
+		for(Relation rel : relationList) 
+		{
+			
+			domain.add(rel.getDomain().toLowerCase()); 
+			range.add(rel.getRange().toLowerCase());
+			
+		}
+		
+		
+		filterList.addAll(domain); 
+		filterList.addAll(range); 	
+	
+		return filterList ; 
+	}
 
 	/*
 	 * sort document based on percentage relevance..

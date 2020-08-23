@@ -90,6 +90,7 @@ public class MainController implements Initializable{
 			eq = new ExpansionQeury();
 			eq.initSeedVariable("maize", "fertilizers", "irrigation", "soils");
 			System.out.println("Starter " + Ontology.getEqualClass("Maize"));
+			
 		}).start();
 		
 	
