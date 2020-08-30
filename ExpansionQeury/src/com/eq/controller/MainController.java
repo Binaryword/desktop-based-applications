@@ -9,6 +9,7 @@ import javax.imageio.ImageIO;
 
 import com.eq.model.ExpansionQeury;
 
+import WordNet.Wordnet;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -90,7 +91,8 @@ public class MainController implements Initializable{
 			eq = new ExpansionQeury();
 			eq.initSeedVariable("maize", "fertilizers", "irrigation", "soils");
 			System.out.println("Starter " + Ontology.getEqualClass("Maize"));
-			
+			Wordnet.getOntologyTerm(Ontology.getAllOntologyConcept());
+			Wordnet.learnWordNetOntologyRelevance("boy");
 		}).start();
 		
 	

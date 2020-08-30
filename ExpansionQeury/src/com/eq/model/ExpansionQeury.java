@@ -29,7 +29,7 @@ public class ExpansionQeury {
 		Wordnet.loadWordNet("C:\\Program Files (x86)\\WordNet\\2.1\\Dict");
 		Ontology.readOntology(new File("maizeFarmingOntology_MODIFY3_VALIDATION.owl"));
 		Ontology.initOntology();
-		Ontology.printActiveOntology();
+		//Ontology.printActiveOntology();
 		TextPreprocessing.initCorpus();
 		
 		new Thread(()->{

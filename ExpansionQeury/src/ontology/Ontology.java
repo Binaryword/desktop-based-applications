@@ -390,6 +390,10 @@ public class Ontology {
 	public static List<String> getClassIndividuals(String clas) {
 
 		OntClass classes = getWorkSpace(clas);
+
+		if(classes == null)
+			return new ArrayList<String>();
+			
 		Iterator<? extends OntResource> iterator = classes.listInstances() ; 
 		List<String> individualList = new LinkedList<>(); 
 		
@@ -454,7 +458,7 @@ public class Ontology {
 
 		for (List<String> doc : documents) {
 
-//			System.out.println("DOCUMENT ===============================  >  : " + doc);
+			System.out.println("DOCUMENT ===============================  >  : " + doc);
 
 		} // outer for loop
 
@@ -683,7 +687,7 @@ public class Ontology {
 		return filter;
 	}
 	
-	public Set<String> getAllOntologyConcept() {
+	public static Set<String> getAllOntologyConcept() {
 		
 		List<String> domain = new LinkedList<>();
 		List<String> range = new LinkedList<>();
@@ -695,7 +699,13 @@ public class Ontology {
 		{
 			
 			domain.add(rel.getDomain().toLowerCase()); 
+			domain.addAll(rel.getDomainEqual());
+			domain.addAll(rel.getDomainSub()); 
+			//domain.addAll(rel.getDomainIntances()); 
 			range.add(rel.getRange().toLowerCase());
+			range.addAll(rel.getRangeEqual()); 
+			//range.addAll(rel.getRangeIntances()); 
+			range.addAll(rel.getRangeSub());
 			
 		}
 		
