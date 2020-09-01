@@ -21,7 +21,7 @@ public class TextPreprocessing {
 	
 	public static void initCorpus() {
 		initStopWord() ; 
-		wordCorpus = WordPresicion.getWordCorpus() ; 
+		wordCorpus = WordCorpus.getWordCorpusDao() ; 
 		
 	}
 	

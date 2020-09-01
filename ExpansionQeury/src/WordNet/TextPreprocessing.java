@@ -15,7 +15,10 @@ public class TextPreprocessing {
 	
 	public static void initCorpus() {
 		initStopWord() ; 
-		wordCorpus = WordPresicion.getWordCorpus() ; 
+		wordCorpus = WordCorpus.getWordCorpusDao() ;
+		wordCorpus.initWords();
+		System.out.println("code get here.... " + wordCorpus); 
+		//System.exit(1);
 		
 	}
 	
@@ -94,6 +97,12 @@ public class TextPreprocessing {
 		
 		// checking if word is spell correctly .. 1. first if word found in word
 		// net...
+				
+			if(word == null)
+				return word; 
+			
+			System.out.println("DATA2 = "+ word);
+			
 			boolean spelling  = wordCorpus.spellChecker(word) ; 
 
 			//System.out.println("WORD SPELT CORRECTLY..... ");

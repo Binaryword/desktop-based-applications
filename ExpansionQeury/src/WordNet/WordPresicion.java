@@ -9,6 +9,11 @@ public class WordPresicion {
 	private static List<String> newWordList = new ArrayList<>();
 	private static String initWord;
 	public static boolean runOnce = false;
+	
+	public static void  loadWordCorpus() {
+		
+		WordCorpus.getWordCorpusDao().initWords();
+	}
 
 	public static boolean wordStemming(String word) {
 
@@ -65,10 +70,7 @@ public class WordPresicion {
 		return word.toString().trim().toLowerCase();
 	}
 
-	public static WordCorpus getWordCorpus() {
-
-		return new WordCorpus();
-	}
+	
 
 
 

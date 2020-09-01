@@ -87,7 +87,8 @@ public class Document {
 			} // inner loop..
 		
 		setDocumentRelevanceValue(totalRelevance); 
-		System.out.println("Total relevance of sense  (" + getSenseIndex() + ")  ===>>| " +  getDocumentRelevanceValue());
+		System.out.print(getDocument());
+		System.out.println("||||---->>>> Total relevance of sense  (" + getSenseIndex() + ")  ===>>| " +  getDocumentRelevanceValue());
 
 	}// end of method..
 

@@ -11,7 +11,8 @@ public class TFIDFCalculator {
     public double tf(List<String> doc, String term) {
         double result = 0;
         for (String word : doc) {
-            if (word.toLowerCase().contains(term.toLowerCase()) || term.toLowerCase().contains(word.toLowerCase())) {
+            if (word.toLowerCase().contains(term.toLowerCase())) {
+            	//if (word.toLowerCase().contains(term.toLowerCase()) || term.toLowerCase().contains(word.toLowerCase())) {
             	result++; 
             }
         }
@@ -28,7 +29,7 @@ public class TFIDFCalculator {
         double n = 0;
         for (List<String> doc : docs) {
             for (String word : doc) {
-                if (word.toLowerCase().contains(term.toLowerCase()) || term.toLowerCase().contains(word.toLowerCase())) {
+                if (word.toLowerCase().contains(term.toLowerCase())) {
                     n++;
                     break;
                 }

@@ -17,15 +17,25 @@ public class WordCorpus {
 	List<String> spList = new ArrayList<>();
 	List<String> words = new ArrayList<>();
 	private static HashMap<String, String> spWords = new LinkedHashMap<>();
+	private static WordCorpus w = new WordCorpus();
 
-	public WordCorpus() {
+	private WordCorpus() {}
+	
+	
+	public void initWords(){
 		
 		path = "SPCorpus";
 		loadSPWords();
 		loadWords();
 		initDiction();
-
 	}
+	
+	public static WordCorpus getWordCorpusDao() {
+		
+		return w ; 
+	}
+	
+	
 
 	public void loadSPWords() {
 
@@ -188,6 +198,8 @@ public class WordCorpus {
 
 		boolean found = false;
 
+		
+		
 		for (String wrd : words) {
 
 			if (word.trim().equals(wrd.toLowerCase().trim())) {

@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Set;
 
 import edu.mit.jwi.Dictionary;
@@ -43,6 +44,10 @@ public class Wordnet {
 			e.printStackTrace();
 			System.out.println("unable to load wordnet");
 		}
+		
+		// initializing word corpus from word net
+		System.out.println("TEXT PRE PROCESSING....");
+		TextPreprocessing.initCorpus();
 
 	}// end of method
 
@@ -60,6 +65,11 @@ public class Wordnet {
 			e.printStackTrace();
 			System.out.println("unable to load wordnet");
 		}
+		
+		
+		// initializing word corpus from word net
+				System.out.println("TEXT PRE PROCESSING....");
+				TextPreprocessing.initCorpus();
 
 	}// end of method
 
@@ -367,7 +377,7 @@ public class Wordnet {
 		 * word or inflected word....
 		 */
 
-		WordCorpus wordCorpus = WordPresicion.getWordCorpus();
+		WordCorpus wordCorpus = WordCorpus.getWordCorpusDao();
 		boolean wdNet = false;
 		@SuppressWarnings("unused")
 		boolean wdCorpus = false;
@@ -552,10 +562,32 @@ public class Wordnet {
 			System.out.println(term);
 			if (term == null)
 				continue;
-			ontTermList.add(term.toLowerCase());
-		}
+			
+			List<String> list = Arrays.asList(term.split("(?<!(^|[A-Z]))(?=[A-Z])|(?<!^)(?=[A-Z][a-z])|(\\s+)|(_)"));
+			
+		     ListIterator<String> it = list.listIterator() ; 
+		     
+		     while(it.hasNext()) 
+		     {
+		    	 
+		    	 String data = it.next().trim();
+		    	 
+		    	 if(data == null || data == "" || data.isEmpty())
+		    		 continue ; 
+		    	 
+		    	 System.out.println("Data = " + data); 
+		    	 
+		    	 it.set(TextPreprocessing.lemmatize_word(data.toLowerCase()));
+		     }
+		     
+			 ontTermList.addAll(list);
+			
+		}/// end of for loop ...
+		
 
 	}// end of method
+
+
 
 	public static void setOntologyDocument(List<List<String>> ontDoc) {
 
@@ -592,10 +624,7 @@ public class Wordnet {
 				List<String> punct = TextPreprocessing.remove_punctuation(token);
 				List<String> cleanWord = TextPreprocessing.remove_stopword(punct);
 				wordNetDocument.addAll(cleanWord);
-				/*
-				 * Iterator<String> it = wordNetDocument.iterator(); while(it.hasNext()) {
-				 * it.next().toLowerCase() ; }
-				 */
+			
 
 				senseIndex++;
 

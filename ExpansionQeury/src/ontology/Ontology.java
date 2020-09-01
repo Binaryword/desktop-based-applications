@@ -298,7 +298,7 @@ public class Ontology {
 							relation.setRelationId(idCounder);
 							idCounder++;
 							relationList.add(relation);
-							System.out.println(relation.toString());
+							//System.out.println(relation.toString());
 
 						} // if
 					} // inner for
@@ -321,7 +321,7 @@ public class Ontology {
 		if (classes == null)
 			return new ArrayList<String>();
 
-		System.out.println(classes.getLocalName());
+		//System.out.println(classes.getLocalName());
 
 		return getOntologyUtilList(classes.listSubClasses().toList());
 	}
@@ -377,12 +377,12 @@ public class Ontology {
 
 		OntClass classes = getWorkSpace(concept);
 
-		System.out.println("OntClass----> " + classes);
+		//System.out.println("OntClass----> " + classes);
 
 		if (classes == null)
 			return new ArrayList<String>();
 
-		System.out.println("OntClass localName ---> " + classes.getLocalName());
+		//System.out.println("OntClass localName ---> " + classes.getLocalName());
 
 		return getOntologyUtilList(classes.listEquivalentClasses().toList());
 	}
@@ -401,7 +401,7 @@ public class Ontology {
 		{
 			Individual individual = (Individual) iterator.next() ; 
 			individualList.add(individual.getLocalName()); 
-			System.out.println("Individual localName ---> " + individual.getLocalName());
+			//System.out.println("Individual localName ---> " + individual.getLocalName());
 		}
 
 
@@ -458,7 +458,7 @@ public class Ontology {
 
 		for (List<String> doc : documents) {
 
-			System.out.println("DOCUMENT ===============================  >  : " + doc);
+			//System.out.println("DOCUMENT ===============================  >  : " + doc);
 
 		} // outer for loop
 
@@ -559,7 +559,7 @@ public class Ontology {
 
 		for (Relevance relevance : pro_relevance) {
 
-			System.out.println(relevance);
+			//System.out.println(relevance);
 		}
 
 		documentsMatcher();
@@ -698,11 +698,11 @@ public class Ontology {
 		for(Relation rel : relationList) 
 		{
 			
-			domain.add(rel.getDomain().toLowerCase()); 
+			domain.add(rel.getDomain()); 
 			domain.addAll(rel.getDomainEqual());
 			domain.addAll(rel.getDomainSub()); 
 			//domain.addAll(rel.getDomainIntances()); 
-			range.add(rel.getRange().toLowerCase());
+			range.add(rel.getRange());
 			range.addAll(rel.getRangeEqual()); 
 			//range.addAll(rel.getRangeIntances()); 
 			range.addAll(rel.getRangeSub());

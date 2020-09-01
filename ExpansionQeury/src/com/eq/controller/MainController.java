@@ -1,11 +1,8 @@
 package com.eq.controller;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import javax.imageio.ImageIO;
 
 import com.eq.model.ExpansionQeury;
 
@@ -92,7 +89,7 @@ public class MainController implements Initializable{
 			eq.initSeedVariable("maize", "fertilizers", "irrigation", "soils");
 			System.out.println("Starter " + Ontology.getEqualClass("Maize"));
 			Wordnet.getOntologyTerm(Ontology.getAllOntologyConcept());
-			Wordnet.learnWordNetOntologyRelevance("boy");
+			Wordnet.learnWordNetOntologyRelevance("fertilizer");
 		}).start();
 		
 	
