@@ -1,7 +1,7 @@
 package WordNet;
 
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -9,17 +9,18 @@ import edu.mit.jwi.item.IIndexWord;
 
 public class Document {
 
-	private Set<String> document;
-	private List<List<String>> documents;
+	private List<String> ontologyterm;
+	private List<List<String>> document ; 
 	private int senseIndex;
 	private double relevanceValue ; 
 	private IIndexWord w;
 
-	public Document(Set<String> doc, int index, IIndexWord w) {
+	public Document(List<String> term, List<List<String>> doc ,  int index,  IIndexWord w) {
 		
-		documents = new ArrayList<>();
-		document = new LinkedHashSet<>();
-		this.document.addAll(doc);
+		document = new ArrayList<>();
+		ontologyterm = new LinkedList<>();
+		this.document.addAll(doc) ; 
+		this.ontologyterm.addAll(term);
 		this.senseIndex = index;
 		this.w = w;
 	}
@@ -30,12 +31,20 @@ public class Document {
 			doc.toLowerCase();
 	}
 
-	public List<String> getDocument() {
-		
-		return new ArrayList<>(document);
+	
+	public List<String> getWordnetterm() {
+		return ontologyterm;
 	}
 
-	public void setDocument(Set<String> document) {
+	public void setOntologyterm(List<String> ontologyterm) {
+		this.ontologyterm = ontologyterm;
+	}
+
+	public List<List<String>> getDocument() {
+		return document;
+	}
+
+	public void setDocument(List<List<String>> document) {
 		this.document = document;
 	}
 
@@ -45,6 +54,14 @@ public class Document {
 
 	public void setSenseIndex(int senseIndex) {
 		this.senseIndex = senseIndex;
+	}
+
+	public double getRelevanceValue() {
+		return relevanceValue;
+	}
+
+	public void setRelevanceValue(double relevanceValue) {
+		this.relevanceValue = relevanceValue;
 	}
 
 	public String getPartOfSpeech() {
@@ -63,7 +80,7 @@ public class Document {
 		builder.append("TOKENS : ");
 		builder.append(" \n ");
 
-		for (String doc : getDocument()) {
+		for (String doc : getWordnetterm()) {
 			builder.append("TOK => : " + doc);
 			builder.append("\n");
 		}
@@ -71,25 +88,35 @@ public class Document {
 		return String.format("%s", builder.toString());
 	}
 
-	public void computeRelevanceToOntology(List<String> termList) {
+	public void computeRelevanceToOntology() {
 
 		TFIDFCalculator cal = new TFIDFCalculator();
 		double totalRelevance = 0.0 ; 
 		// for each senses in the word net
 		
-			// for each term in the onto
-			for (String term : termList) {
 
-				 double value = cal.tfIdf(getDocument() , getAllDocument() , term.toLowerCase());
-				 System.out.println("TF-IDF (ipsum) = of (" + term + ")  is "  + value); 
-				 totalRelevance = totalRelevance + value ;
+				for(List<String> doc : getDocument()) 
+				{
+					// for each term in the onto
+					for (String term : getWordnetterm()) {
+					
+					//term = TextPreprocessing.lemmatize_word(term); 
+					double value = cal.tfIdf( doc , getDocument() , term.toLowerCase());
+				//	System.out.println("TF-IDF (ipsum) = of (" + term + ")  is "  + value); 
+					totalRelevance = totalRelevance + value ;
+				
+				}
+				
+				// after computing for a specific 
+				setDocumentRelevanceValue(totalRelevance); 
+				System.out.print(getDocument());
+				System.out.println("||-->> Total relevance of sense  (" + getSenseIndex() + ")  =>>| " +  getDocumentRelevanceValue());
+				 
 				  
 			} // inner loop..
 		
-		setDocumentRelevanceValue(totalRelevance); 
-		System.out.print(getDocument());
-		System.out.println("||||---->>>> Total relevance of sense  (" + getSenseIndex() + ")  ===>>| " +  getDocumentRelevanceValue());
 
+		
 	}// end of method..
 
 	public void setDocumentRelevanceValue(double totalRelevance) {
@@ -102,14 +129,7 @@ public class Document {
 		return ( relevanceValue ) * 100 ; 
 	}
 
-	public void setAllDocument(List<List<String>> documents2) {
 
-		documents = documents2;
-	}
-
-	public List<List<String>> getAllDocument() {
-
-		return documents;
-	}
+	
 
 }// end of class

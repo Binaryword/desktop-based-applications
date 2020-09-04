@@ -17,7 +17,6 @@ public class TextPreprocessing {
 		initStopWord() ; 
 		wordCorpus = WordCorpus.getWordCorpusDao() ;
 		wordCorpus.initWords();
-		System.out.println("code get here.... " + wordCorpus); 
 		//System.exit(1);
 		
 	}
@@ -56,7 +55,7 @@ public class TextPreprocessing {
 	public static List<String> remove_stopword(List<String> token){
 		
 		List<String> stopWordsList = initStopWord(); 
-		System.out.println("stop word size " + stopWordsList.size());
+	//	System.out.println("stop word size " + stopWordsList.size());
 		List<String> clean_token = new ArrayList<>(); 
 		boolean found = false ; 
 		
@@ -78,7 +77,7 @@ public class TextPreprocessing {
 		}// end of for loop 
 		
 		
-		System.out.println("stop words remove " + clean_token);
+	///	System.out.println("stop words remove " + clean_token);
 		
 		return clean_token ; 
 	}
@@ -101,8 +100,6 @@ public class TextPreprocessing {
 			if(word == null)
 				return word; 
 			
-			System.out.println("DATA2 = "+ word);
-			
 			boolean spelling  = wordCorpus.spellChecker(word) ; 
 
 			//System.out.println("WORD SPELT CORRECTLY..... ");
@@ -119,11 +116,9 @@ public class TextPreprocessing {
 			
 			while (valid_for_searching) {
 
-				//System.out.println("LOOPS FROM WORD NET");
 				
 				valid_for_searching = WordPresicion.wordStemming(WordPresicion.getWord());
 				
-				//System.out.println("ChECKING FAVLID FOR SEARCHING " + valid_for_searching);
 
 				if(WordPresicion.getWord().length() <= 2)
 					break ; 
@@ -138,7 +133,6 @@ public class TextPreprocessing {
 				} else {
 
 					// findPrecision(WordPresicion.getWord().toLowerCase().trim());
-					//System.out.println("LOOP GOING TO BREAK..... ");
 				}
 				// if word is found in wordnet
 
@@ -147,7 +141,6 @@ public class TextPreprocessing {
 			if (!wdNet) {
 
 				String sWord = wordCorpus.convertToSingular(word);
-				//System.out.println("FIRST WORD FROM WORD CORPUSE " + sWord);
 
 				if (sWord == null) {
 
@@ -156,7 +149,6 @@ public class TextPreprocessing {
 
 					while (condition) {
 
-					//	System.out.println("LOOPS FROM WORD CORPUS");
 						condition = WordPresicion.wordStemming(WordPresicion.getWord());
 						System.out.println();
 						sWord = wordCorpus.convertToSingular(WordPresicion.getWord());
@@ -189,9 +181,9 @@ public class TextPreprocessing {
 			// check for irregular pattern ..
 			
 
-			System.out.println("From word net :::::::   " + foundWordNet);
-			System.out.println("From word corpus :::::: " + foundWordCorpus);
-			System.out.println("IS WORD SPELT CORRECTLY  " + spelling);
+//			System.out.println("From word net :::::::   " + foundWordNet);
+//			System.out.println("From word corpus :::::: " + foundWordCorpus);
+//			System.out.println("IS WORD SPELT CORRECTLY  " + spelling);
 			
 			
 			if(foundWordNet != null)

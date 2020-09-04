@@ -555,11 +555,9 @@ public class Wordnet {
 
 	public static void getOntologyTerm(Set<String> ontTerm) {
 
-		System.out.println("Size of ont term ==> " + ontTerm.size());
 		ontTermList = new LinkedHashSet<>();
 
 		for (String term : ontTerm) {
-			System.out.println(term);
 			if (term == null)
 				continue;
 			
@@ -573,14 +571,36 @@ public class Wordnet {
 		    	 String data = it.next().trim();
 		    	 
 		    	 if(data == null || data == "" || data.isEmpty())
+		    	 {
+		    		 
 		    		 continue ; 
+		    	 }
+		    	 
+		    	 
 		    	 
 		    	 System.out.println("Data = " + data); 
 		    	 
-		    	 it.set(TextPreprocessing.lemmatize_word(data.toLowerCase()));
+
+		    	 if(data.toLowerCase()=="p") {
+		    		 it.set("ph");
+		    		 continue ; 
+		    	 }
+		    	 
+		    	 if(data.toLowerCase()=="hvalue")
+		    	 {
+		    		 it.set("value");
+		    		 continue ; 
+		    	 }
+		    		 
+		    	 
+		    	 it.set(data.toLowerCase());
+		    	 
+		    	 
 		     }
 		     
 			 ontTermList.addAll(list);
+			 
+			 
 			
 		}/// end of for loop ...
 		
@@ -597,12 +617,12 @@ public class Wordnet {
 	public static List<List<String>> getOntologyDocument() {
 
 		return ontDocuments;
+		
 	}
 
 	public static void learnWordNetOntologyRelevance(String word) {
 
-		Set<String> wordNetDocument = new LinkedHashSet<>();
-		List<Document> documentList = new LinkedList<>();
+		List<String> wordNetDocument = new LinkedList<>();
 		Document document = null;
 		List<IIndexWord> indexWord = indexAllSubnet(word);
 		// loop throw all sub net and get appropriate senses
@@ -628,10 +648,11 @@ public class Wordnet {
 
 				senseIndex++;
 
-				document = new Document(wordNetDocument, senseIndex, w);
-				documentList.add(document);
+				document = new Document( wordNetDocument, getOntologyDocument() ,  senseIndex, w );
+				document.computeRelevanceToOntology();
 				// document.computeRelevanceToOntology(getOntologyDocument());
 				wordNetDocument.clear();
+				document.toString() ; 
 			} // end of for
 
 		} // end of for loop ...
@@ -640,33 +661,33 @@ public class Wordnet {
 		 * helper method to set or map all word net document to individual word net
 		 * document
 		 */
-		initAllWordnetDocument(documentList);
+		//initAllWordnetDocument(documentList);
 
-		for (Document d : documentList) {
-
-			 d.computeRelevanceToOntology(new ArrayList<>(ontTermList));
-			 
-		}
+//		for (Document d : documentList) {
+//
+//			 d.computeRelevanceToOntology(new ArrayList<>(ontTermList));
+//			 
+//		}
 		
 	}// end of method....
 
-	public static void initAllWordnetDocument(List<Document> wNdoc) {
-
-		List<List<String>> documents = new LinkedList<>();
-
-		for (Document doc : wNdoc) {
-
-			documents.add(doc.getDocument());
-
-		}
-
-		for (Document doc : wNdoc) {
-
-			doc.setAllDocument(documents);
-
-		}
-
-	}// end of method
+//	public static void initAllWordnetDocument(List<Document> wNdoc) {
+//
+//		List<List<String>> documents = new LinkedList<>();
+//
+//		for (Document doc : wNdoc) {
+//
+//			documents.add(doc.getDocument());
+//
+//		}
+//
+//		for (Document doc : wNdoc) {
+//
+//			doc.setAllDocument(documents);
+//
+//		}
+//
+//	}// end of method
 
 	public static void getHypernyms(int wordSense) {
 

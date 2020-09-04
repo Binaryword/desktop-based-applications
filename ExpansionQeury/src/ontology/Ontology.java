@@ -458,7 +458,7 @@ public class Ontology {
 
 		for (List<String> doc : documents) {
 
-			//System.out.println("DOCUMENT ===============================  >  : " + doc);
+			System.out.println("DOCUMENT ===============================  >  : " + doc);
 
 		} // outer for loop
 

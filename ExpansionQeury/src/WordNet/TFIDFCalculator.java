@@ -2,6 +2,8 @@ package WordNet;
 
 import java.util.List;
 
+import javax.print.Doc;
+
 public class TFIDFCalculator {
     /**
      * @param doc  list of strings
@@ -11,12 +13,14 @@ public class TFIDFCalculator {
     public double tf(List<String> doc, String term) {
         double result = 0;
         for (String word : doc) {
-            if (word.toLowerCase().contains(term.toLowerCase())) {
-            	//if (word.toLowerCase().contains(term.toLowerCase()) || term.toLowerCase().contains(word.toLowerCase())) {
+            if (word.toLowerCase().matches(term)) {
+            	//System.out.print(word  + " , " );
+            	//System.out.println();
             	result++; 
             }
         }
-
+        
+        //System.out.print("TF=" + result/doc.size() + " |" );
         return result / doc.size();
     }
 
@@ -29,14 +33,18 @@ public class TFIDFCalculator {
         double n = 0;
         for (List<String> doc : docs) {
             for (String word : doc) {
-                if (word.toLowerCase().contains(term.toLowerCase())) {
+                if (word.toLowerCase().matches(term) ) {
                     n++;
+                	//System.out.print(word  + " , " );
+                	//System.out.println();
+                    
                     break;
                 }
             }
         }
         
-        return Math.log(docs.size() / n);
+        //System.out.print("IDF=" + Math.log(docs.size()+1) /n + ""  + "  ||  " );
+        return Math.log(docs.size()+1 / n);
     }
 
     /**
@@ -47,14 +55,17 @@ public class TFIDFCalculator {
      */
     public double tfIdf(List<String> doc, List<List<String>> docs, String term) {
     	
-    	double result = tf(doc, term) * idf(docs, term); 
-    	if(String.valueOf(result) == "NaN")
+    	double result = tf(doc, term) * idf(docs, term) ;
+    	
+    	//System.out.println(" Result   ==>  " + tf(doc,term) + " x " + idf(docs,term)  + " = " + result );
+    	
+    	if( String.valueOf(result) == "NaN" )
     		return 0.0 ; 
     	else 
     		return result ; 
 
     }
-//
+
 //    public static void main(String[] args) {
 //
 //        List<String> doc1 = Arrays.asList("Lorem", "ipsums", "dolor", "ipsums", "sit", "ipsums");
