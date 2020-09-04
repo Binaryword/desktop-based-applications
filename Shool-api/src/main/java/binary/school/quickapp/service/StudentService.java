@@ -51,6 +51,12 @@ public class StudentService {
 		}
 		
 	}// end of method
+
+	public void deleteStudent(int id) {
+		
+		studentList.removeIf(t-> String.valueOf(t.getId()).equals(String.valueOf(id))) ; 
+		
+	}// end of method
 	
 	
 	
