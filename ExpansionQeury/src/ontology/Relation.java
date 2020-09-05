@@ -38,7 +38,7 @@ public class Relation {
 
 
 	public List<String> getDomainEqual() {
-		System.out.println(Ontology.getEqualClass(getDomain()));
+		//System.out.println(Ontology.getEqualClass(getDomain()));
 		return Ontology.getEqualClass(getDomain());
 	}
 

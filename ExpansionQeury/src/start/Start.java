@@ -14,15 +14,9 @@ import ontology.Ontology;
 
 public class Start extends Application{
 
-	public static void main(String[] args) {
-	
-	
-	//System.out.println(POS.NOUN);
-	//startConsole();
-	launch(args);
-	
+	public static void main(String[] args) { 
 		
-		
+		launch(args);
 	}
 
 	@Override

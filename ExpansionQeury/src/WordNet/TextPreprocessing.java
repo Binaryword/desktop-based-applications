@@ -150,7 +150,7 @@ public class TextPreprocessing {
 					while (condition) {
 
 						condition = WordPresicion.wordStemming(WordPresicion.getWord());
-						System.out.println();
+						//System.out.println();
 						sWord = wordCorpus.convertToSingular(WordPresicion.getWord());
 					//	System.out.println("NEXT WORD FORM WORD CORPUS " + sWord);
 

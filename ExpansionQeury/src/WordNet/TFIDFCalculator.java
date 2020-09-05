@@ -1,8 +1,7 @@
 package WordNet;
 
+import java.util.ArrayList;
 import java.util.List;
-
-import javax.print.Doc;
 
 public class TFIDFCalculator {
     /**
@@ -10,12 +9,16 @@ public class TFIDFCalculator {
      * @param term String represents a term
      * @return term frequency of term in document
      */
+	
+	private List<String> foundList = new ArrayList<>(); 
+	
     public double tf(List<String> doc, String term) {
         double result = 0;
         for (String word : doc) {
-            if (word.toLowerCase().matches(term)) {
-            	//System.out.print(word  + " , " );
-            	//System.out.println();
+        	if(term.isEmpty() || term =="")
+    			continue ;
+            if (word.toLowerCase().contains(term)) {
+            	foundList.add(term); 
             	result++; 
             }
         }
@@ -25,19 +28,19 @@ public class TFIDFCalculator {
     }
 
     /**
-     * @param docs list of list of strings represents the dataset
+     * @param docs list of list of strings represents the data set
      * @param term String represents a term
      * @return the inverse term frequency of term in documents
      */
     public double idf(List<List<String>> docs, String term) {
         double n = 0;
         for (List<String> doc : docs) {
+        		if( term.isEmpty() || term == "" )
+        			continue ; 
             for (String word : doc) {
-                if (word.toLowerCase().matches(term) ) {
+                if (word.toLowerCase().contains(term) ) {
+                	foundList.add(term); 
                     n++;
-                	//System.out.print(word  + " , " );
-                	//System.out.println();
-                    
                     break;
                 }
             }
@@ -45,6 +48,11 @@ public class TFIDFCalculator {
         
         //System.out.print("IDF=" + Math.log(docs.size()+1) /n + ""  + "  ||  " );
         return Math.log(docs.size()+1 / n);
+    }
+    
+    
+    public List<String> getMatchTerms() {
+    	return foundList ;  	
     }
 
     /**
@@ -56,8 +64,6 @@ public class TFIDFCalculator {
     public double tfIdf(List<String> doc, List<List<String>> docs, String term) {
     	
     	double result = tf(doc, term) * idf(docs, term) ;
-    	
-    	//System.out.println(" Result   ==>  " + tf(doc,term) + " x " + idf(docs,term)  + " = " + result );
     	
     	if( String.valueOf(result) == "NaN" )
     		return 0.0 ; 

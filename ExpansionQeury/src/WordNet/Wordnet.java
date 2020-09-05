@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -18,9 +19,11 @@ import edu.mit.jwi.RAMDictionary;
 import edu.mit.jwi.data.ILoadPolicy;
 import edu.mit.jwi.item.IIndexWord;
 import edu.mit.jwi.item.ISynset;
+import edu.mit.jwi.item.ISynsetID;
 import edu.mit.jwi.item.IWord;
 import edu.mit.jwi.item.IWordID;
 import edu.mit.jwi.item.POS;
+import edu.mit.jwi.item.Pointer;
 
 public class Wordnet {
 
@@ -31,6 +34,9 @@ public class Wordnet {
 	private static List<Relevance> relevanceList = new ArrayList<>();
 	private static StringBuilder wordBuilder = new StringBuilder();
 	private static LinkedHashSet<String> ontTermList;
+	private static List<String> rawOntTerm ;
+	private static List<Document> learnedDocument = new LinkedList<>();
+	private static LinkedHashSet<String> matchTermList;
 
 	public static void loadWordNet(File wordnetLocation) {
 
@@ -44,7 +50,7 @@ public class Wordnet {
 			e.printStackTrace();
 			System.out.println("unable to load wordnet");
 		}
-		
+
 		// initializing word corpus from word net
 		System.out.println("TEXT PRE PROCESSING....");
 		TextPreprocessing.initCorpus();
@@ -65,11 +71,10 @@ public class Wordnet {
 			e.printStackTrace();
 			System.out.println("unable to load wordnet");
 		}
-		
-		
+
 		// initializing word corpus from word net
-				System.out.println("TEXT PRE PROCESSING....");
-				TextPreprocessing.initCorpus();
+		System.out.println("TEXT PRE PROCESSING....");
+		TextPreprocessing.initCorpus();
 
 	}// end of method
 
@@ -556,58 +561,66 @@ public class Wordnet {
 	public static void getOntologyTerm(Set<String> ontTerm) {
 
 		ontTermList = new LinkedHashSet<>();
-
+		rawOntTerm = new LinkedList<>(ontTerm);
 		for (String term : ontTerm) {
 			if (term == null)
 				continue;
-			
-			List<String> list = Arrays.asList(term.split("(?<!(^|[A-Z]))(?=[A-Z])|(?<!^)(?=[A-Z][a-z])|(\\s+)|(_)"));
-			
-		     ListIterator<String> it = list.listIterator() ; 
-		     
-		     while(it.hasNext()) 
-		     {
-		    	 
-		    	 String data = it.next().trim();
-		    	 
-		    	 if(data == null || data == "" || data.isEmpty())
-		    	 {
-		    		 
-		    		 continue ; 
-		    	 }
-		    	 
-		    	 
-		    	 
-		    	 System.out.println("Data = " + data); 
-		    	 
 
-		    	 if(data.toLowerCase()=="p") {
-		    		 it.set("ph");
-		    		 continue ; 
-		    	 }
-		    	 
-		    	 if(data.toLowerCase()=="hvalue")
-		    	 {
-		    		 it.set("value");
-		    		 continue ; 
-		    	 }
-		    		 
-		    	 
-		    	 it.set(data.toLowerCase());
-		    	 
-		    	 
-		     }
-		     
-			 ontTermList.addAll(list);
-			 
-			 
-			
-		}/// end of for loop ...
-		
+			List<String> list = Arrays.asList(term.split("(?<!(^|[A-Z]))(?=[A-Z])|(?<!^)(?=[A-Z][a-z])|(\\s+)|(_)"));
+
+			ListIterator<String> it = list.listIterator();
+
+			while (it.hasNext()) {
+
+				String data = it.next().trim();
+
+				if (data == null || data == "" || data.isEmpty()) {
+					continue;
+				}
+
+				// System.out.println("Data = " + data);
+
+				if (data.toLowerCase() == "p") {
+					it.set("ph");
+					continue;
+				}
+
+				if (data.toLowerCase() == "hvalue") {
+					it.set("value");
+					continue;
+				}
+
+				it.set(data.toLowerCase());
+
+			}
+
+			ontTermList.addAll(list);
+			List<String> ontTerms = cleanOntTermList(ontTermList);
+			ontTermList.clear();
+			ontTermList.addAll(ontTerms);
+		} /// end of for loop ...
 
 	}// end of method
 
+	public static List<String> getRawOntTerm() {
+		return rawOntTerm;
+	}
 
+	public static void setRawOntTerm(List<String> rawOntTerm) {
+		Wordnet.rawOntTerm = rawOntTerm;
+	}
+
+	private static List<String> cleanOntTermList(LinkedHashSet<String> ontTermList2) {
+		List<String> term = new ArrayList<>(ontTermList2);
+		List<String> clean_term = TextPreprocessing.remove_stopword(term);
+		term.clear();
+		for (String t : clean_term) {
+			if (!(t.length() <= 3)) {
+				term.add(t);
+			}
+		} // end of for
+		return term;
+	}
 
 	public static void setOntologyDocument(List<List<String>> ontDoc) {
 
@@ -617,13 +630,15 @@ public class Wordnet {
 	public static List<List<String>> getOntologyDocument() {
 
 		return ontDocuments;
-		
+
 	}
 
 	public static void learnWordNetOntologyRelevance(String word) {
 
-		List<String> wordNetDocument = new LinkedList<>();
+		List<String> wordNetDoc = new LinkedList<>();
+		matchTermList = new LinkedHashSet<>();
 		Document document = null;
+		List<Document> documentList = new ArrayList<>();
 		List<IIndexWord> indexWord = indexAllSubnet(word);
 		// loop throw all sub net and get appropriate senses
 		for (IIndexWord w : indexWord) {
@@ -639,20 +654,20 @@ public class Wordnet {
 			// loop throw each senses
 			for (IWord wrd : senseWord) {
 
-				wordNetDocument.addAll(getSynset(wrd));
+				wordNetDoc.addAll(getSynset(wrd));
 				List<String> token = TextPreprocessing.tokenize_query(wrd.getSynset().getGloss());
 				List<String> punct = TextPreprocessing.remove_punctuation(token);
 				List<String> cleanWord = TextPreprocessing.remove_stopword(punct);
-				wordNetDocument.addAll(cleanWord);
-			
-
-				senseIndex++;
-
-				document = new Document( wordNetDocument, getOntologyDocument() ,  senseIndex, w );
-				document.computeRelevanceToOntology();
+				wordNetDoc.addAll(cleanWord);
+				senseIndex++ ; 
+				// for(List<String> doct : ontDocuments) {System.out.println("Ont Doc : " +
+				// doct); }
+				document = new Document(wordNetDoc, senseIndex, w);
+				documentList.add(document);
+				// document.computeRelevanceToOntology();
 				// document.computeRelevanceToOntology(getOntologyDocument());
-				wordNetDocument.clear();
-				document.toString() ; 
+				wordNetDoc.clear();
+				// document.toString() ;
 			} // end of for
 
 		} // end of for loop ...
@@ -661,36 +676,218 @@ public class Wordnet {
 		 * helper method to set or map all word net document to individual word net
 		 * document
 		 */
-		//initAllWordnetDocument(documentList);
+		initAllWordnetDocument(documentList);
 
-//		for (Document d : documentList) {
-//
-//			 d.computeRelevanceToOntology(new ArrayList<>(ontTermList));
-//			 
-//		}
-		
+		learnedDocument.clear();
+		for (Document d : documentList) {
+			d.computeRelevanceToOntology(new ArrayList<>(ontTermList));
+			//System.out.println(d);
+			matchTermList.addAll(d.getMatchList());
+			learnedDocument.add(d);
+		}
+
+		for(String t : getRawOntTerm()) {System.out.println("OntTerm : " +  t); }
+		System.out.println("berfor match List --> " + getMatchTermList());
+		setMatchTermList(new ArrayList<>(matchTermList));
+		System.out.println("after match List --> " + getMatchTermList());
+		getHypernyms(learnedDocument, word);
+		getHyponyms(learnedDocument, word);
+		getHolonyms(learnedDocument, word);
+		getMeronyms(learnedDocument, word);
 	}// end of method....
 
-//	public static void initAllWordnetDocument(List<Document> wNdoc) {
-//
-//		List<List<String>> documents = new LinkedList<>();
-//
-//		for (Document doc : wNdoc) {
-//
-//			documents.add(doc.getDocument());
-//
-//		}
-//
-//		for (Document doc : wNdoc) {
-//
-//			doc.setAllDocument(documents);
-//
-//		}
-//
-//	}// end of method
+	public static List<Document> getLearnedDocument() {
+		return learnedDocument;
+	}
 
-	public static void getHypernyms(int wordSense) {
+	public static LinkedHashSet<String> getMatchTermList() {
+		return matchTermList;
+	}
 
+	public static void setMatchTermList(List<String> termList) {
+
+		List<String> rawOntTerm = getRawOntTerm();
+		List<String> newList = new ArrayList<>();
+		for (String raw : rawOntTerm) {
+			for (int i = 0; i < termList.size(); i++) {
+				if(raw == null || termList.get(i) == null )
+					continue ;
+				
+				if (raw.toLowerCase().matches((termList.get(i).toLowerCase()))) {
+						System.out.println("Match founds  " + raw +  " : " +termList.get(i));
+						newList.add(termList.get(i)); 
+							//termList.remove(i); 
+				} // if
+			} // for in
+		} // for out
+		
+		System.out.println("New Matct list    " + termList); 
+	}
+
+	public static void initAllWordnetDocument(List<Document> wNdoc) {
+
+		List<List<String>> documents = new LinkedList<>();
+
+		for (Document doc : wNdoc) {
+			documents.add(doc.getDocument());
+		}
+
+		for (Document doc : wNdoc) {
+			doc.setAllDocument(documents);
+		}
+
+	}// end of method
+
+	/*
+	 * using this helper methods to get associated relationship... 1. get
+	 * relationship 2. loop through relationship to find matcher.... -> learned WORD
+	 * 3. store all word relationship in a list .. 4. pass in auto onto-LOGY encoder
+	 * helper method.....
+	 */
+
+	public static List<String> getHypernyms(List<Document> document, String searchWord) {
+		List<String> hypernymList = new ArrayList<>();
+
+		for (Document doc : document) {
+
+			if (doc.getRelevanceValue() <= 0.0)
+				continue;
+
+			IIndexWord idxWord = dict.getIndexWord(searchWord, doc.getPOS());
+			IWordID wordID = idxWord.getWordIDs().get(doc.getSenseIndex()-1); // meaning associated with doc
+			IWord word = dict.getWord(wordID);
+			ISynset synset = word.getSynset();
+
+			// get the HYPERNYMS
+			List<ISynsetID> hypernyms = synset.getRelatedSynsets(Pointer.HYPERNYM);
+
+			List<IWord> words;
+			for (ISynsetID sid : hypernyms) {
+				words = dict.getSynset(sid).getWords();
+				for (Iterator<IWord> i = words.iterator(); i.hasNext();) {
+					hypernymList.add(i.next().getLemma());
+				}
+			}
+
+			// hypernymList.clear();
+		} // end of for loop
+
+		System.out.println("hypernymsList---------(" + ")----------<<<<>>>>>> " + hypernymList);
+		return hypernymList;
+	}
+
+	public static List<String> getHyponyms(List<Document> document, String searchWord) {
+		
+		List<String> hyponymList = new ArrayList<>();
+
+		for (Document doc : document) {
+
+			if (doc.getRelevanceValue() <= 0.0)
+				continue;
+
+			IIndexWord idxWord = dict.getIndexWord(searchWord, doc.getPOS());
+			IWordID wordID = idxWord.getWordIDs().get(doc.getSenseIndex()-1); // meaning associated with doc
+			IWord word = dict.getWord(wordID);
+			ISynset synset = word.getSynset();
+
+			// get the HYPERNYMS
+			List<ISynsetID> hyponyms = synset.getRelatedSynsets(Pointer.HYPONYM);
+
+			List<IWord> words;
+			for (ISynsetID sid : hyponyms) {
+				words = dict.getSynset(sid).getWords();
+				for (Iterator<IWord> i = words.iterator(); i.hasNext();) {
+					hyponymList.add(i.next().getLemma());
+				}
+			}
+
+			// hypernymList.clear();
+		} // end of for loop
+
+		System.out.println("hyponymsList---------(" + ")----------<<<<>>>>>> " + hyponymList);
+		return hyponymList;
+	}
+
+	public static List<String> getMeronyms(List<Document> document, String searchWord) {
+		List<String> meronymsList = new ArrayList<>();
+
+		for (Document doc : document) {
+
+			if (doc.getRelevanceValue() <= 0.0)
+				continue;
+
+			IIndexWord idxWord = dict.getIndexWord(searchWord, doc.getPOS());
+			IWordID wordID = idxWord.getWordIDs().get(doc.getSenseIndex()-1); // meaning associated with doc
+			IWord word = dict.getWord(wordID);
+			ISynset synset = word.getSynset();
+
+			// get the HYPERNYMS
+			List<ISynsetID> meronym1 = synset.getRelatedSynsets(Pointer.MERONYM_MEMBER);
+			List<ISynsetID> meronym2 = synset.getRelatedSynsets(Pointer.MERONYM_PART);
+
+			List<IWord> words;
+			for (ISynsetID sid : meronym1) {
+				words = dict.getSynset(sid).getWords();
+				for (Iterator<IWord> i = words.iterator(); i.hasNext();) {
+					meronymsList.add(i.next().getLemma());
+				}
+			}
+			
+			List<IWord> words2;
+			for (ISynsetID sid : meronym2) {
+				words2 = dict.getSynset(sid).getWords();
+				for (Iterator<IWord> i = words2.iterator(); i.hasNext();) {
+					meronymsList.add(i.next().getLemma());
+				}
+			}
+
+			// hypernymList.clear();
+		} // end of for loop
+
+		System.out.println("meronymsList---------(" + ")----------<<<<>>>>>> " + meronymsList);
+		return meronymsList;
+	}
+	
+
+
+	public static List<String> getHolonyms(List<Document> document, String searchWord) {
+		List<String> holonymsList = new ArrayList<>();
+
+		for (Document doc : document) {
+
+			if (doc.getRelevanceValue() <= 0.0)
+				continue;
+
+			IIndexWord idxWord = dict.getIndexWord(searchWord, doc.getPOS());
+			IWordID wordID = idxWord.getWordIDs().get(doc.getSenseIndex()-1); // meaning associated with doc
+			IWord word = dict.getWord(wordID);
+			ISynset synset = word.getSynset();
+
+			// get the HYPERNYMS
+			List<ISynsetID> holonyms1 = synset.getRelatedSynsets(Pointer.HOLONYM_MEMBER);
+			List<ISynsetID> holonyms2 = synset.getRelatedSynsets(Pointer.HOLONYM_PART);
+
+			List<IWord> words;
+			for (ISynsetID sid : holonyms1) {
+				words = dict.getSynset(sid).getWords();
+				for (Iterator<IWord> i = words.iterator(); i.hasNext();) {
+					holonymsList.add(i.next().getLemma());
+				}
+			}
+			
+			List<IWord> words2;
+			for (ISynsetID sid : holonyms2) {
+				words2 = dict.getSynset(sid).getWords();
+				for (Iterator<IWord> i = words2.iterator(); i.hasNext();) {
+					holonymsList.add(i.next().getLemma());
+				}
+			}
+
+			// hypernymList.clear();
+		} // end of for loop
+
+		System.out.println("holonymsList---------(" + ")----------<<<<>>>>>> " + holonymsList);
+		return holonymsList;
 	}
 
 }// end of class

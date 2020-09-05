@@ -87,11 +87,10 @@ public class MainController implements Initializable{
 
 			eq = new ExpansionQeury();
 			eq.initSeedVariable("maize", "fertilizers", "irrigation", "soils");
-			System.out.println("Starter " + Ontology.getEqualClass("Maize"));
 			Wordnet.getOntologyTerm(Ontology.getAllOntologyConcept());
-			Ontology.printDocuments();
+			//Ontology.printDocuments();
 			Wordnet.setOntologyDocument(Ontology.getDocuments());
-			Wordnet.learnWordNetOntologyRelevance("Maize");
+			Wordnet.learnWordNetOntologyRelevance("tree");
 		}).start();
 		
 	

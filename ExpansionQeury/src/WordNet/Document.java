@@ -6,21 +6,23 @@ import java.util.List;
 import java.util.Set;
 
 import edu.mit.jwi.item.IIndexWord;
+import edu.mit.jwi.item.POS;
 
 public class Document {
 
-	private List<String> ontologyterm;
-	private List<List<String>> document ; 
+	private List<String> ontTerm;
+	private List<String> document ; 
+	private List<String> matchList ; 
 	private int senseIndex;
 	private double relevanceValue ; 
 	private IIndexWord w;
+	private List<List<String>> allDoc = new ArrayList<>(); 
 
-	public Document(List<String> term, List<List<String>> doc ,  int index,  IIndexWord w) {
+	public Document(List<String> doc ,  int index,  IIndexWord w) {
 		
 		document = new ArrayList<>();
-		ontologyterm = new LinkedList<>();
+		ontTerm = new LinkedList<>();
 		this.document.addAll(doc) ; 
-		this.ontologyterm.addAll(term);
 		this.senseIndex = index;
 		this.w = w;
 	}
@@ -32,19 +34,19 @@ public class Document {
 	}
 
 	
-	public List<String> getWordnetterm() {
-		return ontologyterm;
+	public List<String> getOntoTerm() {
+		return ontTerm;
 	}
 
 	public void setOntologyterm(List<String> ontologyterm) {
-		this.ontologyterm = ontologyterm;
+		this.ontTerm = ontologyterm;
 	}
 
-	public List<List<String>> getDocument() {
+	public List<String> getDocument() {
 		return document;
 	}
 
-	public void setDocument(List<List<String>> document) {
+	public void setDocument(List<String> document) {
 		this.document = document;
 	}
 
@@ -68,6 +70,11 @@ public class Document {
 
 		return w.getPOS().name();
 	}
+	
+	public POS getPOS() {
+		
+		return w.getPOS() ;
+	}
 
 	@Override
 	public String toString() {
@@ -80,7 +87,7 @@ public class Document {
 		builder.append("TOKENS : ");
 		builder.append(" \n ");
 
-		for (String doc : getWordnetterm()) {
+		for (String doc : getDocument()) {
 			builder.append("TOK => : " + doc);
 			builder.append("\n");
 		}
@@ -88,48 +95,67 @@ public class Document {
 		return String.format("%s", builder.toString());
 	}
 
-	public void computeRelevanceToOntology() {
+	public void computeRelevanceToOntology(List<String> terms) {
 
-		TFIDFCalculator cal = new TFIDFCalculator();
+		TFIDFCalculator cal  = null ; 
+		matchList = new ArrayList<>();
 		double totalRelevance = 0.0 ; 
+		ontTerm.addAll(terms) ; 
 		// for each senses in the word net
-		
+		//for(List<String> doct : getDocument()) {System.out.println("Ont Doc : " + doct); }
 
-				for(List<String> doc : getDocument()) 
+				for(String term : terms) 
 				{
-					// for each term in the onto
-					for (String term : getWordnetterm()) {
-					
+				
+					cal = new TFIDFCalculator(); 
 					//term = TextPreprocessing.lemmatize_word(term); 
-					double value = cal.tfIdf( doc , getDocument() , term.toLowerCase());
-				//	System.out.println("TF-IDF (ipsum) = of (" + term + ")  is "  + value); 
+					double value = cal.tfIdf(    getDocument()  , allDoc , term.toLowerCase());
+					matchList.addAll(cal.getMatchTerms()); 
+					//System.out.println("TF-IDF (ipsum) = of (" + term + ")  is "  + value); 
 					totalRelevance = totalRelevance + value ;
 				
-				}
-				
-				// after computing for a specific 
-				setDocumentRelevanceValue(totalRelevance); 
-				System.out.print(getDocument());
-				System.out.println("||-->> Total relevance of sense  (" + getSenseIndex() + ")  =>>| " +  getDocumentRelevanceValue());
-				 
 				  
 			} // inner loop..
 		
+				// after computing for a specific 
+				setMatchList(matchList);
+				setDocumentRelevanceValue(totalRelevance); 
+				System.out.print(getDocument());
+				System.out.println("||-->> Total relevance of sense  (" + getSenseIndex() + ")  =>>| " +  getDocumentRelevanceValue());
+				//System.out.println(getDocument());
 
 		
 	}// end of method..
+
+	public List<String> getMatchList() {
+		return matchList;
+	}
+
+	public void setMatchList(List<String> matchList) {
+		System.out.println("Match : " + matchList);
+		this.matchList = matchList;
+	}
 
 	public void setDocumentRelevanceValue(double totalRelevance) {
 
 		relevanceValue = totalRelevance ; 
 	}
 	
+	
+	
 	public double getDocumentRelevanceValue() {
 		
-		return ( relevanceValue ) * 100 ; 
+		return ( relevanceValue )  ; 
 	}
 
+	public void setAllDocument(List<List<String>> documents) {
+		
+		allDoc.clear();
+		allDoc.add(document); 
+		
+	}
 
+	
 	
 
 }// end of class
