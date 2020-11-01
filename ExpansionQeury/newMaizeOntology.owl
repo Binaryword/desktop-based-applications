@@ -1,0 +1,3464 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27"
+     xml:base="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-27="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Include_symptoms_like -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Include_symptoms_like">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_a_symptoms_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphologicalSign"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LeafTesselBlast"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RootInhabitant"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SeedColor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SeedDamage"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ShotInhabitant"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#leafSenescence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Process_is_damage_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Process_is_damage_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#damage_the_process_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Fertilization"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeGrowth"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Pollination"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ProteinStability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#HeatStress"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#absent_lead_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#absent_lead_to">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_the_absent_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#affect_development_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#affect_development_of">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#development_is_affected_by"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Air"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drought"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Humidity"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Light"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Precipitation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFed"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Temperature"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterLogged"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Wind"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#affect_yield_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#affect_yield_of">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#yield_is_affected_by"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Air"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drainage"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drought"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Humidity"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Irrigation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Light"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Precipitation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFed"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Temperature"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterLogged"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Wind"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#can_abort_sucessfull -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#can_abort_sucessfull">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#disturb_the_process_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#can_be_aborted_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#can_be_aborted_by">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#process_is_disturb_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#can_be_cause_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#can_be_cause_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#can_be_the_cause_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Lodging"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFall"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Wind"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#can_be_damage_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#can_be_damage_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#can_damage"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drought"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#can_be_maize -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#can_be_maize">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#of_maize_can_be"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Sunlight"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#EnergySource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#can_be_of_climate_condition -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#can_be_of_climate_condition">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_a_climate_that_is_part_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticCondition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Air"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drought"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Humidity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Light"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Precipitation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Sunlight"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Temperature"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Wind"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#can_be_the_cause_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#can_be_the_cause_of">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFall"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Wind"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Lodging"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#can_damage -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#can_damage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drought"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#can_prevent_the_process_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#can_prevent_the_process_of">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#disturb_the_process_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#cause_loss_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#cause_loss_of">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_loss_due_to"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#HeatStress"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#CellWater"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#causes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#causes">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_cause_by"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Temperature"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#HeatStress"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#causes_damage__on -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#causes_damage__on">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#damage_can_be_cause_by"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#HeatStress"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#component_include -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#component_include">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_a_component_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Gas"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Argon"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#CarbonDioxide"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Helium"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Methane"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Neon"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Nitrogen"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#NitrousOxide"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Oxygen"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterVapour"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Xenon"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#conductance_is_injured_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#conductance_is_injured_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#injured_conductance_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Stomata"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterLogged"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#containing_moisture_is -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#containing_moisture_is">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_moisture_content_in"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Air"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Humidity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#content_is_determine_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#content_is_determine_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#determine_the_content_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SoilMoisture"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Precipitation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFall"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Temperature"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Water"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#damage_can_be_cause_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#damage_can_be_cause_by">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#HeatStress"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#damage_the_process_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#damage_the_process_of">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#HeatStress"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Fertilization"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeGrowth"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Pollination"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ProteinStability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#determine_the_content_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#determine_the_content_of">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Precipitation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFall"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Temperature"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Water"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SoilMoisture"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#development_is_affected_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#development_is_affected_by">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Air"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drought"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Humidity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Light"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Precipitation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFed"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Temperature"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterLogged"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Wind"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#disturb_the_process_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#disturb_the_process_of">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#process_is_disturb_by"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drought"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#HeatStress"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Pollination"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#drive_energy_manufacturing_for -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#drive_energy_manufacturing_for">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#energy_manufacturing_is_driven_by"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Oxygen"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeGrowth"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#enable -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#enable">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_enable_by"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterLogged"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Translocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#enable_energy_gain_through -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#enable_energy_gain_through">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#gain_enegy_through"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Respiration"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeRoot"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#enable_gain_in -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#enable_gain_in">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_gained_by"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Photosynthesis"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Respiration"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Energy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#energy_manufacturing_is_driven_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#energy_manufacturing_is_driven_by">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeGrowth"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Oxygen"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#excess_is_a_result_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#excess_is_a_result_of">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#result_to_excessive"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SoilMoisture"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterLogged"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#exist_in_form_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#exist_in_form_of">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_an_existing_from_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Precipitation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FreezingPrecipitation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Frost"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FrozenPrecipitation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LiquidPrecipitation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#from_respiration_is_used_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#from_respiration_is_used_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#use_respiration_for"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Energy"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeRoot"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#gain_enegy_through -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#gain_enegy_through">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeRoot"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Respiration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#has_a_factor_which_include -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#has_a_factor_which_include">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_a_factor_among"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticFactor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Elevation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Latitude"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#NearByWater"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#OceanCurrent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PrevailingWind"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Topography"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Vegetation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#has_symptoms_called -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#has_symptoms_called">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_symptoms_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphogenesisProcess"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphologicalSign"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#in_air_determine_the -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#in_air_determine_the">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_determine_by_air"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Temperature"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterVapour"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Humidity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#in_atmosphere_is -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#in_atmosphere_is">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_atmospheric"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Water"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Precipitation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#in_excess_remove -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#in_excess_remove">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_remove_by_excess"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SoilMoisture"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Oxygen"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#in_maximum_per_annual_is_required_for -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#in_maximum_per_annual_is_required_for">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#require_maximum_annual"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFall"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeGrowth"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#in_minimum_per_annual_is_required_for -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#in_minimum_per_annual_is_required_for">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#require_minimum_annual"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFall"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFall"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#include_process_like -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#include_process_like">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_part_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#GrowthProcess"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Absorption"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MetabolicProcess"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MineralAbsorbtion"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Morphogenesis"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Phototropism"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PhysiologicalProcess"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Pollination"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SilkEmergent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#StomataMovement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Translocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#increase_drought_sensitivity_during -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#increase_drought_sensitivity_during">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_sensitive_to_drough_at"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Pollination"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SilkEmergent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#influence -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#influence">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_influence_by"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Light"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Temperature"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeGrowth"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#influence_pollination_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#influence_pollination_of">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#pollination_is_influence_by"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Wind"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#injured_conductance_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#injured_conductance_of">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterLogged"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Stomata"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#injured_the_process_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#injured_the_process_of">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#process_is_injured_by"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterLogged"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Photosynthesis"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Stomata"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Transpiration"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#VegitativeStage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#injury_reduce -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#injury_reduce">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterLogged"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Transpiration"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#VegitativeStage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#intake_is_prevented_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#intake_is_prevented_by">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#uptake_is_prevented_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_a_climate_that_is_part_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_a_climate_that_is_part_of">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Air"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drought"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Humidity"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Light"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Precipitation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Sunlight"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Temperature"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Wind"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticCondition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_a_component_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_a_component_of">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Argon"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#CarbonDioxide"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Helium"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Methane"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Neon"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Nitrogen"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#NitrousOxide"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Oxygen"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterVapour"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Xenon"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Gas"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_a_factor_among -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_a_factor_among">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticFactor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Elevation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Latitude"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#NearByWater"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#OceanCurrent"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PrevailingWind"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Topography"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Vegetation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticFactor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_a_form_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_a_form_of">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFall"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Water"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LiquidPrecipitation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_a_mixture_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_a_mixture_of">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#mixture_form"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Air"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Gas"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_a_requirment_for -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_a_requirment_for">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#require"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Oxygen"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Sunlight"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeRoot"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Respiration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_a_source_of_water_for -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_a_source_of_water_for">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#sources_of_water_is"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFall"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFed"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_a_symptoms_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_a_symptoms_of">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LeafTesselBlast"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RootInhabitant"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SeedColor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SeedDamage"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ShotInhabitant"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#leafSenescence"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphologicalSign"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_affected_by_high -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_affected_by_high">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#when_high_affect"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeGrowth"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeYield"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#HeatStress"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_an_existing_from_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_an_existing_from_of">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FreezingPrecipitation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Frost"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FrozenPrecipitation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LiquidPrecipitation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Precipitation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_atmospheric -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_atmospheric">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Precipitation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Water"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_cause_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_cause_by">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#HeatStress"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Temperature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_cause_by_high -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_cause_by_high">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#when_high_cause"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#HeatStress"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Temperature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_determine_by_air -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_determine_by_air">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Humidity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Temperature"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterVapour"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_enable_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_enable_by">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Translocation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterLogged"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_essential_for_Producing -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_essential_for_Producing">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#production_requires"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Light"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Nitrogen"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ChlorophyII"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_gained_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_gained_by">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Energy"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Photosynthesis"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Respiration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_influence_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_influence_by">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeGrowth"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Light"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Temperature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_influence_by_host_of_interacting -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_influence_by_host_of_interacting">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_interaction_of_host_that_influence"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticCondition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticFactor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_interaction_of_host_that_influence -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_interaction_of_host_that_influence">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticFactor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticCondition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_irrigation_method_using -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_irrigation_method_using">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_use_for_irragation_in"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFed"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFall"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_loss_due_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_loss_due_to">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#CellWater"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#HeatStress"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_moisture_content_in -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_moisture_content_in">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Humidity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Air"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_part_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_part_of">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Absorption"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MetabolicProcess"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MineralAbsorbtion"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Morphogenesis"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Phototropism"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PhysiologicalProcess"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Pollination"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SilkEmergent"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#StomataMovement"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Translocation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#GrowthProcess"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_part_of_requirement_for -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_part_of_requirement_for">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#requirement_include"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Air"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Nitrogen"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Precipitation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Sunlight"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Photosynthesis"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_present_during -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_present_during">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#occur_in_the_present_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Sunlight"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Photosynthesis"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_prevented_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_prevented_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#prevent"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Respiration"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterLogged"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_rely_on_for -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_rely_on_for">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#relies_on_rain_fall_for"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Water"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFed"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_remove_by_excess -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_remove_by_excess">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Oxygen"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SoilMoisture"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_sensitive_to_drough_at -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_sensitive_to_drough_at">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Pollination"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SilkEmergent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_sexual_reproduction_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_sexual_reproduction_of">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#reproduce_sexually_by"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Pollination"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_source_of_energy_for -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_source_of_energy_for">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#source_of_energy_is"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Light"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeGrowth"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Photosynthesis"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_symptoms_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_symptoms_of">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphologicalSign"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphogenesisProcess"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_the_absent_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_the_absent_of">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drought"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFall"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_the_product_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_the_product_of">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#produces"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Food"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_triggered_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_triggered_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#trigger"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphogenesisProcess"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PhysiologicalProcess"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Light"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_use_for_irragation_in -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_use_for_irragation_in">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Water"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFed"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_vital_for -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#is_vital_for">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ChlorophyII"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Photosynthesis"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#limit_production_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#limit_production_of">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#production_is_limited"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterLogged"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#mixture_form -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#mixture_form">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Gas"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Air"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#occur_in_the_present_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#occur_in_the_present_of">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Photosynthesis"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Sunlight"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#of_maize_can_be -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#of_maize_can_be">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#EnergySource"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Sunlight"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#pollination_is_influence_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#pollination_is_influence_by">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Wind"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#prevent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#prevent">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterLogged"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Respiration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#prevent_intake_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#prevent_intake_of">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#prevent_uptake_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#prevent_uptake_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#prevent_uptake_of">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#uptake_is_prevented_by"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterLogged"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Nitrogen"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#process_can_be_prevented_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#process_can_be_prevented_by">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#process_is_disturb_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#process_is_disturb_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#process_is_disturb_by">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Pollination"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drought"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#process_is_injured_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#process_is_injured_by">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Photosynthesis"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Stomata"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Transpiration"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#VegitativeStage"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterLogged"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#produces -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#produces">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Food"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#production_is_limited -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#production_is_limited">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterLogged"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#production_requires -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#production_requires">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ChlorophyII"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Energy"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Light"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Nitrogen"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Oxygen"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#relies_on_rain_fall_for -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#relies_on_rain_fall_for">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFed"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Water"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#reproduce_sexually_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#reproduce_sexually_by">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Pollination"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#require -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#require">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeRoot"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Respiration"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Oxygen"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Sunlight"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Temperature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#require_maximum_annual -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#require_maximum_annual">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeGrowth"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFall"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#require_minimum_annual -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#require_minimum_annual">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeGrowth"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFall"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#requirement_include -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#requirement_include">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Photosynthesis"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Air"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Nitrogen"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Precipitation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Sunlight"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#result_to_excessive -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#result_to_excessive">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterLogged"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SoilMoisture"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#source_of_energy_is -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#source_of_energy_is">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeGrowth"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Photosynthesis"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Light"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#sources_of_water_is -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#sources_of_water_is">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFed"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFall"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#trigger -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#trigger">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Light"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphogenesisProcess"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PhysiologicalProcess"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#uptake_is_prevented_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#uptake_is_prevented_by">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Nitrogen"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterLogged"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#use_respiration_for -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#use_respiration_for">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeRoot"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Energy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#when_high_affect -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#when_high_affect">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#HeatStress"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeGrowth"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeYield"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#when_high_cause -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#when_high_cause">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Temperature"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#HeatStress"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#when_high_influence_the -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#when_high_influence_the">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#HeatStress"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MetabolicProcess"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphologicalSign"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#yield_is_affected_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#yield_is_affected_by">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Air"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drainage"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drought"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Humidity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Irrigation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Light"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Precipitation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFed"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Temperature"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterLogged"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Wind"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasBoilingPoint -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasBoilingPoint">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SoilWater"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasCloud -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasCloud">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFall"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasColor -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasColor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasContraction -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasContraction">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Air"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasDegree -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasDegree">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Temperature"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasDirection -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasDirection">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Air"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasDuration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasDuration">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticCondition"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasExpansion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasExpansion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Air"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasFreezingPoint -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasFreezingPoint">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SoilWater"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasHeight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasHeight">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasHumidity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasHumidity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Air"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasIntensity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasIntensity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFall"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasMeasurement -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasMeasurement">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Air"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Precipitation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasMetaCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasMetaCode">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Precipitation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasMotion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasMotion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Air"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasPotoperiod -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasPotoperiod"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasPressure -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasPressure">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Air"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasQuality -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasQuality"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasRainBound -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasRainBound">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFall"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasSize -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasSize">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasState -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasState">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SoilWater"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasSymbolicRepresentation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasSymbolicRepresentation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Argon"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#CarbonDioxide"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Helium"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Methane"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Neon"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Nitrogen"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#NitrousOxide"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Oxygen"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterVapour"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Xenon"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasUnitOfMeasuement -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasUnitOfMeasuement">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Temperature"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasWavelength -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasWavelength"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasWidth -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#hasWidth">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Absorption -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Absorption">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#GrowthProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ActiveMiniralAbsorption -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ActiveMiniralAbsorption">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MiniralAbsorption"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#AgriculturalDrought -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#AgriculturalDrought">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drought"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Air -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Air">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Amylomaize -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Amylomaize">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeVarieTies"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Argon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Argon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Gas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ArtificialApplicationOfWatar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ArtificialApplicationOfWatar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FarmingPractice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ArtificialDrainage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ArtificialDrainage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drainage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#BabyCorn -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#BabyCorn">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeVarieTies"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#CarbonDioxide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#CarbonDioxide">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Gas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#CellWater -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#CellWater"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#CenterPivotIrrigation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#CenterPivotIrrigation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Irrigation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ChlorophyII -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ChlorophyII">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizePart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#CircadiamRhythms -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#CircadiamRhythms">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PhysiologicalProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Climate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Climate"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticCondition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticCondition">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticVariable"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Climate"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticFactor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticFactor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Climate"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticVariable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticVariable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticVariable">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Climate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Corn -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Corn">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ZeaMays"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Crop"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Crop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Crop"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#CrownRoot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#CrownRoot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeRoot"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PropRoot"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Degree -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Degree"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#DentCorn -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#DentCorn">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeVarieTies"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Dormancy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Dormancy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PhysiologicalProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drainage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drainage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ArtificialApplicationOfWatar"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#DripIrrigation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#DripIrrigation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Irrigation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drought -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drought">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Ear -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Ear">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizePart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Elevation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Elevation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Energy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Energy"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#EnergySource -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#EnergySource"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#EnvironmentalStresPhysiology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#EnvironmentalStresPhysiology">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PhysiologicalProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Fahrenheit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Fahrenheit"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FarmingPractice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FarmingPractice"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FeildCorn -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FeildCorn">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeVarieTies"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Fertilization -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Fertilization"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FlintCorn -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FlintCorn">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeVarieTies"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FlourCorn -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FlourCorn">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeVarieTies"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Food -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Food"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FreezingPrecipitation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FreezingPrecipitation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Precipitation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Frost -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Frost">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Precipitation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FrozenPrecipitation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FrozenPrecipitation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Precipitation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Gas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Gas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Air"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#GerminationProcess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#GerminationProcess">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#GrowthProcess"/>
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeGrowth"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#GrowthProcess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#GrowthProcess">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeGrowth"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#GrowthStage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#GrowthStage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#HeatStress -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#HeatStress">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#temperatureStress"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Helium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Helium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Gas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Humidity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Humidity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Husk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Husk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizePart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#HydrologicalDrought -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#HydrologicalDrought">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drought"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Irrigation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Irrigation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ArtificialApplicationOfWatar"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Kelvin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Kelvin"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LateralMoveIrrigation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LateralMoveIrrigation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Irrigation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Latitude -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Latitude">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LeafTesselBlast -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LeafTesselBlast">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphologicalSign"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Leaves -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Leaves">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizePart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Light -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Light">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LiquidPrecipitation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LiquidPrecipitation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Precipitation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LocalWind -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LocalWind">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Wind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LocalizeIrrigation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LocalizeIrrigation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Irrigation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Lodging -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Lodging">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ZeaMays"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Crop"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeGrowth -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeGrowth">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizePart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizePart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeRoot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeRoot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Root"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeVarieTies -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeVarieTies">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maize"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeYield -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeYield"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ManualIrrigation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ManualIrrigation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Irrigation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Membrane -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Membrane"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MetabolicProcess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MetabolicProcess">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#GrowthProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MeteorologicalDrought -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MeteorologicalDrought">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drought"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Methane -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Methane">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Gas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MineralAbsorbtion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MineralAbsorbtion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#GrowthProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MiniralAbsorption -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MiniralAbsorption">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Absorption"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Morphogenesis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Morphogenesis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#GrowthProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphogenesisProcess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphogenesisProcess">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Morphogenesis"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphologicalSign"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphologicalSign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphologicalSign">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Morphogenesis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#NasticMovement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#NasticMovement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PhysiologicalProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#NaturalApplicationOfWater -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#NaturalApplicationOfWater">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FarmingPractice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#NearByWater -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#NearByWater">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Neon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Neon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Gas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Nitrogen -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Nitrogen">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Gas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#NitrousOxide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#NitrousOxide">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Gas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#OceanCurrent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#OceanCurrent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Oxygen -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Oxygen">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Gas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PassiveMiniralAbsorption -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PassiveMiniralAbsorption">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MiniralAbsorption"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Periodic_Wind -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Periodic_Wind">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Wind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Photomorphogenesis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Photomorphogenesis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PhysiologicalProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Photoperiodism -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Photoperiodism">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PhysiologicalProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Photosynthesis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Photosynthesis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PhysiologicalProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Phototropism -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Phototropism">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#GrowthProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PhysiologicalProcess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PhysiologicalProcess">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#GrowthProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PlanetaryWind -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PlanetaryWind">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Wind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PlantHormoneFunction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PlantHormoneFunction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PhysiologicalProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PlantNutrition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PlantNutrition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PhysiologicalProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PodCorn -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PodCorn">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeVarieTies"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Pollination -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Pollination">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#GrowthProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PopCorn -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PopCorn">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeVarieTies"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Precipitation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Precipitation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PrevailingWind -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PrevailingWind">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PropRoot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PropRoot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeRoot"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ProteinStability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ProteinStability"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFall -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFall">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LiquidPrecipitation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFed">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#NaturalApplicationOfWater"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ReproductiveStage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ReproductiveStage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#GrowthStage"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#VegitativeStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Respiration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Respiration">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PhysiologicalProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Root -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Root">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizePart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RootInhabitant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RootInhabitant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphologicalSign"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RootLodging -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RootLodging">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Lodging"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#StemLodging"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SeedColor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SeedColor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphologicalSign"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SeedDamage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SeedDamage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphologicalSign"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SeedGermination -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SeedGermination">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphogenesisProcess"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Transpiration"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ShotInhabitant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ShotInhabitant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphologicalSign"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Silk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Silk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizePart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SilkEmergent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SilkEmergent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#GrowthProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SocioeconomicDrought -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SocioeconomicDrought">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drought"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SoilMoisture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SoilMoisture"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SoilWater -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SoilWater"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SprinklerIrrigation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SprinklerIrrigation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Irrigation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Stalk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Stalk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizePart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Stalk_breaking -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Stalk_breaking">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Stalk"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#StemLodging -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#StemLodging">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Lodging"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Stomata -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Stomata">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizePart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#StomataFunction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#StomataFunction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PhysiologicalProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#StomataMovement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#StomataMovement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#GrowthProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SubIrrigation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SubIrrigation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Irrigation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SubSurfaceDrainage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SubSurfaceDrainage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ArtificialDrainage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Sunlight -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Sunlight">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SurfaceDrainage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SurfaceDrainage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ArtificialDrainage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SurfaceIrrigation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SurfaceIrrigation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Irrigation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SweetCorn -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SweetCorn">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeVarieTies"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Tassel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Tassel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizePart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Temperature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Temperature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#TheWesterlies -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#TheWesterlies">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Wind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Topography -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Topography">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#TradeWind -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#TradeWind">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Wind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Translocation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Translocation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#GrowthProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Transpiration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Transpiration">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphogenesisProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Tropisms -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Tropisms">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PhysiologicalProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Vegetation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Vegetation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#VegitativeStage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#VegitativeStage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#GrowthStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Water -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Water">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LiquidPrecipitation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterAbsorption -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterAbsorption">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Absorption"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterLogged -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterLogged"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterVapour -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterVapour">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Gas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaxyCorn -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaxyCorn">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeVarieTies"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Wind -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Wind">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ClimaticCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Xenon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Xenon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Gas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ZeaMays -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ZeaMays">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Crop"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#leafSenescence -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#leafSenescence">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphologicalSign"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#temperatureStress -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#temperatureStress"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#AbsoluteHumidity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#AbsoluteHumidity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Humidity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#AgriculturalDrought -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#AgriculturalDrought">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drought"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Blister -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Blister">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ReproductiveStage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#CenterPivotIrrigation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#CenterPivotIrrigation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Irrigation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#CloudBurst -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#CloudBurst">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LiquidPrecipitation"/>
+        <untitled-ontology-27:hasMetaCode></untitled-ontology-27:hasMetaCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Conventional_rainfall -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Conventional_rainfall">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFall"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Cyclonic_rainfall -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Cyclonic_rainfall">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFall"/>
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Frontal_rainfall"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Dent -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Dent">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ReproductiveStage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Dough -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Dough">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ReproductiveStage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drizzle -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drizzle">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LiquidPrecipitation"/>
+        <untitled-ontology-27:hasMetaCode>DZ</untitled-ontology-27:hasMetaCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#DrizzleAndSnowMixed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#DrizzleAndSnowMixed">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FreezingPrecipitation"/>
+        <untitled-ontology-27:hasMetaCode>DASN</untitled-ontology-27:hasMetaCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Emergence -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Emergence">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#VegitativeStage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FirstLeafCollar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FirstLeafCollar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#VegitativeStage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FreezingDrizzle -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FreezingDrizzle">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FreezingPrecipitation"/>
+        <untitled-ontology-27:hasMetaCode>FZDZ</untitled-ontology-27:hasMetaCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Frontal_rainfall -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Frontal_rainfall">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFall"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#GasStateWater -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#GasStateWater">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SoilWater"/>
+        <untitled-ontology-27:hasState>gas</untitled-ontology-27:hasState>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Graupel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Graupel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FrozenPrecipitation"/>
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SnowPellets"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Hail -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Hail">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FrozenPrecipitation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#HydrologicalDrought -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#HydrologicalDrought">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drought"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#IceCrystals -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#IceCrystals">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FrozenPrecipitation"/>
+        <untitled-ontology-27:hasMetaCode>IC</untitled-ontology-27:hasMetaCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#IcePellets -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#IcePellets">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FrozenPrecipitation"/>
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Sleet"/>
+        <untitled-ontology-27:hasMetaCode>PL</untitled-ontology-27:hasMetaCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LandWind -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LandWind">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Wind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LastLeafCollar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LastLeafCollar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#VegitativeStage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LeafSenescence -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LeafSenescence">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphologicalSign"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LiquidStateWater -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LiquidStateWater">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SoilWater"/>
+        <untitled-ontology-27:hasState>Liquid</untitled-ontology-27:hasState>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LiquidWater -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LiquidWater">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SoilWater"/>
+        <untitled-ontology-27:hasState>liquid</untitled-ontology-27:hasState>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LocalWinds -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LocalWinds">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Wind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LocalizeIrrigation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LocalizeIrrigation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Irrigation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ManualIrrigation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ManualIrrigation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Irrigation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maturity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Maturity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ReproductiveStage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MeteorologicalDrought -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MeteorologicalDrought">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drought"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Milking -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Milking">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ReproductiveStage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MonsoonWind -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MonsoonWind">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Periodic_Wind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MountainBreeze -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MountainBreeze">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Periodic_Wind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Orographic_rainfall -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Orographic_rainfall">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFall"/>
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Relief_rainfall"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PeriodicWind -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PeriodicWind">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Wind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PlanetaryWind -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PlanetaryWind">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Wind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainAndSnowMixed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainAndSnowMixed">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FreezingPrecipitation"/>
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Slush"/>
+        <untitled-ontology-27:hasMetaCode>RASN</untitled-ontology-27:hasMetaCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RelativeHumidity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RelativeHumidity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Humidity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Relief_rainfall -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Relief_rainfall">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RainFall"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Root_Inhabitant -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Root_Inhabitant">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphologicalSign"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SeaBreeze -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SeaBreeze">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Periodic_Wind"/>
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ValleyBreeze"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SecondLeafCollar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SecondLeafCollar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#VegitativeStage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SeedColor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SeedColor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphologicalSign"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SeedDamage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SeedDamage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MorphologicalSign"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Silking -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Silking">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ReproductiveStage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Sleet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Sleet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FrozenPrecipitation"/>
+        <untitled-ontology-27:hasMetaCode></untitled-ontology-27:hasMetaCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Slush -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Slush">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FreezingPrecipitation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Snow -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Snow">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FrozenPrecipitation"/>
+        <untitled-ontology-27:hasMetaCode>SN</untitled-ontology-27:hasMetaCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SnowGrains -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SnowGrains">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FrozenPrecipitation"/>
+        <untitled-ontology-27:hasMetaCode>SG</untitled-ontology-27:hasMetaCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SnowPellets -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SnowPellets">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FrozenPrecipitation"/>
+        <untitled-ontology-27:hasMetaCode>GS</untitled-ontology-27:hasMetaCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SocioeconmicDrought -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SocioeconmicDrought">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Drought"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SolidStateWater -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SolidStateWater">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SoilWater"/>
+        <untitled-ontology-27:hasState>solid</untitled-ontology-27:hasState>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SpecificHumidity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SpecificHumidity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Humidity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SprinklerIrrigation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SprinklerIrrigation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Irrigation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SubIrrigation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SubIrrigation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Irrigation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Sunshower -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Sunshower">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LiquidPrecipitation"/>
+        <untitled-ontology-27:hasMetaCode></untitled-ontology-27:hasMetaCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SurfaceIrrigation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SurfaceIrrigation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Irrigation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Tasseling -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Tasseling">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#VegitativeStage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ThirdLeafCollar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ThirdLeafCollar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#VegitativeStage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#TradeWind -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#TradeWind">
+        <untitled-ontology-27:hasDirection></untitled-ontology-27:hasDirection>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ValleyBreeze -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ValleyBreeze">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Periodic_Wind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#bodyTemperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#bodyTemperature">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Temperature"/>
+        <untitled-ontology-27:hasDegree rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">37 celcuis / 98 fahrenhiet</untitled-ontology-27:hasDegree>
+        <untitled-ontology-27:hasMeasurement></untitled-ontology-27:hasMeasurement>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#boilingPoint -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#boilingPoint">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Temperature"/>
+        <untitled-ontology-27:hasDegree></untitled-ontology-27:hasDegree>
+        <untitled-ontology-27:hasMeasurement rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">100 celsius</untitled-ontology-27:hasMeasurement>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#conditional_air -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#conditional_air">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Air"/>
+        <untitled-ontology-27:hasDirection></untitled-ontology-27:hasDirection>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#dripIrrigation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#dripIrrigation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Irrigation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#lateralMovelIrrigation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#lateralMovelIrrigation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Irrigation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#meltingPoint -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#meltingPoint">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Temperature"/>
+        <untitled-ontology-27:hasDegree rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">0 celsius</untitled-ontology-27:hasDegree>
+        <untitled-ontology-27:hasMeasurement></untitled-ontology-27:hasMeasurement>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#natural_air -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#natural_air">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Air"/>
+        <untitled-ontology-27:hasDirection></untitled-ontology-27:hasDirection>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#overheadIrrigation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#overheadIrrigation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Irrigation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#polluted_air -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#polluted_air">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Air"/>
+        <untitled-ontology-27:hasDirection></untitled-ontology-27:hasDirection>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#roomTemperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#roomTemperature">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Temperature"/>
+        <untitled-ontology-27:hasDegree rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">20-25 celsius/68-77fahrenhiet</untitled-ontology-27:hasDegree>
+        <untitled-ontology-27:hasMeasurement></untitled-ontology-27:hasMeasurement>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#surfaceIrrigation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#surfaceIrrigation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Irrigation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Amylomaize"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#BabyCorn"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#DentCorn"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FeildCorn"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FlintCorn"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FlourCorn"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PodCorn"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PopCorn"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SweetCorn"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaxyCorn"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#CellWater"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Climate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Crop"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Degree"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Energy"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#EnergySource"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Fahrenheit"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#FarmingPractice"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Fertilization"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Food"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#HeatStress"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Kelvin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeYield"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Membrane"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ProteinStability"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SoilMoisture"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SoilWater"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#WaterLogged"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#temperatureStress"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ChlorophyII"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Ear"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Husk"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Leaves"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Root"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Silk"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Stalk"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Stomata"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Tassel"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#CircadiamRhythms"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Dormancy"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#EnvironmentalStresPhysiology"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#NasticMovement"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Photomorphogenesis"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Photoperiodism"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Photosynthesis"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PlantHormoneFunction"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#PlantNutrition"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Respiration"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#StomataFunction"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Tropisms"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#GrowthProcess"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#GrowthStage"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#Lodging"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizePart"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#MaizeVarieTies"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#LeafTesselBlast"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#RootInhabitant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SeedColor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#SeedDamage"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#ShotInhabitant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/6/untitled-ontology-27#leafSenescence"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

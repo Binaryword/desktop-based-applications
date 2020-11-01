@@ -30,7 +30,7 @@ public class Tagging {
 
 	public String toString() {
 
-		return String.format("word (%s) ---- > tag %s", getWord(), getTags());
+		return String.format("word (%s) ---- > tag (Expansion) %s", getWord(), getTags());
 	}
 
 }

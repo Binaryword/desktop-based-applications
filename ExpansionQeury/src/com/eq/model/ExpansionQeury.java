@@ -16,6 +16,8 @@ public class ExpansionQeury {
 	private String userQuery ;
 	private int checkCount; 
 	private List<Tagging> queryTags = new ArrayList<>(); 
+	private List<String> clean_user_query = new ArrayList<>();; 
+	private boolean isExpansionFored ; 
 	
 	
 	public ExpansionQeury(){
@@ -27,6 +29,7 @@ public class ExpansionQeury {
 		
 		this.seedVariableList = seedVariableList ; 
 		Wordnet.loadWordNet("C:\\Program Files (x86)\\WordNet\\2.1\\Dict");
+	//	Ontology.readOntology(new File("maizeFarmingOntology_MODIFY3_VALIDATION.owl"));
 		Ontology.readOntology(new File("maizeFarmingOntology_MODIFY3_VALIDATION.owl"));
 		Ontology.initOntology();
 		//Ontology.printActiveOntology();
@@ -91,28 +94,37 @@ public class ExpansionQeury {
 		
 		// initializing lemma list
 		List<String> lemmaUserQueryList = new ArrayList<>(); 
+		List<String> debugLemmaList = new ArrayList<>(); 
 		
 		// stemming user query 
 		for(String w : cleanStopWord) 
 		{
 			lemmaUserQueryList.add(TextPreprocessing.lemmatize_word(w)); 
+			debugLemmaList.add(w); 
 			
 		}// end of for loop
 		
+		clean_user_query.clear();
+		clean_user_query.addAll(lemmaUserQueryList); 
 	
 		// finding.. candidate term form onto file... 
 		Set<String> fileterList = Ontology.getFilterCandidateTerm(lemmaUserQueryList);
+		Set<String> fileterList2 = Ontology.getFilterCandidateTerm(debugLemmaList);
+		
 		lemmaUserQueryList.clear();
 		lemmaUserQueryList.addAll(fileterList); 
-		
 		// finding expansion to user query... 
 		lemmaUserQueryList.addAll(findQueryExpansion(lemmaUserQueryList)) ; 
-//		Set<String> expansion = findQueryExpansion(lemmaUserQueryList);
+		List<Tagging> expansion = findQueryExpansion(new ArrayList<>(fileterList2) , null);
+		
+		System.out.println("Printing out expantion data................"); 
+		for (Tagging t : expansion)
+			System.out.println("DATA"+ t);
+		
 //		lemmaUserQueryList.clear();
 //		lemmaUserQueryList.addAll(expansion); 
 		
-		System.out.println("Expanding Query ---> " + lemmaUserQueryList); 
-		
+		System.out.println("Expanding Query data---> " + lemmaUserQueryList); 
 		// computing semantic relevance to onto corpus .....
 		Ontology.computeWordRelevance(lemmaUserQueryList);
 		checkCount  = checkSVCount(lemmaUserQueryList); 
@@ -120,6 +132,9 @@ public class ExpansionQeury {
 		
 	}// end of method
 	
+	public List<String> getCleanedQuery(){
+		return clean_user_query ; 
+	}
 	
 	public int getSeedVariableCount(){
 		
@@ -177,10 +192,36 @@ public class ExpansionQeury {
 			
 		}// end of for loop 
 		
+	//	System.out.println(queryTags);
 		
 		return expansion ; 
 		
 	}//
+	
+	
+public List<Tagging> findQueryExpansion(List<String> words , String title) {
+		
+		
+		Set<String> expansion = new HashSet<>(); 
+		queryTags.clear(); 
+		 
+		
+		
+		for(String word : words) {	
+			word = Wordnet.find_word_precision(word);
+			List<String> syn = Wordnet.getSynonyms(word); 
+			expansion.addAll(syn);
+			queryTags.add(new Tagging(word , syn)); 
+			
+		}// end of for loop 
+		
+	//	System.out.println(queryTags);
+
+		return queryTags ; 
+		
+	}//
+	
+	
 	
 	public List<Tagging> getQueryTags(){
 		

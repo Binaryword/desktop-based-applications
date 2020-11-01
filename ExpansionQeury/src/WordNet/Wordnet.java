@@ -37,6 +37,7 @@ public class Wordnet {
 	private static List<String> rawOntTerm ;
 	private static List<Document> learnedDocument = new LinkedList<>();
 	private static LinkedHashSet<String> matchTermList;
+	private static ArrayList<WordRelationShip> finalWordRelationShip;
 
 	public static void loadWordNet(File wordnetLocation) {
 
@@ -487,7 +488,120 @@ public class Wordnet {
 				System.out.println("Word suggestion alogrithm is required....");
 		}
 
+	}// end of metho
+	
+public static String find_word_precision(String word){
+		
+		
+		boolean wdNet = false;
+		WordCorpus wordCorpus = WordCorpus.getWordCorpusDao();
+		@SuppressWarnings("unused")
+		boolean wdCorpus = false;
+		String foundWordNet = null;
+		String foundWordCorpus = null;
+		WordPresicion.runOnce = false;
+		
+		// checking if word is spell correctly .. 1. first if word found in word
+		// net...
+				
+			if(word == null)
+				return word; 
+			
+			boolean spelling  = wordCorpus.spellChecker(word) ; 
+
+			//System.out.println("WORD SPELT CORRECTLY..... ");
+
+		if(Wordnet.checkWordSense(word)) {
+			
+			wdNet = true ; 
+			foundWordNet = word ; 
+			
+		}else {
+			
+				
+            boolean valid_for_searching = WordPresicion.wordStemming(word);
+			
+			while (valid_for_searching) {
+
+				
+				valid_for_searching = WordPresicion.wordStemming(WordPresicion.getWord());
+				
+
+				if(WordPresicion.getWord().length() <= 2)
+					break ; 
+				
+				if (Wordnet.checkWordSense(WordPresicion.getWord().toLowerCase().trim())) {
+
+					// if word is found .... in word net after stemming
+					wdNet = true;
+					foundWordNet = WordPresicion.getWord().toLowerCase().trim();
+					break;
+
+				} else {
+
+					// findPrecision(WordPresicion.getWord().toLowerCase().trim());
+				}
+				// if word is found in wordnet
+
+			} // while loop bracket
+
+			if (!wdNet) {
+
+				String sWord = wordCorpus.convertToSingular(word);
+
+				if (sWord == null) {
+
+					WordPresicion.runOnce = false;
+					boolean condition = WordPresicion.wordStemming(word);
+
+					while (condition) {
+
+						condition = WordPresicion.wordStemming(WordPresicion.getWord());
+						//System.out.println();
+						sWord = wordCorpus.convertToSingular(WordPresicion.getWord());
+					//	System.out.println("NEXT WORD FORM WORD CORPUS " + sWord);
+
+						if (sWord != null) {
+							wdCorpus = true;
+							foundWordCorpus = sWord.toLowerCase().trim();
+							break;
+
+						}// end of first layer if
+
+					}// while condition
+
+				}// end of second layer if ...
+				else {
+
+					wdCorpus = true;
+					foundWordCorpus = sWord.toLowerCase().trim();
+
+				}// end of second layer if
+
+			}// end of third layer if statement....
+			
+			
+			
+		} // fourth layer of if statement ...... checking for init word sense.... 
+			
+			
+			// check for irregular pattern ..
+			
+
+//			System.out.println("From word net :::::::   " + foundWordNet);
+//			System.out.println("From word corpus :::::: " + foundWordCorpus);
+//			System.out.println("IS WORD SPELT CORRECTLY  " + spelling);
+			
+			
+			if(foundWordNet != null)
+				return foundWordNet;
+			
+			else if(foundWordCorpus != null)
+				return foundWordCorpus; 
+			else 
+				return word ; 
 	}
+	
 
 	public static void getStemWord(String text) {
 
@@ -635,6 +749,7 @@ public class Wordnet {
 
 	public static void learnWordNetOntologyRelevance(String word) {
 
+		word  = word.toLowerCase(); 
 		List<String> wordNetDoc = new LinkedList<>();
 		matchTermList = new LinkedHashSet<>();
 		Document document = null;
@@ -645,6 +760,7 @@ public class Wordnet {
 			// if part of speech is not found skip .....
 			if (w == null)
 				continue;
+			System.out.println("Part of Speach  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> "   + w.getPOS()  );
 
 			List<IWord> senseWord = getSenses(w);
 			int senseIndex = 0;
@@ -674,10 +790,9 @@ public class Wordnet {
 
 		/*
 		 * helper method to set or map all word net document to individual word net
-		 * document
+		 * document---> each sense and all Sense 
 		 */
 		initAllWordnetDocument(documentList);
-
 		learnedDocument.clear();
 		for (Document d : documentList) {
 			d.computeRelevanceToOntology(new ArrayList<>(ontTermList));
@@ -688,14 +803,37 @@ public class Wordnet {
 
 		for(String t : getRawOntTerm()) {System.out.println("OntTerm : " +  t); }
 		System.out.println("berfor match List --> " + getMatchTermList());
-		setMatchTermList(new ArrayList<>(matchTermList));
+		//setMatchTermList(new ArrayList<>(matchTermList));
 		System.out.println("after match List --> " + getMatchTermList());
-		getHypernyms(learnedDocument, word);
-		getHyponyms(learnedDocument, word);
-		getHolonyms(learnedDocument, word);
-		getMeronyms(learnedDocument, word);
+		
+		// An helper method to set appropriate relationship...
+		initializeLearntWord(learnedDocument , word); 
+	
 	}// end of method....
 
+	private static void initializeLearntWord(List<Document> learnedDocument2, String word) {
+		
+		// getting  the four ONTOLOGY constant relation
+		// this relations define four possible constant...
+		WordRelationShip eds1= new WordRelationShip(WordNetRelation.HYPERNYMS ,  getHypernyms(learnedDocument2, word) ) ; 
+		WordRelationShip eds2= new WordRelationShip(WordNetRelation.HYPONYMS , getHyponyms(learnedDocument2, word));
+		WordRelationShip eds3= new WordRelationShip(WordNetRelation.HOLONYMS , getHolonyms(learnedDocument2, word));
+		WordRelationShip eds4= new WordRelationShip(WordNetRelation.MERONYMS , getMeronyms(learnedDocument2, word));
+
+		/*
+		 * adding to a list of collectors 
+		 */
+		finalWordRelationShip = new ArrayList<>(Arrays.asList(eds1 , eds2 , eds3 , eds4));
+		for(WordRelationShip r : finalWordRelationShip) { System.out.println(r.getRelationConstant().getType() + "--> " + r.getRelationships()); }
+		for(WordRelationShip r : finalWordRelationShip) { System.out.println(r.getRelationConstant().getType() + "--> " + r.getFilteredRelationships(new ArrayList<>(getMatchTermList()))); }
+		for(WordRelationShip r : finalWordRelationShip) { System.out.println(r.getRelationConstant().getType() + "--> 2" + r.getRelationships()); }
+
+	}
+
+	public static List<WordRelationShip> getFinalLearntWord(){
+		return  finalWordRelationShip  ; 
+	}
+	
 	public static List<Document> getLearnedDocument() {
 		return learnedDocument;
 	}
@@ -722,6 +860,8 @@ public class Wordnet {
 		} // for out
 		
 		System.out.println("New Matct list    " + termList); 
+		getMatchTermList().clear();
+		getMatchTermList().addAll(newList);
 	}
 
 	public static void initAllWordnetDocument(List<Document> wNdoc) {
@@ -750,7 +890,7 @@ public class Wordnet {
 
 		for (Document doc : document) {
 
-			if (doc.getRelevanceValue() <= 0.0)
+			if (doc.getRelevanceValue() <= 0.0 || doc.getSenseIndex() != 1 )
 				continue;
 
 			IIndexWord idxWord = dict.getIndexWord(searchWord, doc.getPOS());
@@ -760,19 +900,24 @@ public class Wordnet {
 
 			// get the HYPERNYMS
 			List<ISynsetID> hypernyms = synset.getRelatedSynsets(Pointer.HYPERNYM);
-
+			
 			List<IWord> words;
 			for (ISynsetID sid : hypernyms) {
 				words = dict.getSynset(sid).getWords();
+				//hypernymList.add(dict.getSynset(sid).getLexicalFile().toString());
+					//System.out.println("Tester " +  dict.getSynset(sid).getLexicalFile().);
 				for (Iterator<IWord> i = words.iterator(); i.hasNext();) {
 					hypernymList.add(i.next().getLemma());
+				//	System.out.println("Tester2 " +  i.next().ge);
 				}
 			}
+		
+				
 
 			// hypernymList.clear();
 		} // end of for loop
 
-		System.out.println("hypernymsList---------(" + ")----------<<<<>>>>>> " + hypernymList);
+		//System.out.println("hypernymsList---------(" + ")----------<<<<>>>>>> " + hypernymList);
 		return hypernymList;
 	}
 
@@ -782,7 +927,7 @@ public class Wordnet {
 
 		for (Document doc : document) {
 
-			if (doc.getRelevanceValue() <= 0.0)
+			if (doc.getRelevanceValue() <= 0.0 || doc.getSenseIndex() != 1 )
 				continue;
 
 			IIndexWord idxWord = dict.getIndexWord(searchWord, doc.getPOS());
@@ -804,7 +949,7 @@ public class Wordnet {
 			// hypernymList.clear();
 		} // end of for loop
 
-		System.out.println("hyponymsList---------(" + ")----------<<<<>>>>>> " + hyponymList);
+		//System.out.println("hyponymsList---------(" + ")----------<<<<>>>>>> " + hyponymList);
 		return hyponymList;
 	}
 
@@ -813,7 +958,7 @@ public class Wordnet {
 
 		for (Document doc : document) {
 
-			if (doc.getRelevanceValue() <= 0.0)
+			if (doc.getRelevanceValue() <= 0.0 || doc.getSenseIndex() != 1 )
 				continue;
 
 			IIndexWord idxWord = dict.getIndexWord(searchWord, doc.getPOS());
@@ -844,7 +989,7 @@ public class Wordnet {
 			// hypernymList.clear();
 		} // end of for loop
 
-		System.out.println("meronymsList---------(" + ")----------<<<<>>>>>> " + meronymsList);
+		//System.out.println("meronymsList---------(" + ")----------<<<<>>>>>> " + meronymsList);
 		return meronymsList;
 	}
 	
@@ -855,7 +1000,7 @@ public class Wordnet {
 
 		for (Document doc : document) {
 
-			if (doc.getRelevanceValue() <= 0.0)
+			if (doc.getRelevanceValue() <= 0.0 || doc.getSenseIndex() != 1 )
 				continue;
 
 			IIndexWord idxWord = dict.getIndexWord(searchWord, doc.getPOS());
@@ -886,7 +1031,7 @@ public class Wordnet {
 			// hypernymList.clear();
 		} // end of for loop
 
-		System.out.println("holonymsList---------(" + ")----------<<<<>>>>>> " + holonymsList);
+		//System.out.println("holonymsList---------(" + ")----------<<<<>>>>>> " + holonymsList);
 		return holonymsList;
 	}
 

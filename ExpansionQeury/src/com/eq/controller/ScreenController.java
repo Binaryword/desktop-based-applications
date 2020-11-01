@@ -10,6 +10,9 @@ import java.util.Set;
 import com.eq.model.LinkedHolder;
 import com.jfoenix.controls.JFXListView;
 
+import WordNet.TextPreprocessing;
+import WordNet.WordRelationShip;
+import WordNet.Wordnet;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -34,9 +37,18 @@ public class ScreenController implements Initializable {
 	private JFXListView<String> linkLayout;
 	public static String userQuery;
 	private boolean firster = false;
-
+	private boolean canexecute = false  ; 
+	DebugController controller ; 
 	@FXML
 	void activate_searching(ActionEvent event) {
+		
+		try {
+			loadDebugPanel("Duburg");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		controller.setContent("hellos"); 
 
 		if (searchBox.getText() != "" && searchBox.getText() != null) {
 			String word = searchBox.getText().toString().toLowerCase();
@@ -68,9 +80,9 @@ public class ScreenController implements Initializable {
 			boolean isFormed = MainController.eq.isExpansionFormed();
 
 			if (isFormed) {
-				
+				queryPrompt.setText("");
 				queryPrompt.setText("Showing " + links.size() + " result for : " + searchBox.getText()) ; 
-				
+				linkLayout.getItems().clear();
 				for (LinkedHolder holder : links) {
 					
 					linkLayout.getItems().add(holder.getRelation().getReadableString());
@@ -78,17 +90,18 @@ public class ScreenController implements Initializable {
 				} // for loops ...
 
 			} else {
-
+					
+				System.out.println("ontology LINK EMPTY"); 
 				linkLayout.getItems().add("ACTIVATE ONTOLOGY LEARNING");
 				
 				/*
 				 * 		implementing onto learning using word net...
 				 * 
 				 */
-
+				
 			}
 
-		} else if (MainController.eq.getSeedVariableCount() == 1) {
+		} else if (MainController.eq.getSeedVariableCount() < 2 || links.isEmpty()) {
 
 			/*
 			 * if only one seed variable found in user query
@@ -99,18 +112,38 @@ public class ScreenController implements Initializable {
 			 * 
 			 * 	<pre> process user query to get precise candidate term..
 			 */
+			
+			
+			
 			queryPrompt.setText("Showing " + links.size() + " result for : " + searchBox.getText()) ;
 			linkLayout.getItems().clear();
-			linkLayout.getItems().add("SUGGESTING SEED VARIBLE.. ");
+			linkLayout.getItems().add("OUT OF SUBJECT GRANULARITY...");
+			linkLayout.getItems().add("Ontology Learning activated ....");
 
-		} else if (links.isEmpty()) {
+			
+			for(String qeury : MainController.eq.getCleanedQuery()) 
+			{
+				//activateOntologyLearning(qeury);
+			}
+			
+
+			
+			
+			
+
+		} 
+		
+		else if (links.isEmpty()) {
 
 			/*
 			 * when no one seed variable found in user query
 			 */
-			queryPrompt.setText("Showing " + links.size() + " result for : " + searchBox.getText()) ;
-			linkLayout.getItems().clear();
-			linkLayout.getItems().add("OUT OF SUBJECT GRANULARITY...");
+//			System.out.println("Qury list " + MainController.eq.getCleanedQuery()); 
+//	
+//			queryPrompt.setText("Showing " + links.size() + " result for : " + searchBox.getText()) ;
+//			linkLayout.getItems().clear();
+//			linkLayout.getItems().add("OUT OF SUBJECT GRANULARITY...");
+//			
 		}
 
 	}// end of method.......
@@ -165,13 +198,101 @@ public class ScreenController implements Initializable {
 			userQuery = MainController.userQuery;
 			searchBox.setText(userQuery);
 			MainController.eq.setUserQuery(userQuery);
+			
+		
 			MainController.eq.processUserQuery();
 		}
 
 		searchBox.setFocusTraversable(false);
 		activate_link_clicked();
 		addLinkdeLayout();
+		
+	
 
 	}
+	
+	
+private void loadDebugPanel(String title) throws IOException {
+		// TODO Auto-generated method stub
+	FXMLLoader load = new FXMLLoader(getClass().getResource("/com/eq/graphic/DebugPanel.fxml"));
+	Parent root = load.load() ;  
+	 controller =(DebugController)load.getController() ; 
+	Scene scene = new Scene(root);
+	Stage stage = new Stage();  
+	stage.setScene(scene);
+	stage.setTitle(title);
+	stage.show();
+		
+	}
+
+public void activateOntologyLearning(String wordOrSetences) {
+	
+	if(!canexecute)
+			return ; 
+	
+	
+	System.out.println("Called");
+	
+	new Thread(()->{
+				
+		//	ExpansionQeury eq =  new ExpansionQeury();
+		//	eq.initSeedVariable("maize", "fertilizers", "irrigation", "soils");
+			//Ontology.printDocuments();
+			//activateOntologyLearning();
+			
+		List<String>  wRs = TextPreprocessing.tokenize_query(wordOrSetences); 		
+		System.out.println("ONTOLOGY LEARNING THREAD CALLED.... " + wRs);
+		for(String word : wRs) {
+			
+			// GETTING WORDNET RESOURCE READY........
+			Wordnet.getOntologyTerm(Ontology.getAllOntologyConcept());
+			Wordnet.setOntologyDocument(Ontology.getDocuments());
+			Wordnet.learnWordNetOntologyRelevance(word.trim().toLowerCase());
+			List<WordRelationShip> wd = Wordnet.getFinalLearntWord() ;
+			System.out.println("ONTOLOGY LEARNING THREAD CALLED.... " + wd);
+			
+			// initializing resource to encode iNTO the ONTOLOGY.... 
+			String domain =  null ; 
+			String range = null;
+			String relationship = null ; 
+			int sensecounter = 0 ; 
+			for(WordRelationShip wdr : wd) {
+				if(wdr.getRelationships().isEmpty())
+					continue ; 
+						domain = word ; 
+							// going through either HOLO , HYPO , ETC 
+								for(String rela : wdr.getRelationships() ) {
+									range = rela ; 
+									relationship  = wdr.getRelationConstant().getRelation() ; 
+									domain = TextPreprocessing.word_to_cammel_case(domain); 
+									range = TextPreprocessing.word_to_cammel_case(range); 
+									System.out.println(domain + " " + relationship + " " + range); 
+									
+									if(domain == null || range==null || relationship==null)
+										continue ;
+									
+									Ontology.encodeOntology(relationship, domain , range ,  null  , 	null , null,false , false) ;
+									Ontology.updateOntology("newOntFile.owl"); 
+																sensecounter++ ;
+								}
+							
+			}
+			
+			if(sensecounter==0)
+				System.out.println("Cannot learn or make sense due on my current knowledge");
+		}
+		
+		
+		canexecute = true ; 
+	}).start();
+		
+	}// end of method
+
+	
+	
+	
+	
+	
+	
 
 }

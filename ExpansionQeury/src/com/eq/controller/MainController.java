@@ -2,10 +2,12 @@ package com.eq.controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import com.eq.model.ExpansionQeury;
 
+import WordNet.WordRelationShip;
 import WordNet.Wordnet;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -87,16 +89,25 @@ public class MainController implements Initializable{
 
 			eq = new ExpansionQeury();
 			eq.initSeedVariable("maize", "fertilizers", "irrigation", "soils");
-			Wordnet.getOntologyTerm(Ontology.getAllOntologyConcept());
 			//Ontology.printDocuments();
-			Wordnet.setOntologyDocument(Ontology.getDocuments());
-			Wordnet.learnWordNetOntologyRelevance("tree");
+			//activateOntologyLearning();
+			
 		}).start();
 		
 	
 		System.out.println("Controller called....");
 	}
 	
-	
+	public void activateOntologyLearning() {
+		
+		// GETTING WORDNET RESOURCE READY........
+		Wordnet.getOntologyTerm(Ontology.getAllOntologyConcept());
+		Wordnet.setOntologyDocument(Ontology.getDocuments());
+		Wordnet.learnWordNetOntologyRelevance("tree");
+		//List<WordRelationShip> wd = Wordnet.getFinalLearntWord() ;
+		
+		
+		
+	}
 
 }

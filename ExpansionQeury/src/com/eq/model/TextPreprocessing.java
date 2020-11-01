@@ -8,12 +8,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.ListIterator;
 
 import WordNet.WordCorpus;
 import WordNet.WordPresicion;
 import WordNet.Wordnet;
-import edu.mit.jwi.item.IIndexWord;
-import edu.mit.jwi.item.IWord;
 
 public class TextPreprocessing {
 	
@@ -240,4 +239,35 @@ public class TextPreprocessing {
 		return stopwordList ; 
 	}// end  of method 
 
+	public static String word_to_cammel_case(String word) {
+		if(word==null || word=="")
+			return word; 
+		
+		word = word.toLowerCase(); 
+		List<String> string = Arrays.asList(word.split("_")); 
+		StringBuilder builder = new StringBuilder();
+		
+		for(String s : string) {
+			
+			for(int c=0 ; c<s.length() ; c++) 
+			{
+				if(c==0)
+					builder.append(string.get(c).toUpperCase()); 
+				
+				builder.append(string.get(c)); 
+				
+			}
+			
+			builder.append(builder.toString()); 
+			
+		}
+		return builder.toString() ; 
+		
+	}
+	
+	
+	
+	
+	
+	
 }

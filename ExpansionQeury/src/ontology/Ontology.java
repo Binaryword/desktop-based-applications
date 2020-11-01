@@ -3,6 +3,7 @@ package ontology;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -17,6 +18,7 @@ import org.apache.jena.ontology.OntClass;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntResource;
 import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.util.iterator.ExtendedIterator;
 
 import com.eq.model.LinkedHolder;
@@ -429,6 +431,109 @@ public class Ontology {
 	}
 	
 	
+	/* 
+	 *  Auto creation of ONTOLOGY class 
+	 *  properTy and subclass and equalClass.. 
+	 *  =================================================================
+	 */
+	
+	  public static  void encodeOntology(String property , String domain , String range , List<String> domainSyns , List<String> rangeSyns ,  List<String> propEqual , boolean isDexist , boolean isRexist) {
+		
+	
+		  OntResource domains = initConcept(domain); 
+		  OntResource ranges = initConcept(range); 
+		  ObjectProperty prop = initObjectProperty(property); 
+		  
+		  if(domainSyns != null)
+		  initConceptEquals(domains , domainSyns) ;
+		  
+		  if(rangeSyns != null)
+			  initConceptEquals(ranges, domainSyns) ;
+		  
+		  if(propEqual != null)
+			  initRelationShipEquals(prop, propEqual) ;
+		  
+		  
+		  initStatement(domains, prop, ranges);
+		 
+		  
+		 // System.out.println("uRL: " + getOntologyUrl() );
+		  //String rangs = getOntologyUrl() + "Plant" ; 
+		  //String domain =  getOntologyUrl() + "Tree" ; 
+		  //String property =   "is_a" ; 
+		  
+		  // some condition are required... 
+		  		
+		//  Resource tree = ontModel.createResource(getOntologyUrl()+"Tree") ; 
+		 // Resource plant = ontModel.createResource(getOntologyUrl()+"Plant") ; 
+		  
+//		  
+//		  OntResource plant =  ontModel.createClass(getOntologyUrl()+"Plant"); 
+//		  OntResource tree1 =  ontModel.createClass(getOntologyUrl()+"Tree1"); 
+//		  OntResource tree =  ontModel.createClass(getOntologyUrl()+"Tree");
+//		   ((OntClass)tree).setEquivalentClass(tree1);
+//		  //ontModel.add(tree);
+//		  ObjectProperty prop  = (ObjectProperty)ontModel.createObjectProperty((getOntologyUrl()+"is_a"));  
+//		  prop.addDomain(tree);		  prop.addRange(plant);
+//		 
+//		  Statement statement =  ontModel.createStatement(tree, prop, plant); 
+//		 ontModel.add(statement);
+//		 ontModel.write(System.out); 
+	  }
+	  
+	  public static void updateOntology(String fileName){
+		  try {
+				ontModel.write(new FileOutputStream(new File(fileName)));
+				System.out.println("write to file successfully" ); 
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+
+	  }
+	  
+	  public static void initStatement(OntResource domain , ObjectProperty prop , OntResource range) {
+		 prop.addDomain(domain);
+		 prop.addRange(range);
+		  Statement statement = ontModel.createStatement(domain, prop , range); 
+		  ontModel.add(statement); 
+				//  ontModel.wr
+		  
+	  }
+	  
+	  public static ObjectProperty initObjectProperty(String relationship) {
+		  
+		  ObjectProperty prop  = (ObjectProperty)ontModel.createObjectProperty((getOntologyUrl()+relationship));  
+		  return prop ;
+	  }
+	  
+	  public static OntResource initConcept(String concept1){
+		  
+		  OntResource concept =  ontModel.createClass(getOntologyUrl()+concept1); 
+		  return concept ; 
+	  }
+	  
+	  public static void initConceptEquals(OntResource ontres , List<String> syn) {
+		  
+		  for(String s : syn) {
+			  	ontres.addSameAs((ontModel.createClass(getOntologyUrl()+s)));			
+		  }
+			  
+	  }
+	  
+	  
+	  public static void initRelationShipEquals(ObjectProperty ontres , List<String> syn) {
+		  
+		  for(String s : syn) {
+			  	ontres.setSameAs(ontModel.createObjectProperty(getOntologyUrl()+s));			
+		  }
+			  
+	  }
+	  
+	  
+	  
+	
+	//==================================================================
 
 	public static void initDocument() {
 

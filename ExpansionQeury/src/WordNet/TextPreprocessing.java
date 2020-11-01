@@ -236,5 +236,33 @@ public class TextPreprocessing {
 		
 		return stopwordList ; 
 	}// end  of method 
+	
+	
+	public static String word_to_cammel_case(String word) {
+		
+		
+		if(word==null || word=="")
+			return word; 
+		
+		word = word.toLowerCase(); 
+		List<String> string = Arrays.asList(word.split("_")); 
+		StringBuilder builder = new StringBuilder();
+		
+		for(String s : string) {
+			List<String> ls = Arrays.asList(s.split("")) ; ;	   
+			for(int c=0 ; c<ls.size() ; c++) 
+			{
+				if(c==0)
+					builder.append(ls.get(c).toUpperCase()); 
+				else 
+					builder.append(ls.get(c)); 
+			}
+			
+			//builder.append(); 
+		}
+		return builder.toString() ; 
+		
+	}
+
 
 }
